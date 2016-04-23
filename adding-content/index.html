@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head lang="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+	<meta name="description" content="A documentation theme for Hugo.">
+	<meta name="generator" content="Hugo 0.16-DEV" />
+	
+	<title>Adding content &mdash; Alabaster</title>
+	
+	<link rel="stylesheet" href="https://digitalcraftsman.github.io/hugo-alabaster-theme/css/alabaster.css" type="text/css" />
+	<link rel="stylesheet" href="https://digitalcraftsman.github.io/hugo-alabaster-theme/css/highlight.css" type="text/css" />
+
+	
+
+	<link rel="shortcut icon" href="https://digitalcraftsman.github.io/hugo-alabaster-theme/favicon.ico" type="image/x-icon"/>
+</head>
+
+	<body role="document">
+		<div class="document">
+			<div class="documentwrapper">
+				<div class="bodywrapper">
+					<div class="body" role="main">
+						
+	<h1>Adding content</h1>
+	
+	
+
+<h2 id="hello-world:d680e8a854a7cbad6d490c445cba2eba">Hello world</h2>
+
+<p>Let&rsquo;s create our first content file for your documentation. Open a terminal and add the following command for each new file you want to add. Replace <code>&lt;section-name&gt;</code> with a general term that describes your document in detail.</p>
+
+<pre><code class="language-sh">hugo new &lt;section-name&gt;/filename.md
+</code></pre>
+
+<p>Visitors of your website will find the final document under <code>www.example.com/&lt;section-name&gt;/filename/</code>.</p>
+
+<p>Since it&rsquo;s possible to have multiple content files in the same section I recommend to create at least one <code>index.md</code> file per section. This ensures that users will find an index page under <code>www.example.com/&lt;section-name&gt;</code>.</p>
+
+<h2 id="homepage:d680e8a854a7cbad6d490c445cba2eba">Homepage</h2>
+
+<p>To add content to the homepage you need to add a small indicator to the frontmatter of the content file:</p>
+
+<pre><code class="language-toml">type: homepage
+</code></pre>
+
+<p>Otherwise the theme will not be able to find the corresponding content file.</p>
+
+<h2 id="table-of-contents:d680e8a854a7cbad6d490c445cba2eba">Table of contents</h2>
+
+<p>You maybe noticed that the menu on the left contains a small table of contents of the current page. All <code>&lt;h2&gt;</code> tags (<code>## Headline</code> in Markdown) will be added automatically.</p>
+
+<h2 id="admonitions:d680e8a854a7cbad6d490c445cba2eba">Admonitions</h2>
+
+<p>Admonition is a handy feature that adds block-styled side content to your documentation, either notes or warnings. It can be enabled by using the corresponding <a href="http://gohugo.io/extras/shortcodes/">shortcodes</a> inside your content:</p>
+
+<pre><code class="language-md">{{&lt; admonition title=&quot;Note&quot; type=&quot;note&quot; &gt;}}
+Something good to know.
+{{&lt; /admonition &gt;}}
+</code></pre>
+
+<p>will be rendered as</p>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Lorem ipsum dolor.</p>
+</div>
+
+<p>The <code>type</code> parameter can optionally be used to either display a <code>note</code> or <code>warning</code>. The last type is the default one.</p>
+
+<pre><code class="language-md">{{&lt; admonition title=&quot;Caution&quot; &gt;}}
+Don't try this at home!
+{{&lt; /admonition &gt;}}
+</code></pre>
+
+<p>becomes</p>
+
+<div class="admonition ">
+<p class="first admonition-title">Caution</p>
+<p>Don&rsquo;t try this at home!</p>
+</div>
+
+
+
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+	<div class="sphinxsidebarwrapper">
+		<p class="logo">
+			<a href="https://digitalcraftsman.github.io/hugo-alabaster-theme/">
+				<img class="logo" src="https://digitalcraftsman.github.io/hugo-alabaster-theme/favicon.ico" alt="Logo"/>
+				<h1 class="logo logo-name">Alabaster</h1>
+			</a>
+		</p>
+		
+		<p class="blurb">A documentation theme for Hugo.</p>
+
+		
+
+	<p>
+		<iframe src="https://ghbtns.com/github-btn.html?user=digitalcraftsman&repo=hugo-alabaster-theme&type=watch&count=true&size=large"
+		allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+	</p>
+
+	
+
+	
+		
+
+		
+
+<h3>Navigation</h3>
+<ul>
+	
+	<li class="toctree-l1">
+		<a class="reference internal" href="/hugo-alabaster-theme/">Foreword</a>
+	</li>
+	
+	<li class="toctree-l1">
+		<a class="reference internal" href="/hugo-alabaster-theme/getting-started/">Getting Started</a>
+	</li>
+	
+	<li class="toctree-l1">
+		<a class="reference internal" href="/hugo-alabaster-theme/adding-content/">Adding content</a>
+	</li>
+	
+	<li class="toctree-l1">
+		<a class="reference internal" href="/hugo-alabaster-theme/roadmap/">Roadmap</a>
+	</li>
+	
+</ul>
+
+
+		<h3>Related Topics</h3>
+<ul>
+  <li><a href="https://digitalcraftsman.github.io/hugo-alabaster-theme/">Documentation overview</a><ul>
+  
+  
+</ul>
+
+	</div>
+</div>
+<div class="clearer"></div>
+</div>
+			<div class="footer">
+	&copy; 2016 <a href="https://github.com/digitalcraftsman">Digitalcraftsman</a>
+	|
+	Powered by <a href="http://gohugo.io/">Hugo 0.16-DEV</a>
+	&amp; <a href="https://github.com/digitalcraftsman/hugo-alabaster-theme">Alabaster</a>
+	
+</div>
+
+<a href="https://github.com/digitalcraftsman/hugo-alabaster-theme" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" class="github"/>
+</a>
+
+
+			
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
+			
+
+			
+		</div>
+	</body>
+</html>

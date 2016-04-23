@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alabaster</title>
+    <link>https://digitalcraftsman.github.io/hugo-alabaster-theme/</link>
+    <description>Recent content on Alabaster</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Apr 2016 15:21:22 +0200</lastBuildDate>
+    <atom:link href="https://digitalcraftsman.github.io/hugo-alabaster-theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Foreword</title>
+      <link>https://digitalcraftsman.github.io/hugo-alabaster-theme/</link>
+      <pubDate>Sat, 23 Apr 2016 15:21:22 +0200</pubDate>
+      
+      <guid>https://digitalcraftsman.github.io/hugo-alabaster-theme/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-alabaster:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;What is Alabaster?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitprophet/alabaster&#34;&gt;Alabaster&lt;/a&gt; was originally a theme for the popular documentation tool &lt;a href=&#34;http://www.sphinx-doc.org/en/stable/&#34;&gt;Sphinx&lt;/a&gt;. This theme port to Hugo theme is all about documentations. It should allow you to easily create a documentation for your projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.fabfile.org/&#34;&gt;Fabric&lt;/a&gt; and &lt;a href=&#34;http://www.pyinvoke.org/&#34;&gt;Invoke&lt;/a&gt; are two examples of the Alabaster theme in the wild.&lt;/p&gt;
+
+&lt;p&gt;The following pages will guide you through the setup, introduce you to the very basics of &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; and show you the capabilities of this theme. Have a look at the &lt;a href=&#34;https://digitalcraftsman.github.io/hugo-alabaster-theme/hugo-alabaster-theme/roadmap/&#34;&gt;Roadmap&lt;/a&gt; if you&amp;rsquo;re curious about what comes next.&lt;/p&gt;
+
+&lt;h2 id=&#34;acknowledgements:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;Last but not I want to give a big shout-out to &lt;a href=&#34;https://github.com/bitprophet&#34;&gt;Jeff Forcier&lt;/a&gt;, &lt;a href=&#34;https://github.com/kennethreitz&#34;&gt;Kenneth Reitz&lt;/a&gt; and &lt;a href=&#34;https://github.com/mitsuhiko&#34;&gt;Armin Ronacher&lt;/a&gt;. Their work and modifications on the original codebase made this port possible.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, thanks to &lt;a href=&#34;https://gihub.com/spf13&#34;&gt;Steve Francia&lt;/a&gt; for creating Hugo and the &lt;a href=&#34;https://github.com/spf13/hugo/graphs/contributors&#34;&gt;awesome community&lt;/a&gt; around the project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://digitalcraftsman.github.io/hugo-alabaster-theme/getting-started/</link>
+      <pubDate>Sat, 23 Apr 2016 15:57:19 +0200</pubDate>
+      
+      <guid>https://digitalcraftsman.github.io/hugo-alabaster-theme/getting-started/</guid>
+      <description>
+
+&lt;h2 id=&#34;installation:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-hugo:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Install Hugo&lt;/h3&gt;
+
+&lt;p&gt;Hugo itself is just a single binary without dependencies on expensive runtimes like Ruby, Python or PHP and without dependencies on any databases.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;first admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;Currently, this theme makes use of features that will be part of the Hugo v0.16 release. You have to &lt;a href=&#34;https://github.com/spf13/hugo/#clone-the-hugo-project-contributor&#34;&gt;compile&lt;/a&gt; the latest developement version yourself.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!--You just need to download the [latest version](https://github.com/spf13/hugo/releases). For more information read the official [installation guides](http://gohugo.io/overview/installing/). --&gt;
+
+&lt;p&gt;Let&amp;rsquo;s make sure Hugo is set up as expected. You should see a similar version number in your terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;hugo version
+# Hugo Static Site Generator v0.15 BuildDate: 2016-01-03T12:47:47+01:00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;install-alabaster:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Install Alabaster&lt;/h3&gt;
+
+&lt;p&gt;Next, assuming you have Hugo up and running the &lt;code&gt;hugo-alabaster&lt;/code&gt; theme can be installed with &lt;code&gt;git&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# create a new Hugo website
+hugo new site my-awesome-docs
+
+# move into the themes folder of your website
+cd my-awesome-docs/themes/
+
+# download the theme
+git clone git@github.com:digitalcraftsman/hugo-alabaster-theme.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;setup:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Next, take a look in the &lt;code&gt;exampleSite&lt;/code&gt; folder at &lt;code&gt;themes/hugo-alabaster-theme/&lt;/code&gt;. This directory contains an example config file and the content that you are currently reading. It serves as an example setup for your documentation.&lt;/p&gt;
+
+&lt;p&gt;Copy at least the &lt;code&gt;config.toml&lt;/code&gt; in the root directory of your website. Overwrite the existing config file if necessary.&lt;/p&gt;
+
+&lt;p&gt;Hugo includes a development server, so you can view your changes as you go -
+very handy. Spin it up with the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you can go to &lt;a href=&#34;http://localhost:1313&#34;&gt;localhost:1313&lt;/a&gt; and the Alabaster
+theme should be visible. You can now start writing your documentation, or read
+on and customize the theme through some options.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuration:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Before you are able to deploy your documentation you should take a few minute to adjust some information in the &lt;code&gt;config.toml&lt;/code&gt;. Open the file in an editor:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;baseurl = &amp;quot;http://replace-this-with-your-hugo-site.com/&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;Alabaster&amp;quot;
+
+disqusShortname = &amp;quot;&amp;quot;
+googleAnalytics = &amp;quot;&amp;quot;
+
+[params]
+  name = &amp;quot;Alabaster&amp;quot;
+  description = &amp;quot;A documentation theme for Hugo.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add some metadata about your theme. The &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;description&lt;/code&gt; will appear in the top left of the sidebar. Furthermore, you can enable tracking via Google Analytics by entering your tracking code.&lt;/p&gt;
+
+&lt;p&gt;To allow users direct feedback to your documentation you can also enable a comment section powered by Disqus. The comment section will appear on each page except the homepage.&lt;/p&gt;
+
+&lt;h2 id=&#34;options:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Options&lt;/h2&gt;
+
+&lt;h3 id=&#34;adding-a-custom-favicon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Adding a custom favicon&lt;/h3&gt;
+
+&lt;p&gt;Favicons are small small icons that are displayed in the tabs right next to the title of the current page. As with the logo above you need to save your favicon in &lt;code&gt;static/&lt;/code&gt; and link it relative to this folder in the config file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  favicon = &amp;quot;favicon.ico&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;syntax-highlighting:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Syntax highlighting&lt;/h3&gt;
+
+&lt;p&gt;This theme uses the popular &lt;a href=&#34;https://highlightjs.org/&#34;&gt;Highlight.js&lt;/a&gt; library to colorize code examples. The default theme is called &amp;ldquo;Foundation&amp;rdquo; with a few small tweaks. You can link our own theme if you like. Again, store your stylesheet in the &lt;code&gt;static/&lt;/code&gt; folder and set the relative path in the config file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  # Syntax highlighting theme
+  highlightjs  = &amp;quot;path/to/theme.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alternatively, you can use Pygments to highlight code blocks. If &lt;code&gt;highlightjs&lt;/code&gt; does not contain a path it defaults to the Pygments stylesheet. Read the &lt;a href=&#34;https://gohugo.io/extras/highlighting#pygments&#34;&gt;Hugo docs&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;If you used GitHub flavoured Markdown with code fences like below&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;```toml
+[params]
+  # Syntax highlighting theme
+  highlightjs  = &amp;quot;path/to/theme.css&amp;quot;
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you have to add the &lt;code&gt;pygmentsuseclasses = true&lt;/code&gt; option to the config file.&lt;/p&gt;
+
+&lt;h3 id=&#34;small-tweaks:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Small tweaks&lt;/h3&gt;
+
+&lt;p&gt;This theme provides a simple way for making small adjustments, that is changing some margins, centering text, etc. Simply put the CSS and Javascript files that contain your adjustments in the &lt;code&gt;static/&lt;/code&gt; directory (ideally in subdirectories of their own) and include them via the &lt;code&gt;custom_css&lt;/code&gt; and &lt;code&gt;custom_js&lt;/code&gt;
+variables in your &lt;code&gt;config.toml&lt;/code&gt;. Reference the files relative to &lt;code&gt;static/&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  custom_css = [
+    &amp;quot;foo.css&amp;quot;,
+    &amp;quot;bar.css&amp;quot;
+  ]
+
+  custom_js = [&amp;quot;buzz.js&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sidebar:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Sidebar&lt;/h2&gt;
+
+&lt;h3 id=&#34;adding-a-logo:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Adding a logo&lt;/h3&gt;
+
+&lt;p&gt;If your project has a logo, you can add it to the sidebar by defining the variable &lt;code&gt;logo&lt;/code&gt;. Save your logo somewhere in the &lt;code&gt;static/&lt;/code&gt; folder and reference the file relative to this location:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params.sidebar]
+  logo = &amp;quot;images/logo.png&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;adding-menu-entries:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Adding menu entries&lt;/h3&gt;
+
+&lt;p&gt;Once you created your first content files you can link them manually in the sidebar on the left. A menu entry has the following schema:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+  name   = &amp;quot;Home&amp;quot;
+  url    = &amp;quot;/&amp;quot;
+  weight = 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;name&lt;/code&gt; is the title displayed in the menu and &lt;code&gt;url&lt;/code&gt; the relative URL to the content. The &lt;code&gt;weight&lt;/code&gt; attribute allows you to modify the order of the menu entries. A menu entry appears further down the more weight you add.&lt;/p&gt;
+
+&lt;p&gt;Instead of just linking a single file you can enhance the sidebar by creating a nested menu. This way you can list all pages of a section instead of linking them one by one (without nesting).&lt;/p&gt;
+
+&lt;p&gt;You need extend the frontmatter of each file content file in a section slightly. The snippet below registers this content file as &amp;lsquo;child&amp;rsquo; of a menu entry that already exists.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;menu: main
+weight: 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt; specifies to which menu the content file should be added. &lt;code&gt;main&lt;/code&gt; is the only menu in this theme by default. &lt;code&gt;parent&lt;/code&gt; let&amp;rsquo;s you register this content file to an existing menu entry, in this case the &lt;code&gt;Home&lt;/code&gt; link. Note that the parent in the frontmatter needs to match the name in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;buttons:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Buttons&lt;/h3&gt;
+
+&lt;p&gt;Above the menu you can include multiple buttons, e.g. the number of stars on GitHub or the current build status of &lt;a href=&#34;https://travis-ci.org/&#34;&gt;TravisCI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;first admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;It is required that you add your username and the URL to the project you want to document. Otherwise the buttons will not be able to display any information.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If your project is hosted on GitHub, add the repository link and your username to the
+configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  github_user   = &amp;quot;digitalcraftsman&amp;quot;
+  github_repo   = &amp;quot;hugo-alabaster-theme&amp;quot;
+  github_banner = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;github_banner&lt;/code&gt; adds the black banner in the top right of each page and simply links to your project on GitHub.&lt;/p&gt;
+
+&lt;p&gt;Now you can define which buttons you want to show:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params.sidebar]
+  github_button  = true
+  travis_button  = false
+  codecov_button = false
+  gratipay = &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;github_button&lt;/code&gt; displays the number of stars of your repository on GitHub&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;travis_button&lt;/code&gt; displays the current build status of your project&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;codecov_button&lt;/code&gt; display the code coverage of your tests thanks to &lt;a href=&#34;https://codecov.io/&#34;&gt;CodeCov&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gratipay&lt;/code&gt; allows you to collect tips via &lt;a href=&#34;https://gratipay.com/&#34;&gt;GratiPay&lt;/a&gt;. Enter your username after you signed up.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;relations:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Relations&lt;/h3&gt;
+
+&lt;p&gt;Includes links to the previous and next page in a section those exist under the menu as &amp;ldquo;Related Topics&amp;rdquo;. This makes the navigation for users easier. It can be disabled if each of your website section&amp;rsquo;s contain only contain a single page.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params.sidebar]
+   show_relations = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;footer:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Footer&lt;/h2&gt;
+
+&lt;p&gt;The footer is very simple. Your &lt;code&gt;copyright&lt;/code&gt; notice can be formatted with Markdown. This can be handy if you want to format text slightly or you want to include a hyperlink.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;show_powered_by&lt;/code&gt; allows you hide the showcase of the used tools. Some promotion is always appreciated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params.footer]
+  copyright = &amp;quot;[Digitalcraftsman](https://github.com/digitalcraftsman)&amp;quot;
+  show_powered_by = true
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding content</title>
+      <link>https://digitalcraftsman.github.io/hugo-alabaster-theme/adding-content/</link>
+      <pubDate>Sat, 23 Apr 2016 20:26:34 +0200</pubDate>
+      
+      <guid>https://digitalcraftsman.github.io/hugo-alabaster-theme/adding-content/</guid>
+      <description>
+
+&lt;h2 id=&#34;hello-world:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Hello world&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create our first content file for your documentation. Open a terminal and add the following command for each new file you want to add. Replace &lt;code&gt;&amp;lt;section-name&amp;gt;&lt;/code&gt; with a general term that describes your document in detail.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;hugo new &amp;lt;section-name&amp;gt;/filename.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Visitors of your website will find the final document under &lt;code&gt;www.example.com/&amp;lt;section-name&amp;gt;/filename/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since it&amp;rsquo;s possible to have multiple content files in the same section I recommend to create at least one &lt;code&gt;index.md&lt;/code&gt; file per section. This ensures that users will find an index page under &lt;code&gt;www.example.com/&amp;lt;section-name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;homepage:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Homepage&lt;/h2&gt;
+
+&lt;p&gt;To add content to the homepage you need to add a small indicator to the frontmatter of the content file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;type: homepage
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Otherwise the theme will not be able to find the corresponding content file.&lt;/p&gt;
+
+&lt;h2 id=&#34;table-of-contents:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Table of contents&lt;/h2&gt;
+
+&lt;p&gt;You maybe noticed that the menu on the left contains a small table of contents of the current page. All &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; tags (&lt;code&gt;## Headline&lt;/code&gt; in Markdown) will be added automatically.&lt;/p&gt;
+
+&lt;h2 id=&#34;admonitions:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Admonitions&lt;/h2&gt;
+
+&lt;p&gt;Admonition is a handy feature that adds block-styled side content to your documentation, either notes or warnings. It can be enabled by using the corresponding &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; inside your content:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-md&#34;&gt;{{&amp;lt; admonition title=&amp;quot;Note&amp;quot; type=&amp;quot;note&amp;quot; &amp;gt;}}
+Something good to know.
+{{&amp;lt; /admonition &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will be rendered as&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;first admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;type&lt;/code&gt; parameter can optionally be used to either display a &lt;code&gt;note&lt;/code&gt; or &lt;code&gt;warning&lt;/code&gt;. The last type is the default one.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-md&#34;&gt;{{&amp;lt; admonition title=&amp;quot;Caution&amp;quot; &amp;gt;}}
+Don&#39;t try this at home!
+{{&amp;lt; /admonition &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;becomes&lt;/p&gt;
+
+&lt;div class=&#34;admonition &#34;&gt;
+&lt;p class=&#34;first admonition-title&#34;&gt;Caution&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t try this at home!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Roadmap</title>
+      <link>https://digitalcraftsman.github.io/hugo-alabaster-theme/roadmap/</link>
+      <pubDate>Sat, 23 Apr 2016 20:08:11 +0100</pubDate>
+      
+      <guid>https://digitalcraftsman.github.io/hugo-alabaster-theme/roadmap/</guid>
+      <description>
+
+&lt;p&gt;Quo vadis? The port of the original &lt;a href=&#34;https://github.com/bitprophet/alabaster&#34;&gt;Alabaster theme&lt;/a&gt; has replicated nearly all of its features. A few are still missing, but I&amp;rsquo;ve good news: the Hugo community is actively working on this issues. Maybe with the next release of Hugo we can abandon this list. Stay tuned.&lt;/p&gt;
+
+&lt;h2 id=&#34;planned-features:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Planned features&lt;/h2&gt;
+
+&lt;h3 id=&#34;localization:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Localization&lt;/h3&gt;
+
+&lt;p&gt;Currently, it is possible to collect all strings in a single place for easy customization. However, this only enables you to define all strings in a single language. This approach is quite limiting in terms of localization support. Therefore, I decided to wait for a native integration. This way we can avoid a second setup of all strings in your website.&lt;/p&gt;
+
+&lt;p&gt;Keep an eye on &lt;a href=&#34;https://github.com/spf13/hugo/issues/1734&#34;&gt;#1734&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;search:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Search&lt;/h3&gt;
+
+&lt;p&gt;Beside third-party services, some hacky workarounds and Grunt-/Gulp-based scripts that only require unnecessary dependencies, future versions of Hugo will support the generation of a content index as a core feature.&lt;/p&gt;
+
+&lt;p&gt;Keep an eye on &lt;a href=&#34;https://github.com/spf13/hugo/pull/1853&#34;&gt;#1853&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;styling-options:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Styling options&lt;/h3&gt;
+
+&lt;p&gt;The original theme allowed users to customize the layout directly from the &lt;a href=&#34;https://github.com/bitprophet/alabaster#style-colors&#34;&gt;configuration&lt;/a&gt;. There is a similar idea that tries to template CSS stylesheets - this means every stylesheet would be treat as a template that can access the values from your config file.&lt;/p&gt;
+
+&lt;p&gt;Keep an eye on &lt;a href=&#34;https://github.com/spf13/hugo/pull/1431&#34;&gt;#1431&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;contributing:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;Did you found an bug or you would like to suggest a new feature? I&amp;rsquo;m open for feedback. Please open a new &lt;a href=&#34;https://github.com/digitalcraftsman/hugo-alabaster-theme/issues&#34;&gt;issue&lt;/a&gt; and let me know what you think.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re also welcome to contribute with &lt;a href=&#34;https://github.com/digitalcraftsman/hugo-alabaster-theme/pulls&#34;&gt;pull requests&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
