@@ -1,0 +1,14 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	{{ range .Data.Pages.GroupByDate "2006" }}
+	<h2>{{ .Key }}</h2>
+	<ul class="pages">
+		{{ range .Pages }}
+			{{ partial "preview" . }}
+		{{ end }}
+	</ul>
+	{{ end }}
+{{ end }}

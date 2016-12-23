@@ -1,0 +1,11 @@
+{{/* Tag cloud from Taxonomy map */}}
+<h2>tags</h2>
+<div class="tag-cloud">
+{{ with .Site.Taxonomies.tags -}}
+	<ul class="tags">
+  		{{ range $name, $taxonomy := . -}}
+    		<li><a class="tag" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+  		{{- end }}
+	</ul>
+{{- end }}
+</div>

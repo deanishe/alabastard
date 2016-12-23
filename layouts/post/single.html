@@ -1,0 +1,11 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	<div class="post">
+		<div class="meta">{{ if gt (len .Params.tags) 0 }}
+				{{ partial "tags" .Params.tags }}
+				<span class="date">{{ .Date.Format "2 Jan, 2006" }}</span>
+			{{ end }}
+		</div>
+		{{ .Content }}
+	</div>
+{{ end }}

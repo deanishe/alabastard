@@ -1,0 +1,13 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	{{ .Data.Terms | len }} {{ .Data.Plural }}
+
+	<ul class="terms">
+		{{ range $key, $value := .Data.Terms }}
+		<li><a href="{{ $.Site.BaseURL }}{{ $.Data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> <span class="count">({{ len $value }})</span></li>
+		{{ end }}
+	</ul>
+{{ end }}

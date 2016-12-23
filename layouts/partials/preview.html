@@ -1,0 +1,17 @@
+<li class="preview">
+	<h3><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} <span class="status">[draft]</span>{{end}}</h3>
+	<div class="meta">
+		<span class="date">{{ .Date.Format "2 Jan, 2006" }}</span>
+		{{ if gt (len .Params.tags) 0 }}
+			{{ partial "tags" .Params.tags }}
+		{{ end }}
+	</div>
+	<div class="summary">
+	{{ .Summary }}
+	</div>
+	{{ if .Truncated }}
+	<div class="read-more-link">
+		<a href="{{ .Permalink }}">read more…</a>
+	</div>
+	{{ end }}
+</li>

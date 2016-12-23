@@ -1,0 +1,11 @@
+{{/* List GitHub repos */}}
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	{{ with .Site.Data.repos }}
+		{{ partial "repos" . }}
+	{{ end }}
+
+{{ end }}

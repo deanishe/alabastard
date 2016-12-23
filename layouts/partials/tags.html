@@ -1,0 +1,6 @@
+{{/* Array of tags from Page */}}
+<ul class="tags">
+  {{ range . }}
+    <li><a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+  {{ end }}
+</ul>

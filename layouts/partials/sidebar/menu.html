@@ -1,12 +1,19 @@
-{{ if ne .Site.Menus.main nil }}
-{{ if gt (len .Site.Menus.main) 0 }}
-<h3>Navigation</h3>
+<!-- <h3>Navigation</h3> -->
 <ul>
-	{{ range .Site.Menus.main }}
 	<li class="toctree-l1">
-		<a class="reference internal" href="{{ .URL }}">{{ .Name }}</a>
+		<a class="reference internal" href="{{ .Site.BaseURL }}project/">projects</a>
 	</li>
-	{{ end }}
+	<li class="toctree-l1">
+		<a class="reference internal" href="{{ .Site.BaseURL }}snippet/">scripts &amp; snippets</a>
+	</li>
+	<li class="toctree-l1">
+		<a class="reference internal" href="{{ .Site.BaseURL }}post/">posts</a>
+	</li>
+	<!-- menus -->
+	<!-- {{ range .Site.Menus.main }}
+	<li class="toctree-l1">
+		<a class="reference internal" href="">Menu: {{ . }}</a>
+	</li>
+	{{ end }} -->
+	<!-- /menus -->
 </ul>
-{{ end }}
-{{ end }}

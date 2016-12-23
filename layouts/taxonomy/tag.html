@@ -1,0 +1,12 @@
+{{/* List pages with specifed tag */}}
+{{ define "main" }}
+	<h1>Posts tagged <span class="tag">{{ .Title | lower }}</span></h1>
+
+	{{ .Content }}
+
+	<ul class="pages">
+		{{ range .Pages }}
+			{{ partial "preview" . }}
+		{{ end }}
+	</ul>
+{{ end }}

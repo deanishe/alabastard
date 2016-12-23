@@ -2,7 +2,6 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	{{ partial "head" . }}
-
 	<body role="document">
 		<div class="document">
 			<div class="documentwrapper">
@@ -16,7 +15,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			{{ partial "sidebar/sidebar" . }}
 			{{ partial "footer" . }}
 
@@ -25,8 +24,34 @@
 			{{- end }}
 
 			{{ with .Site.Params.highlightjs -}}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-			<script>hljs.initHighlightingOnLoad();</script>
+			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+			<script type="text/javascript">
+				// hljs.configure({'tabReplace': '    '});
+				hljs.initHighlightingOnLoad();
+			</script>
+			{{ end }}
+
+			{{ if .Site.Params.piwikSiteID }}
+			{{ if .Site.Params.piwikURL }}
+
+			<!-- Piwik -->
+			<script type="text/javascript">
+			  var _paq = _paq || [];
+			  _paq.push(['trackPageView']);
+			  _paq.push(['enableLinkTracking']);
+			  (function() {
+			    var u="//{{ .Site.Params.piwikURL }}/";
+			    _paq.push(['setTrackerUrl', u+'piwik.php']);
+			    _paq.push(['setSiteId', {{ .Site.Params.piwikSiteID }}]);
+			    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			  })();
+			</script>
+			<noscript><p><img src="//{{ .Site.Params.piwikURL }}/piwik.php?idsite={{ .Site.Params.piwikSiteID }}" style="border:0;" alt="" /></p></noscript>
+			<!-- End Piwik Code -->
+
+			{{ end }}
 			{{ end }}
 
 			{{ template "_internal/google_analytics.html" . }}
