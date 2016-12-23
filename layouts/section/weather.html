@@ -6,7 +6,7 @@
 	{{ with .Site.Data.weather }}
 		<ul class="forecasts">
 			{{ with .currently }}
-			<li class="forecast" id="current" data-summary="{{ .summary }}" data-time="{{ .time }}">
+			<li class="forecast" id="current">
 				<h2>Current conditions in Essen</h2>
 
 				{{ partial "forecast" . }}
@@ -17,15 +17,23 @@
 
 				<ul class="forecasts">
 					{{ range .hourly.data }}
-					<li class="forecast" data-summary="{{ .summary }}" data-time="{{ .time }}">
+					<li class="forecast">
 						{{ partial "forecast" . }}
 					</li>
 					{{ end }}
-				</ul>
+				</ul> <!-- /.forecasts -->
 			</li>
-		</ul>
+		</ul> <!-- /.forecasts -->
 	{{ end }}
 
+	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>
+	<script type="text/javascript">
+		$( document ).ready( function() {
+			var w = new Weather();
+			w.run();
+		});
+	</script>
+	{{/*
 	<script type="text/javascript">
 	callOnLoad(function() {
 		$( 'li.forecast' ).each(function() {
@@ -53,4 +61,6 @@
 		});
 	});
 	</script>
+	*/}}
+
 {{ end }}

@@ -1,195 +1,104 @@
-/*
-                                                      dP
-                                                      88
-.d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. 88
-88'  `88 88ooood8 88'  `88 88ooood8 88'  `88 88'  `88 88
-88.  .88 88.  ... 88    88 88.  ... 88       88.  .88 88
-`8888P88 `88888P' dP    dP `88888P' dP       `88888P8 dP
-     .88
- d8888P
-*/
-
 a,
 a:visited {
-	text-decoration: none;
-}
+  text-decoration: none; }
 
 a:hover,
 a:active {
-	text-decoration: underline;
-}
-
-/*
-         oo       dP          dP
-                  88          88
-.d8888b. dP .d888b88 .d8888b. 88d888b. .d8888b. 88d888b.
-Y8ooooo. 88 88'  `88 88ooood8 88'  `88 88'  `88 88'  `88
-      88 88 88.  .88 88.  ... 88.  .88 88.  .88 88
-`88888P' dP `88888P8 `88888P' 88Y8888' `88888P8 dP
-*/
+  text-decoration: underline; }
 
 /*div.sphinxsidebarwrapper h1.logo,*/
-div.sphinxsidebarwrapper { text-align: right; }
+.sphinxsidebarwrapper {
+  text-align: right; }
+
 /*.sphinxsidebarwrapper>ul { text-align: right; }*/
-
-
-/*
-   dP
-   88
- d8888P .d8888b. .d8888b. .d8888b.
-   88   88'  `88 88'  `88 Y8ooooo.
-   88   88.  .88 88.  .88       88
-   dP   `88888P8 `8888P88 `88888P'
-                      .88
-                  d8888P
-*/
-
-
 .tag {
-	border: 0;
-	font-weight: bold;
-	font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-	background: #ecf0f3;
-	color: #222;
-	padding: 0 4px;
-	text-decoration: none;
-}
+  background: #ecf0f3;
+  border: 0;
+  color: #333;
+  font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-weight: bold;
+  padding: 0 4px;
+  text-decoration: none; }
 
-.sphinxsidebar ul.tags,
-ul.tags {
-	margin: 0;
-	padding: 0;
-}
-
-ul.tags li {
-	display: inline-block;
-	padding: 0;
-	margin: 0.2em 0;
-}
-
-ul.tags li a,
-ul.tags li a:hover {
-	border: 0;
-	display: inline-block;
-	margin: 4px 2px;
-}
+.sphinxsidebar .tags,
+.tags {
+  margin: 0;
+  padding: 0; }
+  .sphinxsidebar .tags li,
+  .tags li {
+    display: inline-block;
+    margin: .2em 0;
+    padding: 0; }
+  .sphinxsidebar .tags a,
+  .sphinxsidebar .tags a:hover,
+  .tags a,
+  .tags a:hover {
+    border: 0;
+    display: inline-block;
+    margin: 4px 2px; }
 
 h1 .tag {
-	font-size: 65%;
-}
-
-
-/*
-88d888b. .d8888b. .d8888b. .d8888b. .d8888b.
-88'  `88 88'  `88 88'  `88 88ooood8 Y8ooooo.
-88.  .88 88.  .88 88.  .88 88.  ...       88
-88Y888P' `88888P8 `8888P88 `88888P' `88888P'
-88                     .88
-dP                 d8888P
-*/
+  font-size: 65%; }
 
 .pages {
-	list-style: none;
-	/*border: 1px dotted green;*/
-	margin: 0;
-}
-
-.pages li a {
-	text-decoration: none;
-}
+  list-style: none;
+  margin: 0; }
+  .pages li a {
+    text-decoration: none; }
 
 .meta {
-	font-size: 90%;
-}
-
-.meta .tags {
-	font-size: 90%;
-	float: right;
-	display: block;
-}
+  font-size: 90%; }
+  .meta .tags {
+    display: block;
+    float: right;
+    font-size: 90%; }
 
 .summary {
-	clear: both;
-}
+  clear: both; }
 
 .read-more-link {
-	text-align: right;
-}
-
+  text-align: right; }
 
 .status {
-	font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-	color: #888;
-	font-size: 65%;
-}
+  color: #888;
+  font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  font-size: 65%; }
 
 /*.preview .status {
-	font-size: 70%;
+  font-size: 70%;
 }*/
-
-/*
-                           oo                     dP
-                                                  88
-88d888b. 88d888b. .d8888b. dP .d8888b. .d8888b. d8888P
-88'  `88 88'  `88 88'  `88 88 88ooood8 88'  `""   88
-88.  .88 88       88.  .88 88 88.  ... 88.  ...   88
-88Y888P' dP       `88888P' 88 `88888P' `88888P'   dP
-88                         88
-dP                         dP
-
-*/
-
 .projects {
-	margin: 0;
-	list-style: none;
-}
+  margin: 0;
+  list-style: none; }
 
 /* No. of stars in project title */
 /*.project .status {
-	font-size: 60%;
+  font-size: 60%;
 }*/
-
 /* No. of issues in status list */
 .project .meta .status {
-	font-size: 80%;
-}
+  font-size: 80%; }
 
 .project .status a {
-	color: #888;
-}
+  color: #888; }
 
 .project h2 a {
-	/*color: #3E4349;*/
-	font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-	text-decoration: none;
-	font-size: 70%;
-}
+  /*color: #3E4349;*/
+  font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  font-size: 70%;
+  text-decoration: none; }
 
+.forecasts {
+  list-style: none; }
 
-/*
-.8888b                                                         dP
-88   "                                                         88
-88aaa  .d8888b. 88d888b. .d8888b. .d8888b. .d8888b. .d8888b. d8888P
-88     88'  `88 88'  `88 88ooood8 88'  `"" 88'  `88 Y8ooooo.   88
-88     88.  .88 88       88.  ... 88.  ... 88.  .88       88   88
-dP     `88888P' dP       `88888P' `88888P' `88888P8 `88888P'   dP
-*/
-
-.forecast .temp { font-size: 150%; }
-
-/*                                                                oo
-
- 88d888b. .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. dP dP   .dP .d8888b.
- 88'  `88 88ooood8 Y8ooooo. 88'  `88 88'  `88 88'  `88 Y8ooooo. 88 88   d8' 88ooood8
- 88       88.  ...       88 88.  .88 88.  .88 88    88       88 88 88 .88'  88.  ...
- dP       `88888P' `88888P' 88Y888P' `88888P' dP    dP `88888P' dP 8888P'   `88888P'
-                            88
-                            dP
-
-TODO: better responsive colours (bg sucks)
-*/
+.forecast .temp {
+  font-size: 170%;
+  margin: 0.25em 0; }
 
 @media screen and (max-width: 875px) {
-	/*.sphinxsidebarwrapper>ul { text-align: center; }*/
-	.sphinxsidebarwrapper a.tag { color: #333; }
-}
+  .sphinxsidebarwrapper {
+    text-align: center; }
+    .sphinxsidebarwrapper .tag {
+      color: #333; } }
+
+/*# sourceMappingURL=alabastard.css.map */

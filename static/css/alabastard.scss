@@ -1,0 +1,223 @@
+//                            .8888b oo
+//                            88   "
+// .d8888b. .d8888b. 88d888b. 88aaa  dP .d8888b.
+// 88'  `"" 88'  `88 88'  `88 88     88 88'  `88
+// 88.  ... 88.  .88 88    88 88     88 88.  .88
+// `88888P' `88888P' dP    dP dP     dP `8888P88
+//                                           .88
+//                                       d8888P
+
+$font-monospace: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+
+$bg-tag: #ecf0f3;
+$text-status: #888;
+$text-tag: #333;
+
+
+//                                                       dP
+//                                                       88
+// .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. 88
+// 88'  `88 88ooood8 88'  `88 88ooood8 88'  `88 88'  `88 88
+// 88.  .88 88.  ... 88    88 88.  ... 88       88.  .88 88
+// `8888P88 `88888P' dP    dP `88888P' dP       `88888P8 dP
+//      .88
+//  d8888P
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+
+//          oo       dP          dP
+//                   88          88
+// .d8888b. dP .d888b88 .d8888b. 88d888b. .d8888b. 88d888b.
+// Y8ooooo. 88 88'  `88 88ooood8 88'  `88 88'  `88 88'  `88
+//       88 88 88.  .88 88.  ... 88.  .88 88.  .88 88
+// `88888P' dP `88888P8 `88888P' 88Y8888' `88888P8 dP
+
+
+/*div.sphinxsidebarwrapper h1.logo,*/
+.sphinxsidebarwrapper { text-align: right; }
+/*.sphinxsidebarwrapper>ul { text-align: right; }*/
+
+
+
+//   dP
+//   88
+// d8888P .d8888b. .d8888b. .d8888b.
+//   88   88'  `88 88'  `88 Y8ooooo.
+//   88   88.  .88 88.  .88       88
+//   dP   `88888P8 `8888P88 `88888P'
+//                      .88
+//                  d8888P
+
+
+
+.tag {
+  background: $bg-tag;
+  border: 0;
+  color: $text-tag;
+  font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-weight: bold;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+.sphinxsidebar .tags,
+.tags {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: .2em 0;
+    padding: 0;
+  }
+
+  a,
+  a:hover {
+    border: 0;
+    display: inline-block;
+    margin: 4px 2px;
+  }
+}
+
+
+h1 .tag {
+  font-size: 65%;
+}
+
+
+
+// 88d888b. .d8888b. .d8888b. .d8888b. .d8888b.
+// 88'  `88 88'  `88 88'  `88 88ooood8 Y8ooooo.
+// 88.  .88 88.  .88 88.  .88 88.  ...       88
+// 88Y888P' `88888P8 `8888P88 `88888P' `88888P'
+// 88                     .88
+// dP                 d8888P
+
+
+.pages {
+  // border: 1px dotted green;
+  list-style: none;
+  margin: 0;
+
+  li {
+    a { text-decoration: none; }
+  }
+}
+
+
+.meta {
+  font-size: 90%;
+
+  .tags {
+    display: block;
+    float: right;
+    font-size: 90%;
+  }
+}
+
+
+.summary {
+  clear: both;
+}
+
+.read-more-link {
+  text-align: right;
+}
+
+
+.status {
+  color: $text-status;
+  font-family: $font-monospace;
+  font-size: 65%;
+}
+
+/*.preview .status {
+  font-size: 70%;
+}*/
+
+
+//                            oo                     dP
+//                                                   88
+// 88d888b. 88d888b. .d8888b. dP .d8888b. .d8888b. d8888P
+// 88'  `88 88'  `88 88'  `88 88 88ooood8 88'  `""   88
+// 88.  .88 88       88.  .88 88 88.  ... 88.  ...   88
+// 88Y888P' dP       `88888P' 88 `88888P' `88888P'   dP
+// 88                         88
+// dP                         dP
+
+.projects {
+  margin: 0;
+  list-style: none;
+}
+
+/* No. of stars in project title */
+/*.project .status {
+  font-size: 60%;
+}*/
+
+/* No. of issues in status list */
+.project .meta .status {
+  font-size: 80%;
+}
+
+.project .status a {
+  color: $text-status;
+}
+
+.project h2 a {
+  /*color: #3E4349;*/
+  font-family: $font-monospace;
+  font-size: 70%;
+  text-decoration: none;
+}
+
+
+// .8888b                                                         dP
+// 88   "                                                         88
+// 88aaa  .d8888b. 88d888b. .d8888b. .d8888b. .d8888b. .d8888b. d8888P
+// 88     88'  `88 88'  `88 88ooood8 88'  `"" 88'  `88 Y8ooooo.   88
+// 88     88.  .88 88       88.  ... 88.  ... 88.  .88       88   88
+// dP     `88888P' dP       `88888P' `88888P' `88888P8 `88888P'   dP
+
+
+.forecasts {
+  list-style: none;
+}
+
+.forecast {
+
+  .temp {
+    font-size: 170%;
+    margin: 0.25em 0;
+  }
+}
+
+
+//                                                                 oo
+//
+//  88d888b. .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. dP dP   .dP .d8888b.
+//  88'  `88 88ooood8 Y8ooooo. 88'  `88 88'  `88 88'  `88 Y8ooooo. 88 88   d8' 88ooood8
+//  88       88.  ...       88 88.  .88 88.  .88 88    88       88 88 88 .88'  88.  ...
+//  dP       `88888P' `88888P' 88Y888P' `88888P' dP    dP `88888P' dP 8888P'   `88888P'
+//                             88
+//                             dP
+
+// TODO: better responsive colours (bg sucks)
+@media screen and (max-width: 875px) {
+  .sphinxsidebarwrapper {
+    text-align: center;
+
+    .tag {
+      color: $text-tag;
+    }
+  }
+}

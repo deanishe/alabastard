@@ -24,13 +24,14 @@
 			{{- end }}
 
 			{{ with .Site.Params.highlightjs -}}
-			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<!-- highlight.js -->
 			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
 			<script type="text/javascript">
 				// hljs.configure({'tabReplace': '    '});
 				hljs.initHighlightingOnLoad();
 			</script>
-			{{ end }}
+			<!-- /highlight.js -->
+			{{- end }}
 
 			{{ if .Site.Params.piwikSiteID }}
 			{{ if .Site.Params.piwikURL }}
