@@ -8,6 +8,10 @@
 
 	<title>{{ if not .IsHome }}{{ .Title }} &mdash; {{ end }}{{ .Site.Title }}</title>
 
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" href="{{ .Site.RSSLink }}" />
+	<!-- /RSS -->
+
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/alabaster.css" type="text/css" />
 	{{ with .Site.Params.highlightjs -}}
 	<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" type="text/css" />

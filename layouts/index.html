@@ -1,0 +1,23 @@
+{{ define "main" }}
+	{{ range where .Site.Pages "Type" "homepage" }}
+		<h1>{{ .Title }}</h1>
+
+		{{ .Content }}
+
+		<a id="posts"></a>
+		<h2>Recent posts</h2>
+
+		<ul class="pages">
+		{{ range .Site.RegularPages | first 5 }}
+			{{ partial "preview" . }}
+		{{ end }}
+		</ul>
+
+		<a id="activity"></a>
+		<h2>Recent activity</h2>
+		{{ with .Site.Data.repos | first 5 }}
+			{{ partial "repos" . }}
+		{{ end }}
+	{{ end }}
+	<p><a href="#top">Back to top</a></p>
+{{ end }}
