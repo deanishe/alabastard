@@ -1,6 +1,6 @@
-Copyright (c) 2016 Digitalcraftsman
+Copyright (c) 2016 Dean Jackson
 
-Based on original work copyright (c) Jeff Forcier, copyright (c) 2011 Kenneth Reitz 
+Based on original work copyright (c) Jeff Forcier, copyright (c) 2011 Kenneth Reitz, copyright (c) 2016 Digitalcraftsman
 and copyright (c) 2010 Armin Ronacher.
 
 Some rights reserved.
