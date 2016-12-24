@@ -4,7 +4,7 @@
 
 	{{ .Content }}
 
-	{{ with .Site.Data.repos }}
+	{{ with .Site.Data.repos | first 25 }}
 		{{ partial "repos" . }}
 	{{ end }}
 
