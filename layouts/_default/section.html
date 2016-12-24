@@ -6,9 +6,13 @@
 	{{ range .Data.Pages.GroupByDate "2006" }}
 	<h2>{{ .Key }}</h2>
 	<ul class="pages">
-		{{ range .Pages }}
+		{{ $paginator := $.Paginate .Pages }}
+		{{ range $paginator.Pages }}
 			{{ partial "preview" . }}
 		{{ end }}
 	</ul>
+
+	{{ partial "toplink" }}
+	{{ partial "pagination.html" $paginator }}
 	{{ end }}
 {{ end }}

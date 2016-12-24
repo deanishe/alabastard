@@ -1,4 +1,5 @@
 <!-- sidebar -->
+<a name="menu" id="menu"></a>
 <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
 	<div class="sphinxsidebarwrapper">
 		<p class="logo">
@@ -18,9 +19,11 @@
 		{{ partial "sidebar/donate" . }}
 		{{ partial "sidebar/menu" . }}
 		<!-- {{ partial "sidebar/relations" . }} -->
+		{{ partial "sidebar/social" . }}
 		{{ partial "sidebar/tags" . }}
+		{{ partial "sidebar/about" . }}
 
-		<p><a href="{{ .Site.RSSLink }}">RSS feed</a></p>
+		{{/*<p><a href="{{ .Site.RSSLink }}">RSS feed</a></p>*/}}
 	</div>
 </div>
 <div class="clearer"></div>

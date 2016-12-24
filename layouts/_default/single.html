@@ -1,5 +1,18 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
 
-	{{ .Content }}
+	<div class="page">
+
+		{{ partial "metadata" . }}
+
+		{{ .Content }}
+
+		{{ if .GitInfo -}}
+		{{ partial "gitinfo" .GitInfo }}
+		{{- end }}
+	</div>
+	{{ partial "toplink" }}
+	{{ if ne .Type "toplevel" }}
+	{{ partial "pager" . }}
+	{{- end }}
 {{ end }}

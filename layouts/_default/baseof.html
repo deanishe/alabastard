@@ -7,10 +7,15 @@
 			<div class="documentwrapper">
 				<div class="bodywrapper">
 					<div class="body" role="main">
+						<div class="mobile-menu jumpnav">
+							<a href="#menu">menu &#9662;</a>
+						</div>
 						{{ block "main" . }}{{ end }}
-
 						{{ if not .IsHome -}}
 						{{ template "_internal/disqus.html" . }}
+						{{ if .Site.DisqusShortname -}}
+						{{ partial "toplink" }}
+						{{- end }}
 						{{- end }}
 					</div>
 				</div>

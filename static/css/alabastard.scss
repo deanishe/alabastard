@@ -12,6 +12,10 @@ $font-monospace: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans 
 $bg-tag: #ecf0f3;
 $text-status: #888;
 $text-tag: #333;
+$text-link: #3782BE;
+$text-body: #3E4349;
+$text-lighter: #444;
+$text-light-on-dark: #AAA;
 
 
 //                                                       dP
@@ -23,6 +27,8 @@ $text-tag: #333;
 //      .88
 //  d8888P
 
+.clear { clear: both; }
+
 a,
 a:visited {
   text-decoration: none;
@@ -33,6 +39,42 @@ a:active {
   text-decoration: underline;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    border: none;
+    color: $text-link;
+    text-decoration: none;
+
+    &:hover {
+      border: none;
+      text-decoration: underline;
+    }
+
+    code {
+      color: $text-link;
+      font-weight: normal;
+      &:hover { background: none; }
+    }
+  }
+
+  code {
+    font-family: $font-monospace;
+    font-size: 75%;
+  }
+}
+
+
+.toplink {
+  margin-top: 1em;
+  text-align: right;
+}
+.jumpnav { float: right; }
+
 
 //          oo       dP          dP
 //                   88          88
@@ -41,11 +83,33 @@ a:active {
 //       88 88 88.  .88 88.  ... 88.  .88 88.  .88 88
 // `88888P' dP `88888P8 `88888P' 88Y8888' `88888P8 dP
 
+// Override sphinx sidebar styles
+div.sphinxsidebar {
+  a,
+  a:hover { border: 0; }
+  a:hover { text-decoration: underline; }
+  ul.social,
+  div.about { margin: 1.5em 0 0; }
+  h2 { margin: 10px 0; }
+}
 
-/*div.sphinxsidebarwrapper h1.logo,*/
-.sphinxsidebarwrapper { text-align: right; }
-/*.sphinxsidebarwrapper>ul { text-align: right; }*/
+// div.sphinxsidebarwrapper h1.logo,
+.sphinxsidebar {
+  text-align: right;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $text-lighter;
+  }
+
+  // .about { margin: 10px 0; }
+  .about,
+  .about a { color: $text-status; }
+}
 
 
 //   dP
@@ -76,7 +140,7 @@ a:active {
 
   li {
     display: inline-block;
-    margin: .2em 0;
+    margin: 0 0 .2em;
     padding: 0;
   }
 
@@ -108,9 +172,9 @@ h1 .tag {
   list-style: none;
   margin: 0;
 
-  li {
-    a { text-decoration: none; }
-  }
+  // li {
+  //   a { text-decoration: none; }
+  // }
 }
 
 
@@ -133,16 +197,11 @@ h1 .tag {
   text-align: right;
 }
 
-
 .status {
   color: $text-status;
   font-family: $font-monospace;
   font-size: 65%;
 }
-
-/*.preview .status {
-  font-size: 70%;
-}*/
 
 
 //                            oo                     dP
@@ -152,32 +211,32 @@ h1 .tag {
 // 88.  .88 88       88.  .88 88 88.  ... 88.  ...   88
 // 88Y888P' dP       `88888P' 88 `88888P' `88888P'   dP
 // 88                         88
-// dP                         dP
+// dP
 
 .projects {
-  margin: 0;
   list-style: none;
-}
+  margin: 0;
 
-/* No. of stars in project title */
-/*.project .status {
-  font-size: 60%;
-}*/
+  h2,
+  h3 {
+    &.project {
+      background: url('../images/github-24.png') left center no-repeat;
+      padding-left: 30px;
+    }
 
-/* No. of issues in status list */
-.project .meta .status {
-  font-size: 80%;
-}
+    // No. of stars in project title
+    .status {
+      a {
+        color: $text-status;
+        font-size: 0.7em;
+      }
+    }
+  }
 
-.project .status a {
-  color: $text-status;
-}
-
-.project h2 a {
-  /*color: #3E4349;*/
-  font-family: $font-monospace;
-  font-size: 70%;
-  text-decoration: none;
+  .meta {
+    // No. of issues in status list
+    .status { font-size: 80%; }
+  }
 }
 
 
@@ -202,6 +261,106 @@ h1 .tag {
 }
 
 
+//                            oo          dP
+//                                        88
+// .d8888b. .d8888b. .d8888b. dP .d8888b. 88
+// Y8ooooo. 88'  `88 88'  `"" 88 88'  `88 88
+//       88 88.  .88 88.  ... 88 88.  .88 88
+// `88888P' `88888P' `88888P' dP `88888P8 dP
+
+// Social icons with rollover
+.social {
+
+  li {
+    display: inline-block;
+    margin: 0 0 0 .25em;
+  }
+
+  a {
+    background: url('../images/social.png') 0 0 no-repeat;
+    border: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    &:hover { border: 0; }
+
+    &.twitter { background-position: 0 0; }
+    &.twitter:hover { background-position: 0 -32px; }
+
+    &.rss { background-position: -32px 0; }
+     &.rss:hover { background-position: -32px -32px; }
+
+    &.github { background-position: -64px 0; }
+    &.github:hover { background-position: -64px -32px; }
+  }
+}
+
+
+//          oo   dP
+//               88
+// .d8888b. dP d8888P
+// 88'  `88 88   88
+// 88.  .88 88   88
+// `8888P88 dP   dP
+//      .88
+//  d8888P
+
+div.gitinfo {
+  color: $text-status;
+  float: right;
+
+  .content { display: none; }
+  .hash { display: inline-block; }
+  .header { text-align: right; }
+  code,
+  a.info { color: $text-status; }
+  th {
+    text-align: right;
+    vertical-align: text-top;
+  }
+}
+
+
+//                            oo                     dP   oo
+//                                                   88
+// 88d888b. .d8888b. .d8888b. dP 88d888b. .d8888b. d8888P dP .d8888b. 88d888b.
+// 88'  `88 88'  `88 88'  `88 88 88'  `88 88'  `88   88   88 88'  `88 88'  `88
+// 88.  .88 88.  .88 88.  .88 88 88    88 88.  .88   88   88 88.  .88 88    88
+// 88Y888P' `88888P8 `8888P88 dP dP    dP `88888P8   dP   dP `88888P' dP    dP
+// 88                     .88
+// dP                 d8888P
+
+.pager,
+.pagination {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    &:first-child,
+    &:last-child {
+      .page { padding: 0; }
+    }
+
+    .page {
+      display: block;
+      padding: 0 .5em;
+    }
+
+    &.disabled,
+    &.current {
+      color: $text-status;
+    }
+
+    &.previous { float: left; }
+    &.next { float: right; }
+  }
+}
+
 //                                                                 oo
 //
 //  88d888b. .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. dP dP   .dP .d8888b.
@@ -211,13 +370,28 @@ h1 .tag {
 //                             88
 //                             dP
 
-// TODO: better responsive colours (bg sucks)
+.mobile-menu { display: none; }
+
 @media screen and (max-width: 875px) {
-  .sphinxsidebarwrapper {
+  .mobile-menu { display: block; }
+
+  .sphinxsidebar {
     text-align: center;
 
     .tag {
       color: $text-tag;
+      background: $text-light-on-dark;
+    }
+    h2 { color: $text-light-on-dark; }
+  }
+
+  .social {
+    li {
+      a {
+        &.twitter { background-position: 0 -64px; }
+        &.rss { background-position: -32px -64px; }
+        &.github { background-position: -64px -64px; }
+      }
     }
   }
 }

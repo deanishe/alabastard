@@ -3,7 +3,7 @@
 
 	{{ .Content }}
 
-	{{ with .Site.Data.weather }}
+	{{ with .Site.Data.darksky.forecast }}
 		<ul class="forecasts">
 			{{ with .currently }}
 			<li class="forecast" id="current">
@@ -21,9 +21,9 @@
 						{{ partial "forecast" . }}
 					</li>
 					{{ end }}
-				</ul> <!-- /.forecasts -->
+				</ul>
 			</li>
-		</ul> <!-- /.forecasts -->
+		</ul>
 	{{ end }}
 
 	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>

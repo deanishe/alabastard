@@ -1,0 +1,11 @@
+<div class="about">
+	&copy; {{ .Now.Format "2006" }}
+	{{ with .Site.Params.footer.copyright -}}{{ . | markdownify }}{{- end }}
+	{{ if .Site.Params.footer.show_powered_by -}}
+	|
+	Powered by <a href="http://gohugo.io/">Hugo {{ .Hugo.Version }}</a>
+	&amp; <a href="https://github.com/deanishe/alabastard">Alabastard</a>
+	{{ end }}
+	|
+	<a href="{{ ref . "about.md" }}">about</a>
+</div>

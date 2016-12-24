@@ -1,0 +1,9 @@
+<div class="summary">{{ .description }}</div>
+<ul class="meta">
+	{{ if .homepage -}}
+	<li><a href="{{ .homepage }}">homepage</a></li>
+	{{- end }}
+	<li><a href="{{ .html_url }}">{{ .full_name }}</a> on GitHub</li>
+	<li><a href="{{ .html_url }}/issues">issues</a> <span class="status">({{ .open_issues_count }} open)</span></li>
+	<li>last push on {{ dateFormat "2 Jan, 2006" .pushed_at }}</li>
+</ul>

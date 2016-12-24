@@ -20,7 +20,7 @@ fatal() {
 
 usage() {
     cat <<EOS
-Usage: forecast [-k <apikey>] <location>
+Usage: darksky-forecast [-k <apikey>] <location>
 
 Fetch JSON forecast from darksky.net for given location.
 

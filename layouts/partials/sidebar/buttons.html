@@ -1,14 +1,14 @@
-{{ if .Site.Params.github_user | and .Site.Params.github_repo -}}
-	{{ $path := printf "%s/%s" .Site.Params.github_user .Site.Params.github_repo }}
+{{ if .Site.Params.githubUsername | and .Site.Params.githubRepo -}}
+	{{ $path := printf "%s/%s" .Site.Params.githubUsername .Site.Params.githubRepo }}
 
-	{{ if .Site.Params.sidebar.github_button -}}
+	{{ if .Site.Params.sidebar.githubButton -}}
 	<p>
 		<iframe src="https://ghbtns.com/github-btn.html?user={{ .Site.Params.github_user }}&repo={{ .Site.Params.github_repo }}&type=watch&count=true&size=large"
 		allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
 	</p>
 	{{- end }}
 
-	{{ if .Site.Params.sidebar.travis_button -}}
+	{{ if .Site.Params.sidebar.travisButton -}}
 	<p>
 		<a href="https://travis-ci.org/{{ $path }}">
 			<img
@@ -19,7 +19,7 @@
 	</p>
 	{{- end }}
 
-	{{ if .Site.Params.sidebar.codecov_button -}}
+	{{ if .Site.Params.sidebar.codecovButton -}}
 	<p>
 		<a href="https://codecov.io/github/{{ $path }}">
 			<img

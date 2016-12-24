@@ -4,8 +4,8 @@
 
 	{{ .Content }}
 
-	{{ with .Site.Data.repos | first 25 }}
-		{{ partial "repos" . }}
+	{{ with .Site.Data.github.repos | first 25 }}
+		{{ partial "repos/list" . }}
 	{{ end }}
 
 {{ end }}

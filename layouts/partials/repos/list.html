@@ -1,0 +1,14 @@
+{{/*
+Render a /user/NNN/repos response from the GitHub API
+TODO: use pre/code tags instead of CSS for monospace project names
+*/}}
+<ul class="github projects">
+	{{ range . -}}
+	<li class="project">
+		<h2 class="project">
+			{{ partial "repos/title" . }}
+		</h2>
+		{{ partial "repos/body" . }}
+	</li>
+	{{ end }}
+</ul>

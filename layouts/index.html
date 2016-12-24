@@ -8,16 +8,25 @@
 		<h2>Recent posts</h2>
 
 		<ul class="pages">
-		{{ range .Site.RegularPages | first 5 }}
+		{{ range first 5 .Site.RegularPages }}
 			{{ partial "preview" . }}
 		{{ end }}
 		</ul>
 
 		<a id="activity"></a>
 		<h2>Recent activity</h2>
-		{{ with .Site.Data.repos | first 5 }}
-			{{ partial "repos" . }}
+		{{ with first 5 .Site.Data.repos }}
+		<ul class="github projects">
+			{{ range . -}}
+				<li class="project">
+					<h3 class="project">
+						{{ partial "repos/title" . }}
+					</h3>
+					{{ partial "repos/body" . }}
+				</li>
+			{{- end }}
+		</ul>
 		{{ end }}
 	{{ end }}
-	<p><a href="#top">Back to top</a></p>
+	{{ partial "toplink" }}
 {{ end }}

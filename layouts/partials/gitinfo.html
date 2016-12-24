@@ -1,0 +1,42 @@
+<div class="gitinfo">
+  <div class="header">
+    <a href="#" class="info">&#8505;</a>
+  </div>
+  <div class="content clear">
+    <table>
+      <tr>
+        <th>last commit</th>
+        <td>
+          <div class="hash"><code>{{ .AbbreviatedHash }}</code></div>
+          {{ .Subject }}
+        </td>
+      </tr>
+      <tr>
+        <th>at</th>
+        <td>{{ .AuthorDate }}</td>
+      </tr>
+      {{/**<tr>
+        <th>by</th>
+        <td>{{ .AuthorName }}</td>
+      </tr>**/}}
+    </table>
+  </div>
+</div>
+<div class="clear"></div>
+
+<script>
+  $( '.gitinfo' ).each(function(i, git) {
+    var link = $(git).find('.header a')[0],
+        content = $(git).find('.content')[0];
+    $(link).on('click', function(ev) {
+      console.log('[gitinfo] toggle')
+      if ( $(content).css('display') == 'none' ) {
+        console.log('[gitinfo] showing info ...')
+        $(content).css('display', 'block');
+      } else {
+        $(content).css('display', 'none');
+      }
+      return false;
+    });
+  });
+</script>

@@ -1,4 +1,5 @@
 <div class="footer">
+{{/*
 	&copy; {{ .Now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}
 	{{ if .Site.Params.footer.show_powered_by -}}
 	|
@@ -7,10 +8,11 @@
 	{{ end }}
 	|
 	<a href="{{ ref . "about.md" }}">about</a>
+*/}}
 </div>
 
-{{ if .Site.Params.github_banner -}}
-<a href="https://github.com/{{ .Site.Params.github_user }}/{{ .Site.Params.github_repo }}" class="github">
+{{ if .Site.Params.githubBanner -}}
+<a href="https://github.com/{{ .Site.Params.githubUsername }}/{{ .Site.Params.githubRepo }}" class="github">
     <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" class="github"/>
 </a>
 {{- end }}
