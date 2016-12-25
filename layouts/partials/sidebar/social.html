@@ -2,7 +2,7 @@
 <ul class="social">
 	{{ if .Site.Params.githubUsername -}}
 	<li><a class="social github" href="https://github.com/{{ .Site.Params.githubUsername }}/">
-			<img src="{{ .Site.BaseURL }}images/1x1.png"
+			<img src="/images/1x1.png"
 				alt="@{{ .Site.Params.githubUsername }} at GitHub"
 				title="@{{ .Site.Params.githubUsername }} at GitHub"
 				width="32" height="32"></a>
@@ -11,7 +11,7 @@
 	{{ if .Site.Params.twitterUsername -}}
 	<li>
 		<a class="social twitter" href="https://twitter.com/{{ .Site.Params.twitterUsername }}">
-			<img src="{{ .Site.BaseURL }}images/1x1.png"
+			<img src="/images/1x1.png"
 				alt="@{{ .Site.Params.twitterUsername }} on Twitter"
 				title="@{{ .Site.Params.twitterUsername }} on Twitter"
 				width="32" height="32">
@@ -19,8 +19,8 @@
 	</li>
 	{{- end }}
 	<li>
-		<a class="social rss" href="{{ .Site.RSSLink }}">
-			<img src="{{ .Site.BaseURL }}images/1x1.png"
+		<a class="social rss" href="{{ .Site.RSSLink | relURL }}">
+			<img src="/images/1x1.png"
 				alt="{{ .Site.Title }} RSS feed"
 				title="{{ .Site.Title }} RSS feed"
 				width="32" height="32">

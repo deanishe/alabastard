@@ -15,19 +15,6 @@
                                                 .88
                                             d8888P
        */
-      this.weatherIconClassMapping = {
-        'rain': 'wi-rain',
-        'snow': 'wi-snow',
-        'fog': 'wi-fog',
-        'cloudy': 'wi-cloudy',
-        'wind': 'wi-windy',
-        'clear-day': 'wi-day-sunny',
-        'mostly-clear-day': 'wi-day-sunny-overcast',
-        'partly-cloudy-day': 'wi-day-cloudy',
-        'clear-night': 'wi-night-clear',
-        'partly-cloudy-night': 'wi-night-cloudy',
-        'unknown': 'wi-cloud-refresh'
-      };
       this.beaufortWindSpeedMapping = {
         0: 1.1,
         1: 5.5,
@@ -46,6 +33,7 @@
 
     Weather.prototype.run = function() {
       console.log('[weather] running ...');
+      $('head').append('<link rel="stylesheet" type="text/css" href="../css/weather.css" />');
       $('.percent.value').each((function(_this) {
         return function(i, e) {
           var p, pc;
@@ -54,22 +42,43 @@
           return $(e).html(pc);
         };
       })(this));
-      $('li.forecast').each((function(_this) {
-        return function(i, li) {
-          li = $(li);
-          if (li.attr('id') === 'current') {
-            return;
-          }
-          return li.find('h3').each(function(i, h3) {
-            var d, s;
-            h3 = $(h3);
-            s = h3.data('summary');
-            d = _this.timestampToDate(h3.data('time'));
-            return h3.find('span.time').html(_this.formatDate(d));
+      $('.forecast .wind').each((function(_this) {
+        return function(i, elem) {
+          var bearing, wc;
+          elem = $(elem);
+          bearing = elem.data('wind-bearing');
+          wc = _this.getWindDirectionIconClass(bearing);
+          console.log('[wind] bearing=' + bearing + ', wc=' + wc);
+          elem.find('.bearing').html('');
+          return elem.find('i.icon').addClass(wc);
+        };
+      })(this));
+      $('.forecast .summary').each((function(_this) {
+        return function(i, div) {
+          var icon;
+          div = $(div);
+          icon = div.data('icon');
+          return div.find('i.icon').addClass('wi wi-forecast-io-' + icon);
+        };
+      })(this));
+      $('section.later').each((function(_this) {
+        return function(i, s) {
+          s = $(s);
+          return s.find('.forecast').each(function(i, f) {
+            return $(f).find('.summary').each(function(i, div) {
+              var d;
+              div = $(div);
+              d = _this.timestampToDate(div.data('time'));
+              return div.find('time').each(function(i, t) {
+                t = $(t);
+                t.attr('datetime', d);
+                return t.html(_this.formatDate(d));
+              });
+            });
           });
         };
       })(this));
-      $('.forecast>.temp').each((function(_this) {
+      $('.forecast .temp').each((function(_this) {
         return function(i, div) {
           var t;
           div = $(div);
@@ -81,22 +90,54 @@
           return div.find('.value').html(i);
         };
       })(this));
-      $('.forecast>.precipitation').each((function(_this) {
-        return function(i, div) {
-          div = $(div);
-          if (div.data('probability') === 0) {
-            return div.html('dry');
+      $('.forecast .precipitation .summary').each((function(_this) {
+        return function(i, elem) {
+          elem = $(elem);
+          if (elem.data('probability') === 0) {
+            return elem.html('dry');
           }
         };
       })(this));
-      return $('.forecast>.wind').each((function(_this) {
-        return function(i, div) {
-          var b, s;
-          div = $(div);
-          b = div.data('wind-bearing');
-          s = div.data('wind-speed');
-          console.log('[weather/wind] speed=' + s + ' m/s, bearing=' + b);
-          return div.find('.speed').html(_this.metresPerSecondToKph(s) + ' kph');
+      $('.forecast .wind').each((function(_this) {
+        return function(i, tr) {
+          tr = $(tr);
+          return tr.find('.speed').each(function(i, div) {
+            div = $(div);
+            return div.html(_this.metresPerSecondToKph(div.data('speed')) + ' kph');
+          });
+        };
+      })(this));
+      return $('.forecast').each((function(_this) {
+        return function(i, section) {
+          section = $(section);
+          section.find('tr.precipitation').each(function(i, tr) {
+            var intensity, level, probability, type;
+            tr = $(tr);
+            type = tr.data('type');
+            intensity = tr.data('intensity');
+            probability = tr.data('probability');
+            level = _this.getPrecipitationWarnLevel(probability, intensity);
+            console.log("[precipitation] type=" + type + ", intensity=" + intensity + ", probability=" + probability + ", level=" + level);
+            return tr.find('i.icon').each(function(i, icon) {
+              if (level === 0) {
+
+              } else {
+                return $(icon).addClass('wi wi-rain warn' + level);
+              }
+            });
+          });
+          return section.find('tr.wind').each(function(i, tr) {
+            var level, speed;
+            tr = $(tr);
+            speed = _this.metresPerSecondToKph(tr.data('speed'));
+            level = _this.getWindWarnLevel(speed);
+            console.log("[wind] speed=" + speed + ", level=" + level);
+            return tr.find('i.icon').each(function(i, icon) {
+              if (level > 0) {
+                return $(icon).addClass('warn' + level);
+              }
+            });
+          });
         };
       })(this));
     };
@@ -168,12 +209,12 @@
       return '';
     };
 
-    Weather.prototype.getWindDirectionIconClass = function(data) {
-      return "wi-wind-default from-" + data.windBearing + "-deg";
+    Weather.prototype.getWindDirectionIconClass = function(bearing) {
+      return "wi wi-wind from-" + bearing + "-deg";
     };
 
-    Weather.prototype.getWindForce = function(data) {
-      var j, key, len, limit, numbers, scaleNo, windForce, windSpeed;
+    Weather.prototype.getWindForce = function(windSpeed) {
+      var j, key, len, limit, numbers, scaleNo, windForce;
       numbers = (function() {
         var results;
         results = [];
@@ -182,7 +223,6 @@
         }
         return results;
       }).call(this);
-      windSpeed = data.windSpeed * 3.6;
       windForce = null;
       for (j = 0, len = numbers.length; j < len; j++) {
         scaleNo = numbers[j];
@@ -227,6 +267,60 @@
         intensity = 'heavy';
       }
       return intensity;
+    };
+
+    Weather.prototype.getPrecipitationWarnLevel = function(probability, intensity) {
+      var i, level, p;
+      if (probability === 0) {
+        return 0;
+      }
+      level = 0;
+      p = probability;
+      i = intensity;
+      if (p >= 0.9) {
+        level = 5;
+      } else if (p >= 0.7) {
+        level = 4;
+      } else if (p >= 0.5) {
+        level = 3;
+      } else if (p >= 0.3) {
+        level = 2;
+      } else if (p >= 0.1) {
+        level = 1;
+      }
+      if (i < 0.017) {
+        level -= 1;
+      } else if (i > 0.4) {
+        level += 2;
+      } else if (i > 0.2) {
+        level += 1;
+      }
+      if (level > 5) {
+        level = 5;
+      }
+      return level;
+    };
+
+    Weather.prototype.getWindWarnLevel = function(windSpeed) {
+      var windForce;
+      windForce = this.getWindForce(windSpeed);
+      console.log("[wind] speed=" + windSpeed + ", force=" + windForce);
+      if (windForce > 5) {
+        return 5;
+      }
+      if (windForce > 4) {
+        return 4;
+      }
+      if (windForce > 2) {
+        return 3;
+      }
+      if (windForce > 1) {
+        return 2;
+      }
+      if (windForce > 0) {
+        return 1;
+      }
+      return 0;
     };
 
     Weather.prototype.getWarnings = function(data) {

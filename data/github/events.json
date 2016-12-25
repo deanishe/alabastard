@@ -1,0 +1,1963 @@
+[
+  {
+    "id": "5068765234",
+    "type": "PushEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 77123081,
+      "name": "deanishe/alabastard",
+      "url": "https://api.github.com/repos/deanishe/alabastard"
+    },
+    "payload": {
+      "push_id": 1472227610,
+      "size": 8,
+      "distinct_size": 8,
+      "ref": "refs/heads/master",
+      "head": "f0c3613139e82b1fd24f460ee77adcad0da8f8b0",
+      "before": "409ccc3f48f753c0a77fd4b69a786486a68983ea",
+      "commits": [
+        {
+          "sha": "5c9da9cb6db0889a367fe459a10cdd0008c22bc7",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Remove link to missing PNG",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/5c9da9cb6db0889a367fe459a10cdd0008c22bc7"
+        },
+        {
+          "sha": "b95e9e79eb07783c3416768398f718f3c4e05808",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Fix title",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/b95e9e79eb07783c3416768398f718f3c4e05808"
+        },
+        {
+          "sha": "bc32ebbe04b130a8080d018c043d42e5fd33f1b6",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add index and link to RSS feed",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/bc32ebbe04b130a8080d018c043d42e5fd33f1b6"
+        },
+        {
+          "sha": "56583842ad0fa1f4d6e7e523cf00734018417e49",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add robots.txt",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/56583842ad0fa1f4d6e7e523cf00734018417e49"
+        },
+        {
+          "sha": "1a6301e613d3b2273c8578956772bd89b4a6ca74",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add scripts to fetch weather and repos",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/1a6301e613d3b2273c8578956772bd89b4a6ca74"
+        },
+        {
+          "sha": "0d06821ef313abac51b8ebb95b93a8e0457c1b98",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Fix display of repos",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/0d06821ef313abac51b8ebb95b93a8e0457c1b98"
+        },
+        {
+          "sha": "58714e5dfe34b8d53c76a5283ad8c38d0a45352e",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Update docs",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/58714e5dfe34b8d53c76a5283ad8c38d0a45352e"
+        },
+        {
+          "sha": "f0c3613139e82b1fd24f460ee77adcad0da8f8b0",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add social & pagination",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/f0c3613139e82b1fd24f460ee77adcad0da8f8b0"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-12-24T22:50:02Z"
+  },
+  {
+    "id": "5068477952",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 69049016,
+      "name": "natefinch/gorram",
+      "url": "https://api.github.com/repos/natefinch/gorram"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-24T17:32:15Z"
+  },
+  {
+    "id": "5066691219",
+    "type": "PushEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 77123081,
+      "name": "deanishe/alabastard",
+      "url": "https://api.github.com/repos/deanishe/alabastard"
+    },
+    "payload": {
+      "push_id": 1471430256,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "409ccc3f48f753c0a77fd4b69a786486a68983ea",
+      "before": "8fa62144632490ff213b02a859b056453c390537",
+      "commits": [
+        {
+          "sha": "409ccc3f48f753c0a77fd4b69a786486a68983ea",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Adapt for homepage/blog, not docs",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alabastard/commits/409ccc3f48f753c0a77fd4b69a786486a68983ea"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-12-23T18:34:42Z"
+  },
+  {
+    "id": "5059366156",
+    "type": "ForkEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 56924275,
+      "name": "digitalcraftsman/hugo-alabaster-theme",
+      "url": "https://api.github.com/repos/digitalcraftsman/hugo-alabaster-theme"
+    },
+    "payload": {
+      "forkee": {
+        "id": 77123081,
+        "name": "hugo-alabaster-theme",
+        "full_name": "deanishe/hugo-alabaster-theme",
+        "owner": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "private": false,
+        "html_url": "https://github.com/deanishe/hugo-alabaster-theme",
+        "description": "A documentation theme ported from Sphinx to Hugo",
+        "fork": true,
+        "url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme",
+        "forks_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/forks",
+        "keys_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/keys{/key_id}",
+        "collaborators_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/collaborators{/collaborator}",
+        "teams_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/teams",
+        "hooks_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/hooks",
+        "issue_events_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/issues/events{/number}",
+        "events_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/events",
+        "assignees_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/assignees{/user}",
+        "branches_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/branches{/branch}",
+        "tags_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/tags",
+        "blobs_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/git/blobs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/git/tags{/sha}",
+        "git_refs_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/git/refs{/sha}",
+        "trees_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/git/trees{/sha}",
+        "statuses_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/statuses/{sha}",
+        "languages_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/languages",
+        "stargazers_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/stargazers",
+        "contributors_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/contributors",
+        "subscribers_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/subscribers",
+        "subscription_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/subscription",
+        "commits_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/commits{/sha}",
+        "git_commits_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/git/commits{/sha}",
+        "comments_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/comments{/number}",
+        "issue_comment_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/issues/comments{/number}",
+        "contents_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/contents/{+path}",
+        "compare_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/compare/{base}...{head}",
+        "merges_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/merges",
+        "archive_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/{archive_format}{/ref}",
+        "downloads_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/downloads",
+        "issues_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/issues{/number}",
+        "pulls_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/pulls{/number}",
+        "milestones_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/notifications{?since,all,participating}",
+        "labels_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/labels{/name}",
+        "releases_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/releases{/id}",
+        "deployments_url": "https://api.github.com/repos/deanishe/hugo-alabaster-theme/deployments",
+        "created_at": "2016-12-22T07:34:56Z",
+        "updated_at": "2016-10-23T16:10:41Z",
+        "pushed_at": "2016-10-24T21:37:25Z",
+        "git_url": "git://github.com/deanishe/hugo-alabaster-theme.git",
+        "ssh_url": "git@github.com:deanishe/hugo-alabaster-theme.git",
+        "clone_url": "https://github.com/deanishe/hugo-alabaster-theme.git",
+        "svn_url": "https://github.com/deanishe/hugo-alabaster-theme",
+        "homepage": "https://digitalcraftsman.github.io/hugo-alabaster-theme/",
+        "size": 235,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "language": null,
+        "has_issues": false,
+        "has_downloads": true,
+        "has_wiki": false,
+        "has_pages": false,
+        "forks_count": 0,
+        "mirror_url": null,
+        "open_issues_count": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "watchers": 0,
+        "default_branch": "master",
+        "public": true
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-22T07:34:58Z"
+  },
+  {
+    "id": "5053628628",
+    "type": "CommitCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 77000050,
+      "name": "vitorgalvao/alfred-workflow",
+      "url": "https://api.github.com/repos/vitorgalvao/alfred-workflow"
+    },
+    "payload": {
+      "comment": {
+        "url": "https://api.github.com/repos/vitorgalvao/alfred-workflow/comments/20257798",
+        "html_url": "https://github.com/vitorgalvao/alfred-workflow/commit/2f05aa3d5987b831b3e6e799f09b2764f74b6351#commitcomment-20257798",
+        "id": 20257798,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "position": null,
+        "line": null,
+        "path": null,
+        "commit_id": "2f05aa3d5987b831b3e6e799f09b2764f74b6351",
+        "created_at": "2016-12-21T09:01:40Z",
+        "updated_at": "2016-12-21T09:01:40Z",
+        "body": "Hey Vítor,\r\n\r\nThis script isn't for zipping workflows, just the library.\r\n\r\nIt only includes *.py files, `version` and `Notify.tgz` in any case.\r\n\r\nI think you're thinking of [this script](https://gist.github.com/deanishe/b16f018119ef3fe951af), which should be updated to strip unexported variables."
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-21T09:01:40Z"
+  },
+  {
+    "id": "5045872351",
+    "type": "PushEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 22550008,
+      "name": "deanishe/alfred-searchio",
+      "url": "https://api.github.com/repos/deanishe/alfred-searchio"
+    },
+    "payload": {
+      "push_id": 1464484059,
+      "size": 23,
+      "distinct_size": 23,
+      "ref": "refs/heads/develop",
+      "head": "a78c566be946e85e5c17a959a580e3b5b63f77bd",
+      "before": "56d28d6867e7d0864cb21fc60880fa0fffef276b",
+      "commits": [
+        {
+          "sha": "f927f7c0773bd5031d974847343dd4bcd2790031",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Alfred 3 compatibility",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/f927f7c0773bd5031d974847343dd4bcd2790031"
+        },
+        {
+          "sha": "92c200e5b0f1be97403e9b643d1cff35f7b130ef",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Alfred 3 and new data model\n\n- Migrate to Alfred 3 and Workflow3\n- Reorganise data & scripts\n- New engine data model\n  - Load engines from Python modules\n  - Load engines from JSON files",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/92c200e5b0f1be97403e9b643d1cff35f7b130ef"
+        },
+        {
+          "sha": "3f0b947bf13ec812ce27ba7c546cc998f82a587d",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Prettier output",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/3f0b947bf13ec812ce27ba7c546cc998f82a587d"
+        },
+        {
+          "sha": "9a5a874b987bc1eb1e29bb8ec7aa876d7a9f4c08",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add \"clean\" command",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/9a5a874b987bc1eb1e29bb8ec7aa876d7a9f4c08"
+        },
+        {
+          "sha": "7ce188c2a1208a6210010f79c8e1dcc95b6d7586",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add eBay variants",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/7ce188c2a1208a6210010f79c8e1dcc95b6d7586"
+        },
+        {
+          "sha": "f8333ac2b4920c96a08dcc7d96bc6dfbac9624f0",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Reorganise",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/f8333ac2b4920c96a08dcc7d96bc6dfbac9624f0"
+        },
+        {
+          "sha": "eaf2f7a3f8b6d2f12ee0e852744316b8e585cf98",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Fix help",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/eaf2f7a3f8b6d2f12ee0e852744316b8e585cf98"
+        },
+        {
+          "sha": "4b906bf47848fa5e10eaf897832150881f871e0c",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Change API key variable name",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/4b906bf47848fa5e10eaf897832150881f871e0c"
+        },
+        {
+          "sha": "3aac14be28a7d068d8292d5f4410faa7d8b3b6d7",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Refactor sub-commands into modules",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/3aac14be28a7d068d8292d5f4410faa7d8b3b6d7"
+        },
+        {
+          "sha": "acd393846cdd4f293122d447e2da90c3f110534a",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Pre-commit hook to keep API key out of repo",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/acd393846cdd4f293122d447e2da90c3f110534a"
+        },
+        {
+          "sha": "243d49747f68fa59cbc81702b678a6eec54dc9f1",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Removed file",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/243d49747f68fa59cbc81702b678a6eec54dc9f1"
+        },
+        {
+          "sha": "e3d69433ac7ffda6315e40a6dc3f844b556b7ed6",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Better icons",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/e3d69433ac7ffda6315e40a6dc3f844b556b7ed6"
+        },
+        {
+          "sha": "afe6b0c9f077e6f4c0fa846a9c78f79ef62463be",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Reorganise widgets",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/afe6b0c9f077e6f4c0fa846a9c78f79ef62463be"
+        },
+        {
+          "sha": "5842e2004a4a0994b556a2dbd2d149964dc55905",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add reload",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/5842e2004a4a0994b556a2dbd2d149964dc55905"
+        },
+        {
+          "sha": "306b6d614433889ec4c5fb75a0fee7fe353d687e",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add user engine directory",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/306b6d614433889ec4c5fb75a0fee7fe353d687e"
+        },
+        {
+          "sha": "1d83d5892826b53a1701fb363dc984ecf9eaae8d",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Hook rejects commit if API key present",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/1d83d5892826b53a1701fb363dc984ecf9eaae8d"
+        },
+        {
+          "sha": "4e06244681fe6eacea219d5015d7384404442805",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Rename hook",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/4e06244681fe6eacea219d5015d7384404442805"
+        },
+        {
+          "sha": "eed49f7f72069522f1e24b2f04f0c2570887f714",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Extra underline for removed borders",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/eed49f7f72069522f1e24b2f04f0c2570887f714"
+        },
+        {
+          "sha": "c37257a1f001ecd37bdd90de6270e81a1fe5a731",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add Wikipedia; remove IMDb",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/c37257a1f001ecd37bdd90de6270e81a1fe5a731"
+        },
+        {
+          "sha": "65d3536595eebb34b30aba1733fbd9070d903fd1",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Add Wiktionary variants",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-searchio/commits/65d3536595eebb34b30aba1733fbd9070d903fd1"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-12-20T00:55:28Z"
+  },
+  {
+    "id": "5037334396",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 22550008,
+      "name": "deanishe/alfred-searchio",
+      "url": "https://api.github.com/repos/deanishe/alfred-searchio"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-searchio",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/events",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8",
+        "id": 191858731,
+        "number": 8,
+        "title": "Autosuggest for Google Maps broken",
+        "user": {
+          "login": "altern8tif",
+          "id": 5793364,
+          "avatar_url": "https://avatars.githubusercontent.com/u/5793364?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/altern8tif",
+          "html_url": "https://github.com/altern8tif",
+          "followers_url": "https://api.github.com/users/altern8tif/followers",
+          "following_url": "https://api.github.com/users/altern8tif/following{/other_user}",
+          "gists_url": "https://api.github.com/users/altern8tif/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/altern8tif/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/altern8tif/subscriptions",
+          "organizations_url": "https://api.github.com/users/altern8tif/orgs",
+          "repos_url": "https://api.github.com/users/altern8tif/repos",
+          "events_url": "https://api.github.com/users/altern8tif/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/altern8tif/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+          {
+            "id": 119008718,
+            "url": "https://api.github.com/repos/deanishe/alfred-searchio/labels/bug",
+            "name": "bug",
+            "color": "fc2929",
+            "default": true
+          }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 6,
+        "created_at": "2016-11-27T12:26:40Z",
+        "updated_at": "2016-12-17T16:13:00Z",
+        "closed_at": null,
+        "body": "Seems like the autosuggest for Google Maps no longer works.  Did the Google API endpoint change for that?\r\n\r\n![screen shot 2016-11-27 at 8 25 36 pm](https://cloud.githubusercontent.com/assets/5793364/20648376/bd0359b4-b4df-11e6-82cd-3051d15ba8e2.png)\r\n"
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/comments/267770928",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8#issuecomment-267770928",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "id": 267770928,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-12-17T16:13:00Z",
+        "updated_at": "2016-12-17T16:13:00Z",
+        "body": "I've sorta fixed this.\r\n\r\nThe maps autosuggest API has been turned off, so I've replaced with with the Places API. The upshot is, you need to get an API key for that one :(\r\n\r\nGoogle Maps is working on the `develop` branch, but some engines are still missing or half-implemented.\r\n"
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-17T16:13:01Z"
+  },
+  {
+    "id": "5025195088",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 45775796,
+      "name": "tikalk/commandcar",
+      "url": "https://api.github.com/repos/tikalk/commandcar"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-15T08:13:19Z",
+    "org": {
+      "id": 1106878,
+      "login": "tikalk",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/tikalk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1106878?"
+    }
+  },
+  {
+    "id": "5019340991",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 49606043,
+      "name": "deanishe/alfred-unicode",
+      "url": "https://api.github.com/repos/deanishe/alfred-unicode"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/1",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-unicode",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/1/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/1/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/1/events",
+        "html_url": "https://github.com/deanishe/alfred-unicode/issues/1",
+        "id": 195467060,
+        "number": 1,
+        "title": "exclude certain languages?",
+        "user": {
+          "login": "rxng",
+          "id": 19649766,
+          "avatar_url": "https://avatars.githubusercontent.com/u/19649766?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/rxng",
+          "html_url": "https://github.com/rxng",
+          "followers_url": "https://api.github.com/users/rxng/followers",
+          "following_url": "https://api.github.com/users/rxng/following{/other_user}",
+          "gists_url": "https://api.github.com/users/rxng/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/rxng/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/rxng/subscriptions",
+          "organizations_url": "https://api.github.com/users/rxng/orgs",
+          "repos_url": "https://api.github.com/users/rxng/repos",
+          "events_url": "https://api.github.com/users/rxng/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/rxng/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2016-12-14T08:18:47Z",
+        "updated_at": "2016-12-14T11:23:55Z",
+        "closed_at": null,
+        "body": "Is this possible? Some of the the unicode icons are coming up as question marks (not found I am assuming), whilst others are irrelevant and will never be used..."
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/comments/267010364",
+        "html_url": "https://github.com/deanishe/alfred-unicode/issues/1#issuecomment-267010364",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-unicode/issues/1",
+        "id": 267010364,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-12-14T11:23:55Z",
+        "updated_at": "2016-12-14T11:23:55Z",
+        "body": "The question mark means the symbol isn't supported by the font you have set (Arial Unicode by default).\r\n\r\nI suppose it would be possible to exclude certain alphabets or codepoint ranges.\r\n\r\nThe trick would be identifying them."
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-14T11:23:55Z"
+  },
+  {
+    "id": "5012961757",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 9193949,
+      "name": "wallabag/wallabag",
+      "url": "https://api.github.com/repos/wallabag/wallabag"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-13T13:08:48Z",
+    "org": {
+      "id": 4143872,
+      "login": "wallabag",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/wallabag",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4143872?"
+    }
+  },
+  {
+    "id": "5008953242",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 28838478,
+      "name": "kardianos/service",
+      "url": "https://api.github.com/repos/kardianos/service"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-12T20:59:22Z"
+  },
+  {
+    "id": "5008209838",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 47248204,
+      "name": "shurcooL/binstale",
+      "url": "https://api.github.com/repos/shurcooL/binstale"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-12T18:52:39Z"
+  },
+  {
+    "id": "5007188461",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 69188189,
+      "name": "p-gen/smenu",
+      "url": "https://api.github.com/repos/p-gen/smenu"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-12T16:07:59Z"
+  },
+  {
+    "id": "5005226820",
+    "type": "ReleaseEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "action": "published",
+      "release": {
+        "url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/4892378",
+        "assets_url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/4892378/assets",
+        "upload_url": "https://uploads.github.com/repos/deanishe/alfred-ssh/releases/4892378/assets{?name,label}",
+        "html_url": "https://github.com/deanishe/alfred-ssh/releases/tag/v0.7.1",
+        "id": 4892378,
+        "tag_name": "v0.7.1",
+        "target_commitish": "master",
+        "name": "Smarter SSH URLs",
+        "draft": false,
+        "author": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "prerelease": false,
+        "created_at": "2016-12-12T09:58:05Z",
+        "published_at": "2016-12-12T09:59:20Z",
+        "assets": [
+          {
+            "url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/assets/2808197",
+            "id": 2808197,
+            "name": "Secure-SHell-0.7.1.alfredworkflow",
+            "label": null,
+            "uploader": {
+              "login": "deanishe",
+              "id": 747913,
+              "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/deanishe",
+              "html_url": "https://github.com/deanishe",
+              "followers_url": "https://api.github.com/users/deanishe/followers",
+              "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+              "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+              "organizations_url": "https://api.github.com/users/deanishe/orgs",
+              "repos_url": "https://api.github.com/users/deanishe/repos",
+              "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/deanishe/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "content_type": "application/octet-stream",
+            "state": "uploaded",
+            "size": 2393425,
+            "download_count": 0,
+            "created_at": "2016-12-12T09:59:12Z",
+            "updated_at": "2016-12-12T09:59:16Z",
+            "browser_download_url": "https://github.com/deanishe/alfred-ssh/releases/download/v0.7.1/Secure-SHell-0.7.1.alfredworkflow"
+          }
+        ],
+        "tarball_url": "https://api.github.com/repos/deanishe/alfred-ssh/tarball/v0.7.1",
+        "zipball_url": "https://api.github.com/repos/deanishe/alfred-ssh/zipball/v0.7.1",
+        "body": "- [Smarter generation of SSH URLs for hosts from `~/.ssh/config`](http://www.alfredforum.com/topic/8956-secure-shell-for-alfred-3-ssh-plus-sftp-mosh-ping-with-autosuggest/?do=findComment&comment=49170)\r\n- Better removal of duplicates\r\n"
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:59:20Z"
+  },
+  {
+    "id": "5005221108",
+    "type": "PushEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "push_id": 1450753248,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "146bfd9f066be5606ed476e7eec8cbcdf7006da7",
+      "before": "228e94aaa866354765e5ac74a10793c863112bc1",
+      "commits": [
+        {
+          "sha": "146bfd9f066be5606ed476e7eec8cbcdf7006da7",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Fix updater error",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-ssh/commits/146bfd9f066be5606ed476e7eec8cbcdf7006da7"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:58:15Z"
+  },
+  {
+    "id": "5005221082",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "ref": "v0.7.1",
+      "ref_type": "tag",
+      "master_branch": "master",
+      "description": "Open SSH/SFTP/mosh connections from Alfred 3",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:58:14Z"
+  },
+  {
+    "id": "5005183476",
+    "type": "ReleaseEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "action": "published",
+      "release": {
+        "url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/4892306",
+        "assets_url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/4892306/assets",
+        "upload_url": "https://uploads.github.com/repos/deanishe/alfred-ssh/releases/4892306/assets{?name,label}",
+        "html_url": "https://github.com/deanishe/alfred-ssh/releases/tag/v0.7.0",
+        "id": 4892306,
+        "tag_name": "v0.7.0",
+        "target_commitish": "master",
+        "name": "Smarter SSH URLs",
+        "draft": false,
+        "author": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "prerelease": false,
+        "created_at": "2016-12-12T09:33:40Z",
+        "published_at": "2016-12-12T09:50:36Z",
+        "assets": [
+          {
+            "url": "https://api.github.com/repos/deanishe/alfred-ssh/releases/assets/2808156",
+            "id": 2808156,
+            "name": "Secure-SHell-0.7.alfredworkflow",
+            "label": null,
+            "uploader": {
+              "login": "deanishe",
+              "id": 747913,
+              "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/deanishe",
+              "html_url": "https://github.com/deanishe",
+              "followers_url": "https://api.github.com/users/deanishe/followers",
+              "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+              "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+              "organizations_url": "https://api.github.com/users/deanishe/orgs",
+              "repos_url": "https://api.github.com/users/deanishe/repos",
+              "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/deanishe/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "content_type": "application/octet-stream",
+            "state": "uploaded",
+            "size": 2393304,
+            "download_count": 0,
+            "created_at": "2016-12-12T09:50:30Z",
+            "updated_at": "2016-12-12T09:50:34Z",
+            "browser_download_url": "https://github.com/deanishe/alfred-ssh/releases/download/v0.7.0/Secure-SHell-0.7.alfredworkflow"
+          }
+        ],
+        "tarball_url": "https://api.github.com/repos/deanishe/alfred-ssh/tarball/v0.7.0",
+        "zipball_url": "https://api.github.com/repos/deanishe/alfred-ssh/zipball/v0.7.0",
+        "body": "- [Smarter generation of SSH URLs for hosts from `~/.ssh/config`](http://www.alfredforum.com/topic/8956-secure-shell-for-alfred-3-ssh-plus-sftp-mosh-ping-with-autosuggest/?do=findComment&comment=49170)\r\n- Better removal of duplicates\r\n"
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:50:37Z"
+  },
+  {
+    "id": "5005165432",
+    "type": "PushEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "push_id": 1450733812,
+      "size": 3,
+      "distinct_size": 3,
+      "ref": "refs/heads/master",
+      "head": "228e94aaa866354765e5ac74a10793c863112bc1",
+      "before": "e922dde5fc128a50bd83d0e87b32e5ddf5c0bab6",
+      "commits": [
+        {
+          "sha": "73ef2345804b24b174e10c6a7f8cc9b7bde56991",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Tidy up repo and build script",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-ssh/commits/73ef2345804b24b174e10c6a7f8cc9b7bde56991"
+        },
+        {
+          "sha": "2efe4524f4b677a271d24b7e4749dea2c85f4c52",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Use interfaces for data models",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-ssh/commits/2efe4524f4b677a271d24b7e4749dea2c85f4c52"
+        },
+        {
+          "sha": "228e94aaa866354765e5ac74a10793c863112bc1",
+          "author": {
+            "email": "deanishe@deanishe.net",
+            "name": "Dean Jackson"
+          },
+          "message": "Update Changelog",
+          "distinct": true,
+          "url": "https://api.github.com/repos/deanishe/alfred-ssh/commits/228e94aaa866354765e5ac74a10793c863112bc1"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:46:51Z"
+  },
+  {
+    "id": "5005165398",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 59518993,
+      "name": "deanishe/alfred-ssh",
+      "url": "https://api.github.com/repos/deanishe/alfred-ssh"
+    },
+    "payload": {
+      "ref": "v0.7.0",
+      "ref_type": "tag",
+      "master_branch": "master",
+      "description": "Open SSH/SFTP/mosh connections from Alfred 3",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2016-12-12T09:46:51Z"
+  },
+  {
+    "id": "5000893311",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 75744278,
+      "name": "oklog/ulid",
+      "url": "https://api.github.com/repos/oklog/ulid"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-10T15:33:55Z",
+    "org": {
+      "id": 24411296,
+      "login": "oklog",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/oklog",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24411296?"
+    }
+  },
+  {
+    "id": "4978925445",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 17146352,
+      "name": "deanishe/alfred-convert",
+      "url": "https://api.github.com/repos/deanishe/alfred-convert"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-convert",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/events",
+        "html_url": "https://github.com/deanishe/alfred-convert/issues/18",
+        "id": 193674072,
+        "number": 18,
+        "title": "Include pint's spectroscopy (and other context) option(s)",
+        "user": {
+          "login": "jmason86",
+          "id": 947614,
+          "avatar_url": "https://avatars.githubusercontent.com/u/947614?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jmason86",
+          "html_url": "https://github.com/jmason86",
+          "followers_url": "https://api.github.com/users/jmason86/followers",
+          "following_url": "https://api.github.com/users/jmason86/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jmason86/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jmason86/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jmason86/subscriptions",
+          "organizations_url": "https://api.github.com/users/jmason86/orgs",
+          "repos_url": "https://api.github.com/users/jmason86/repos",
+          "events_url": "https://api.github.com/users/jmason86/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jmason86/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 3,
+        "created_at": "2016-12-06T03:28:56Z",
+        "updated_at": "2016-12-06T20:57:38Z",
+        "closed_at": null,
+        "body": "Great tool! It would be really nice to also take advantage of the more advanced conversions already available in pint, such as converting between energy and length in the context of spectroscopy (e.g., 1 Å = 12398 eV for light). "
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-convert/issues/comments/265269915",
+        "html_url": "https://github.com/deanishe/alfred-convert/issues/18#issuecomment-265269915",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18",
+        "id": 265269915,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-12-06T20:57:38Z",
+        "updated_at": "2016-12-06T20:57:38Z",
+        "body": "Right, I've got you. Contexts are not currently supported.\r\n\r\nI'm afraid this is over my head mathematically speaking. Could you give me a couple of examples of conversions that should work (`sp 1Å ev` -> `12398 eV` perhaps?), and I'll adjust the parser to allow a context as the first argument.\r\n"
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-06T20:57:38Z"
+  },
+  {
+    "id": "4978394404",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 17146352,
+      "name": "deanishe/alfred-convert",
+      "url": "https://api.github.com/repos/deanishe/alfred-convert"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-convert",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18/events",
+        "html_url": "https://github.com/deanishe/alfred-convert/issues/18",
+        "id": 193674072,
+        "number": 18,
+        "title": "Include pint's spectroscopy (and other context) option(s)",
+        "user": {
+          "login": "jmason86",
+          "id": 947614,
+          "avatar_url": "https://avatars.githubusercontent.com/u/947614?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jmason86",
+          "html_url": "https://github.com/jmason86",
+          "followers_url": "https://api.github.com/users/jmason86/followers",
+          "following_url": "https://api.github.com/users/jmason86/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jmason86/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jmason86/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jmason86/subscriptions",
+          "organizations_url": "https://api.github.com/users/jmason86/orgs",
+          "repos_url": "https://api.github.com/users/jmason86/repos",
+          "events_url": "https://api.github.com/users/jmason86/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jmason86/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-12-06T03:28:56Z",
+        "updated_at": "2016-12-06T19:03:58Z",
+        "closed_at": null,
+        "body": "Great tool! It would be really nice to also take advantage of the more advanced conversions already available in pint, such as converting between energy and length in the context of spectroscopy (e.g., 1 Å = 12398 eV for light). "
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-convert/issues/comments/265240874",
+        "html_url": "https://github.com/deanishe/alfred-convert/issues/18#issuecomment-265240874",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-convert/issues/18",
+        "id": 265240874,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-12-06T19:03:58Z",
+        "updated_at": "2016-12-06T19:03:58Z",
+        "body": "I'm afraid that means nothing to me. Are you talking about a new version of `pint`?"
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-06T19:03:58Z"
+  },
+  {
+    "id": "4978371397",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 22550008,
+      "name": "deanishe/alfred-searchio",
+      "url": "https://api.github.com/repos/deanishe/alfred-searchio"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-searchio",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/events",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8",
+        "id": 191858731,
+        "number": 8,
+        "title": "Autosuggest for Google Maps broken",
+        "user": {
+          "login": "altern8tif",
+          "id": 5793364,
+          "avatar_url": "https://avatars.githubusercontent.com/u/5793364?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/altern8tif",
+          "html_url": "https://github.com/altern8tif",
+          "followers_url": "https://api.github.com/users/altern8tif/followers",
+          "following_url": "https://api.github.com/users/altern8tif/following{/other_user}",
+          "gists_url": "https://api.github.com/users/altern8tif/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/altern8tif/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/altern8tif/subscriptions",
+          "organizations_url": "https://api.github.com/users/altern8tif/orgs",
+          "repos_url": "https://api.github.com/users/altern8tif/repos",
+          "events_url": "https://api.github.com/users/altern8tif/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/altern8tif/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+          {
+            "id": 119008718,
+            "url": "https://api.github.com/repos/deanishe/alfred-searchio/labels/bug",
+            "name": "bug",
+            "color": "fc2929",
+            "default": true
+          }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 4,
+        "created_at": "2016-11-27T12:26:40Z",
+        "updated_at": "2016-12-06T19:00:03Z",
+        "closed_at": null,
+        "body": "Seems like the autosuggest for Google Maps no longer works.  Did the Google API endpoint change for that?\r\n\r\n![screen shot 2016-11-27 at 8 25 36 pm](https://cloud.githubusercontent.com/assets/5793364/20648376/bd0359b4-b4df-11e6-82cd-3051d15ba8e2.png)\r\n"
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/comments/265239714",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8#issuecomment-265239714",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "id": 265239714,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-12-06T19:00:03Z",
+        "updated_at": "2016-12-06T19:00:03Z",
+        "body": "Doubtful unless you're going crazy on Google Maps.\r\n\r\nI haven't looked into the issue yet, as I've been really busy with work.\r\n\r\nHopefully, I'll be able to get it fixed on Thursday."
+      }
+    },
+    "public": true,
+    "created_at": "2016-12-06T19:00:04Z"
+  },
+  {
+    "id": "4978344420",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 75451824,
+      "name": "el1t/uBlock-Safari",
+      "url": "https://api.github.com/repos/el1t/uBlock-Safari"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-12-06T18:55:27Z"
+  },
+  {
+    "id": "4935245614",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 22550008,
+      "name": "deanishe/alfred-searchio",
+      "url": "https://api.github.com/repos/deanishe/alfred-searchio"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-searchio",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8/events",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8",
+        "id": 191858731,
+        "number": 8,
+        "title": "Autosuggest for Google Maps broken",
+        "user": {
+          "login": "altern8tif",
+          "id": 5793364,
+          "avatar_url": "https://avatars.githubusercontent.com/u/5793364?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/altern8tif",
+          "html_url": "https://github.com/altern8tif",
+          "followers_url": "https://api.github.com/users/altern8tif/followers",
+          "following_url": "https://api.github.com/users/altern8tif/following{/other_user}",
+          "gists_url": "https://api.github.com/users/altern8tif/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/altern8tif/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/altern8tif/subscriptions",
+          "organizations_url": "https://api.github.com/users/altern8tif/orgs",
+          "repos_url": "https://api.github.com/users/altern8tif/repos",
+          "events_url": "https://api.github.com/users/altern8tif/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/altern8tif/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+          {
+            "id": 119008718,
+            "url": "https://api.github.com/repos/deanishe/alfred-searchio/labels/bug",
+            "name": "bug",
+            "color": "fc2929",
+            "default": true
+          }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2016-11-27T12:26:40Z",
+        "updated_at": "2016-11-28T21:30:52Z",
+        "closed_at": null,
+        "body": "Seems like the autosuggest for Google Maps no longer works.  Did the Google API endpoint change for that?\r\n\r\n![screen shot 2016-11-27 at 8 25 36 pm](https://cloud.githubusercontent.com/assets/5793364/20648376/bd0359b4-b4df-11e6-82cd-3051d15ba8e2.png)\r\n"
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/comments/263400539",
+        "html_url": "https://github.com/deanishe/alfred-searchio/issues/8#issuecomment-263400539",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-searchio/issues/8",
+        "id": 263400539,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-11-28T21:30:52Z",
+        "updated_at": "2016-11-28T21:30:52Z",
+        "body": "Could you post the error log from the debugger (if there is one)? A screenshot isn't much help. Thanks."
+      }
+    },
+    "public": true,
+    "created_at": "2016-11-28T21:30:56Z"
+  },
+  {
+    "id": "4925217115",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 11180687,
+      "name": "spf13/hugo",
+      "url": "https://api.github.com/repos/spf13/hugo"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-11-25T17:20:21Z"
+  },
+  {
+    "id": "4925163824",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 14712850,
+      "name": "syncthing/syncthing",
+      "url": "https://api.github.com/repos/syncthing/syncthing"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-11-25T17:05:06Z",
+    "org": {
+      "id": 7628018,
+      "login": "syncthing",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/syncthing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7628018?"
+    }
+  },
+  {
+    "id": "4869328439",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 31558536,
+      "name": "tonsky/AnyBar",
+      "url": "https://api.github.com/repos/tonsky/AnyBar"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2016-11-15T12:21:25Z"
+  },
+  {
+    "id": "4866636149",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 17055028,
+      "name": "deanishe/alfred-workflow",
+      "url": "https://api.github.com/repos/deanishe/alfred-workflow"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-workflow",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/events",
+        "html_url": "https://github.com/deanishe/alfred-workflow/issues/85",
+        "id": 158509573,
+        "number": 85,
+        "title": "How best to support workflow variables?",
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+          {
+            "id": 400006830,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/alfred3",
+            "name": "alfred3",
+            "color": "5319e7",
+            "default": false
+          },
+          {
+            "id": 157795287,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/api-change",
+            "name": "api-change",
+            "color": "eb6420",
+            "default": false
+          },
+          {
+            "id": 81891176,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/question",
+            "name": "question",
+            "color": "cc317c",
+            "default": true
+          }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 10,
+        "created_at": "2016-06-04T15:29:35Z",
+        "updated_at": "2016-11-15T00:34:41Z",
+        "closed_at": null,
+        "body": "So in Alfred 3 you can set variables from your Script Filter results by setting `arg` to a JSON-encoded `{\"alfredworkflow\":{\"arg\":...}}` dictionary.\n\nI've been exploring this mechanism in a [Go library](https://gogs.deanishe.net/deanishe/awgo) (Go's a PITA for this, btw). How I currently have that one working is that you can set variables at the `Workflow`, `Item` or `Modifier` level. When you create a new `Item` or `Modifier`, it inherits its parent's variables _at the time of creation_. So you can do:\n\n``` go\nwf.SetVar(\"api_key\", api_key) // Inherited by all child Items\n\nit := wf.NewItem(\"Item Title\")\nit.Subtitle = \"Open in New Window\"\nit.SetVar(\"uuid\", uuid)  // Inherited by child Modifiers\n\n// CMD\nm := it.NewModifier(\"cmd\")\nm.Subtitle = \"Open in New Tab\"\nm.SetVar(\"open_in_tab\", \"1\")\n\n// ALT\nm = it.NewModifier(\"alt\")\nm.Subtitle = \"Open in Private Window\"\nm.SetVar(\"open_in_private\", \"1\")\n\nit.SetVar(\"open_in_win\", \"1\") // Only set on Item, not Modifiers\n```\n\nIs that a solid solution for Alfred-Workflow? Too complex? Should variables (and arg) be resolved at feedback-generation time instead (i.e. `vars = wf.vars.copy(); vars.update(item.vars); vars.update(mod.vars)`)?\n\nOr is variable inheritance a fundamentally bad idea?\n\nCould maybe even make different `Feedback` classes with different variable inheritance behaviour.\n"
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/comments/260509891",
+        "html_url": "https://github.com/deanishe/alfred-workflow/issues/85#issuecomment-260509891",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85",
+        "id": 260509891,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-11-15T00:34:40Z",
+        "updated_at": "2016-11-15T00:34:40Z",
+        "body": "Will do. I'll have to have a think about how best to handle workflow and environment variables.\r\n\r\nThe implementation changed in 6b1fc2c, as Alfred 3.2 added \"real\" top-level workflow variables Previously `Workflow3.setvar()` was just a convenience to set variables on all `Item3` objects. Now it really sets top-level workflow variables (not that there's a lot of difference in practice).\r\n\r\nI suspect what @ViViDboarder suggested is how most people would expect and/or prefer it to work, but I'm leery of conflating the \"real\" environment (i.e. `os.environ`) and workflow variables too much because they're not the same. For example, `$HOME` isn't a workflow variable (i.e. you can't do `{var:HOME}` in an Args & Vars Utility).\r\n\r\nIf `Workflow3.getvar()` gets a value from `os.environ`, should it \"import\" the variable, so it *is* set for downstream workflow objects (e.g. `Workflow.getvar('HOME')` would automatically make `{var:HOME}` work downstream)? If not, a user might think they're using a workflow variable when it's actually from `os.environ` and won't be visible to downstream objects.\r\n\r\nIf `Workflow3.getvar()` reads from `os.environ`, should `Workflow3.setvar()` also write to `os.environ` (so the variables would also be set when you call `run_in_background()` or `subprocess.call()`, and not just for downstream objects)?"
+      }
+    },
+    "public": true,
+    "created_at": "2016-11-15T00:34:41Z"
+  },
+  {
+    "id": "4860173522",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 747913,
+      "login": "deanishe",
+      "display_login": "deanishe",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/deanishe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/747913?"
+    },
+    "repo": {
+      "id": 17055028,
+      "name": "deanishe/alfred-workflow",
+      "url": "https://api.github.com/repos/deanishe/alfred-workflow"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85",
+        "repository_url": "https://api.github.com/repos/deanishe/alfred-workflow",
+        "labels_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/labels{/name}",
+        "comments_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/comments",
+        "events_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85/events",
+        "html_url": "https://github.com/deanishe/alfred-workflow/issues/85",
+        "id": 158509573,
+        "number": 85,
+        "title": "How best to support workflow variables?",
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+          {
+            "id": 400006830,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/alfred3",
+            "name": "alfred3",
+            "color": "5319e7",
+            "default": false
+          },
+          {
+            "id": 157795287,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/api-change",
+            "name": "api-change",
+            "color": "eb6420",
+            "default": false
+          },
+          {
+            "id": 81891176,
+            "url": "https://api.github.com/repos/deanishe/alfred-workflow/labels/question",
+            "name": "question",
+            "color": "cc317c",
+            "default": true
+          }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [
+
+        ],
+        "milestone": null,
+        "comments": 8,
+        "created_at": "2016-06-04T15:29:35Z",
+        "updated_at": "2016-11-14T00:16:32Z",
+        "closed_at": null,
+        "body": "So in Alfred 3 you can set variables from your Script Filter results by setting `arg` to a JSON-encoded `{\"alfredworkflow\":{\"arg\":...}}` dictionary.\n\nI've been exploring this mechanism in a [Go library](https://gogs.deanishe.net/deanishe/awgo) (Go's a PITA for this, btw). How I currently have that one working is that you can set variables at the `Workflow`, `Item` or `Modifier` level. When you create a new `Item` or `Modifier`, it inherits its parent's variables _at the time of creation_. So you can do:\n\n``` go\nwf.SetVar(\"api_key\", api_key) // Inherited by all child Items\n\nit := wf.NewItem(\"Item Title\")\nit.Subtitle = \"Open in New Window\"\nit.SetVar(\"uuid\", uuid)  // Inherited by child Modifiers\n\n// CMD\nm := it.NewModifier(\"cmd\")\nm.Subtitle = \"Open in New Tab\"\nm.SetVar(\"open_in_tab\", \"1\")\n\n// ALT\nm = it.NewModifier(\"alt\")\nm.Subtitle = \"Open in Private Window\"\nm.SetVar(\"open_in_private\", \"1\")\n\nit.SetVar(\"open_in_win\", \"1\") // Only set on Item, not Modifiers\n```\n\nIs that a solid solution for Alfred-Workflow? Too complex? Should variables (and arg) be resolved at feedback-generation time instead (i.e. `vars = wf.vars.copy(); vars.update(item.vars); vars.update(mod.vars)`)?\n\nOr is variable inheritance a fundamentally bad idea?\n\nCould maybe even make different `Feedback` classes with different variable inheritance behaviour.\n"
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/comments/260224113",
+        "html_url": "https://github.com/deanishe/alfred-workflow/issues/85#issuecomment-260224113",
+        "issue_url": "https://api.github.com/repos/deanishe/alfred-workflow/issues/85",
+        "id": 260224113,
+        "user": {
+          "login": "deanishe",
+          "id": 747913,
+          "avatar_url": "https://avatars.githubusercontent.com/u/747913?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/deanishe",
+          "html_url": "https://github.com/deanishe",
+          "followers_url": "https://api.github.com/users/deanishe/followers",
+          "following_url": "https://api.github.com/users/deanishe/following{/other_user}",
+          "gists_url": "https://api.github.com/users/deanishe/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/deanishe/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/deanishe/subscriptions",
+          "organizations_url": "https://api.github.com/users/deanishe/orgs",
+          "repos_url": "https://api.github.com/users/deanishe/repos",
+          "events_url": "https://api.github.com/users/deanishe/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/deanishe/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-11-14T00:16:32Z",
+        "updated_at": "2016-11-14T00:16:32Z",
+        "body": "I explained this in the comment above yours. A newly-created `Workflows3` object has no variables."
+      }
+    },
+    "public": true,
+    "created_at": "2016-11-14T00:16:32Z"
+  }
+]

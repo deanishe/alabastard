@@ -146,12 +146,51 @@ h1 .tag {
   .projects .meta .status {
     font-size: 80%; }
 
+.events {
+  list-style: none;
+  margin-left: 0; }
+  .events .date {
+    color: #888;
+    font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    font-size: 0.8em; }
+  .events .issue {
+    font-style: italic; }
+
 .forecasts {
   list-style: none; }
 
+.forecast .warn2 {
+  color: green; }
+.forecast .warn3 {
+  color: blue; }
+.forecast .warn4 {
+  color: orange; }
+.forecast .warn5 {
+  color: red; }
+.forecast header {
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: .25em 0; }
+  .forecast header .icon {
+    font-size: 2em; }
+.forecast table {
+  border-collapse: separate;
+  border-spacing: 0; }
+  .forecast table td {
+    margin: 0;
+    padding: .125em 0; }
+    .forecast table td .icon {
+      font-size: 1.6em;
+      padding: 0 .25em; }
+.forecast > div {
+  margin: .2em 0; }
 .forecast .temp {
-  font-size: 170%;
-  margin: 0.25em 0; }
+  font-size: 1.75em; }
+.forecast .wind {
+  vertical-align: middle; }
+.forecast + .forecast {
+  margin-top: 1.5em; }
 
 .social li {
   display: inline-block;

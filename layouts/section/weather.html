@@ -3,13 +3,32 @@
 
 	{{ .Content }}
 
+	{{ with .Site.Data.darksky.forecast -}}
+	<section class="current">
+		<h2>Current conditions</h2>
+
+		{{ with .currently -}}
+			{{ partial "darksky/forecast" . }}
+		{{- end }}
+	</section>
+
+	<section class="later">
+		<h2>Later</h2>
+
+		{{ range .hourly.data -}}
+			{{ partial "darksky/forecast" . }}
+		{{- end }}
+	</section>
+	{{- end }}
+
+	{{/*
 	{{ with .Site.Data.darksky.forecast }}
 		<ul class="forecasts">
 			{{ with .currently }}
 			<li class="forecast" id="current">
 				<h2>Current conditions in Essen</h2>
 
-				{{ partial "forecast" . }}
+				{{ partial "darksky/forecast" . }}
 			</li>
 			{{ end }}
 			<li>
@@ -18,15 +37,16 @@
 				<ul class="forecasts">
 					{{ range .hourly.data }}
 					<li class="forecast">
-						{{ partial "forecast" . }}
+						{{ partial "darksky/forecast" . }}
 					</li>
 					{{ end }}
 				</ul>
 			</li>
 		</ul>
 	{{ end }}
+	*/}}
 
-	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>
+	<script type="text/javascript" src="/js/weather.js"></script>
 	<script type="text/javascript">
 		$( document ).ready( function() {
 			var w = new Weather();

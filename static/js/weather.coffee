@@ -20,18 +20,18 @@ class @Weather
 
     # Map the icons specified by forecast.io
     # to ones available in the font
-    @weatherIconClassMapping =
-      'rain'                : 'wi-rain'
-      'snow'                : 'wi-snow'
-      'fog'                 : 'wi-fog'
-      'cloudy'              : 'wi-cloudy'
-      'wind'                : 'wi-windy'
-      'clear-day'           : 'wi-day-sunny'
-      'mostly-clear-day'    : 'wi-day-sunny-overcast'
-      'partly-cloudy-day'   : 'wi-day-cloudy'
-      'clear-night'         : 'wi-night-clear'
-      'partly-cloudy-night' : 'wi-night-cloudy'
-      'unknown'             : 'wi-cloud-refresh'
+    # @weatherIconClassMapping =
+    #   'rain'                : 'wi-rain'
+    #   'snow'                : 'wi-snow'
+    #   'fog'                 : 'wi-fog'
+    #   'cloudy'              : 'wi-cloudy'
+    #   'wind'                : 'wi-windy'
+    #   'clear-day'           : 'wi-day-sunny'
+    #   'mostly-clear-day'    : 'wi-day-sunny-overcast'
+    #   'partly-cloudy-day'   : 'wi-day-cloudy'
+    #   'clear-night'         : 'wi-night-clear'
+    #   'partly-cloudy-night' : 'wi-night-cloudy'
+    #   'unknown'             : 'wi-cloud-refresh'
 
     # level -> max speed in kph, i.e. force 2 is between
     # 5.5 and 11.9 kph
@@ -53,25 +53,45 @@ class @Weather
   run: () ->
     console.log '[weather] running ...'
 
+    # Add stylesheet
+    $('head').append '<link rel="stylesheet" type="text/css" href="../css/weather.css" />'
+
     # All percentages
     $( '.percent.value' ).each (i, e) =>
       p = $(e).data 'percent'
       pc = (p * 100).toFixed(0) + '%'
       $(e).html pc
 
-    # Forecast headlines
-    $('li.forecast').each (i, li) =>
-      li = $( li )
-      if li.attr('id') == 'current'
-        return
-      li.find('h3').each (i, h3) =>
-        h3 = $( h3 )
-        s = h3.data 'summary'
-        d = @timestampToDate h3.data('time')
-        h3.find('span.time').html @formatDate(d)
+    # All wind direction icons
+    $('.forecast .wind').each (i, elem) =>
+      elem = $(elem)
+      bearing = elem.data 'wind-bearing'
+      wc = @getWindDirectionIconClass bearing
+      console.log('[wind] bearing=' + bearing + ', wc=' + wc)
+      elem.find('.bearing').html ''
+      elem.find('i.icon').addClass wc
+
+    # Summary icons
+    $('.forecast .summary').each (i, div) =>
+      div = $(div)
+      icon = div.data('icon')
+      div.find('i.icon').addClass('wi wi-forecast-io-' + icon)
+
+    # Add times to non-current forecast titles
+    $('section.later').each (i, s) =>
+      s = $(s)
+      s.find('.forecast').each (i, f) =>
+        $(f).find('.summary').each (i, div) =>
+          div = $(div)
+          d = @timestampToDate div.data('time')
+
+          div.find('time').each (i, t) =>
+            t = $(t)
+            t.attr('datetime', d)
+            t.html @formatDate(d)
 
     # Make temperatures integers
-    $('.forecast>.temp').each (i, div) =>
+    $('.forecast .temp').each (i, div) =>
       div = $( div )
       t = div.data 'temp'
       i = t.toFixed(0)
@@ -80,26 +100,44 @@ class @Weather
       div.find('.value').html(i)
 
     # No precipitation
-    $('.forecast>.precipitation').each (i, div) =>
-      div = $( div )
-      if div.data('probability') == 0
-        div.html 'dry'
+    $('.forecast .precipitation .summary').each (i, elem) =>
+      elem = $(elem)
+      if elem.data('probability') == 0
+        elem.html 'dry'
 
     # Wind direction
-    $('.forecast>.wind').each (i, div) =>
-      div = $( div )
-      b = div.data 'wind-bearing'
-      s = div.data 'wind-speed'
-      console.log '[weather/wind] speed=' + s + ' m/s, bearing=' + b
-      div.find('.speed').html(@metresPerSecondToKph(s) + ' kph')
-      # TODO: Add wind directional icon
+    $('.forecast .wind').each (i, tr) =>
+      tr = $( tr )
+      tr.find('.speed').each (i, div) =>
+        div = $(div)
+        div.html(@metresPerSecondToKph(div.data('speed')) + ' kph')
       # TODO: Add warning colours?
 
-    # div.find 'h3', (e) ->
-    #   summary = $(e).data 'summary'
-    #   time = $(e).data 'time'
-    #   console.log '[weather] time=' + time + ', summary=' + summary
-
+    # Warning colours
+    $('.forecast').each (i, section) =>
+      section = $(section)
+      # Rain
+      section.find('tr.precipitation').each (i, tr) =>
+        tr = $(tr)
+        type = tr.data('type')
+        intensity = tr.data('intensity')
+        probability = tr.data('probability')
+        level = @getPrecipitationWarnLevel(probability, intensity)
+        console.log """[precipitation] type=#{type}, intensity=#{intensity}, probability=#{probability}, level=#{level}"""
+        tr.find('i.icon').each (i, icon) =>
+          if level == 0
+            return
+          else
+            $(icon).addClass('wi wi-rain warn' + level)
+      # Wind
+      section.find('tr.wind').each (i, tr) =>
+        tr = $(tr)
+        speed = @metresPerSecondToKph tr.data('speed')
+        level = @getWindWarnLevel(speed)
+        console.log """[wind] speed=#{speed}, level=#{level}"""
+        tr.find('i.icon').each (i, icon) =>
+          if level > 0
+            $(icon).addClass('warn' + level)
 
   ###
         dP            dP
@@ -157,13 +195,13 @@ class @Weather
     return ''
 
   # CSS class for wind direction icon for given forecast
-  getWindDirectionIconClass: (data) ->
-    return """wi-wind-default from-#{ data.windBearing }-deg"""
+  getWindDirectionIconClass: (bearing) ->
+    return """wi wi-wind from-#{ bearing }-deg"""
 
   # 0 (calm) to 12 (hurricane)
-  getWindForce: (data) ->
+  getWindForce: (windSpeed) ->
     numbers = (key for key of @beaufortWindSpeedMapping)
-    windSpeed = data.windSpeed * 3.6  # convert m/s to kph
+    # windSpeed = data.windSpeed * 3.6  # convert m/s to kph
     windForce = null
     for scaleNo in numbers
       limit = @beaufortWindSpeedMapping[scaleNo]
@@ -202,6 +240,53 @@ class @Weather
     if data.precipIntensity > 0.4
       intensity = 'heavy'
     return intensity
+
+  getPrecipitationWarnLevel: (probability, intensity) ->
+    if probability == 0
+      return 0
+
+    level = 0
+    p = probability
+    i = intensity
+    if p >= 0.9
+      level = 5
+    else if p >= 0.7
+      level = 4
+    else if p >= 0.5
+      level = 3
+    else if p >= 0.3
+      level = 2
+    else if p >= 0.1
+      level = 1
+
+    # Adjust points for intensity
+    if i < 0.017
+      level -= 1
+    else if i > 0.4
+      level += 2
+    else if i > 0.2
+      level += 1
+
+    if level > 5
+      level = 5
+
+    return level
+
+  getWindWarnLevel: (windSpeed) ->
+    windForce = @getWindForce windSpeed
+    console.log """[wind] speed=#{windSpeed}, force=#{windForce}"""
+    if windForce > 5
+      return 5
+    if windForce > 4
+      return 4
+    if windForce > 2
+      return 3
+    if windForce > 1
+      return 2
+    if windForce > 0
+      return 1
+
+    return 0
 
   # Return list of warning objects if wind or rain is too extreme
   getWarnings: (data) ->

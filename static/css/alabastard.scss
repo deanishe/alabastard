@@ -8,14 +8,22 @@
 //                                       d8888P
 
 $font-monospace: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+$font-title: 'Garamond', 'Georgia', serif;
 
 $bg-tag: #ecf0f3;
 $text-status: #888;
+$text-light: #666;
 $text-tag: #333;
 $text-link: #3782BE;
 $text-body: #3E4349;
 $text-lighter: #444;
 $text-light-on-dark: #AAA;
+
+$text-warn1: $text-body;
+$text-warn2: green;
+$text-warn3: blue;
+$text-warn4: orange;
+$text-warn5: red;
 
 
 //                                                       dP
@@ -240,6 +248,29 @@ h1 .tag {
 }
 
 
+//                                       dP
+//                                       88
+// .d8888b. dP   .dP .d8888b. 88d888b. d8888P .d8888b.
+// 88ooood8 88   d8' 88ooood8 88'  `88   88   Y8ooooo.
+// 88.  ... 88 .88'  88.  ... 88    88   88         88
+// `88888P' 8888P'   `88888P' dP    dP   dP   `88888P'
+
+.events {
+  list-style: none;
+  margin-left: 0;
+
+  .action {
+    // font-weight: bold;
+  }
+  .date {
+    color: $text-status;
+    font-family: $font-monospace;
+    font-size: 0.8em;
+  }
+  // .input { color: $text-status; }
+  .issue { font-style: italic; }
+}
+
 // .8888b                                                         dP
 // 88   "                                                         88
 // 88aaa  .d8888b. 88d888b. .d8888b. .d8888b. .d8888b. .d8888b. d8888P
@@ -254,9 +285,58 @@ h1 .tag {
 
 .forecast {
 
+  .warn1 {}
+  .warn2 { color: $text-warn2; }
+  .warn3 { color: $text-warn3; }
+  .warn4 { color: $text-warn4; }
+  .warn5 { color: $text-warn5; }
+
+  header {
+    font-family: $font-title;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: .25em 0;
+
+    .icon { font-size: 2em; }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    td {
+      margin: 0;
+      padding: .125em 0;
+
+      .icon {
+        font-size: 1.6em;
+        padding: 0 .25em;
+      }
+    }
+  }
+
+  &>div { margin: .2em 0; }
+
   .temp {
-    font-size: 170%;
-    margin: 0.25em 0;
+    font-size: 1.75em;
+    // margin: 0.25em 0;
+  }
+
+
+  .wind {
+    // border: 1px dashed green;
+    vertical-align: middle;
+
+    // &>* {
+    //   border: 1px dotted orange;
+    //   display: inline-block;
+    //   margin-bottom: .5em;
+    // }
+    // .speed {}
+  }
+
+  +.forecast {
+    margin-top: 1.5em;
   }
 }
 

@@ -1,0 +1,12 @@
+{{/* List GitHub repos */}}
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	{{ with .Site.Data.github.events | first 25 }}
+		{{ partial "github/events" . }}
+	{{ end }}
+
+	{{ partial "toplink" }}
+{{ end }}

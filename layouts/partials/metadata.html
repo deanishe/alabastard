@@ -1,7 +1,7 @@
 <div class="meta">
 	<span class="date">{{ .Date.Format "2 Jan, 2006" }}</span>
 	{{ if ne .Type "toplevel" -}}
-	<span class="type">| <a href="{{ $.Site.BaseURL }}{{ .Type | urlize }}/">more {{ .Type | pluralize }}&nbsp;&#9656;</a></span>
+	<span class="type">| <a href="/{{ .Type | urlize }}/">more {{ .Type | pluralize }}&nbsp;&#9656;</a></span>
 	{{- end }}
 	{{ if .Params.tags -}}
 		{{ partial "tags" .Params.tags }}

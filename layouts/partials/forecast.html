@@ -1,7 +1,0 @@
-<div class="forecast">
-	<h3 data-summary="{{ .summary }}" data-time="{{ .time }}"><span class="time"></span> <span class="summary">{{ .summary }}</span></h3>
-	<div class="temp" data-temp="{{ .apparentTemperature }}"><span class="value">{{ .apparentTemperature }}</span><span class="unit">&deg;C</span></div>
-	<div class="precipitation" data-probability="{{ .precipProbability }}" data-type="{{ .precipType }}"><span class="value percent" data-percent="{{ .precipProbability }}">{{ .precipProbability }}</span> chance of <span class="unit">{{ .precipType }}</span></div>
-	<div class="wind" data-wind-speed="{{ .windSpeed }}"  data-wind-bearing="{{ .windBearing }}"><span class="speed">{{ .windSpeed }} m/s</span> wind <span class="bearing">from {{ .windBearing }}&deg;</span></div>
-	<div class="humidity" data-humidity="{{ .humidity }}"><span class="value percent" data-percent="{{ .humidity }}">{{ .humidity }}</span> humidity</div>
-</div>

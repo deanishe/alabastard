@@ -6,9 +6,9 @@ TODO: use pre/code tags instead of CSS for monospace project names
 	{{ range . -}}
 	<li class="project">
 		<h2 class="project">
-			{{ partial "repos/title" . }}
+			{{ partial "github/repos/title" . }}
 		</h2>
-		{{ partial "repos/body" . }}
+		{{ partial "github/repos/body" . }}
 	</li>
 	{{ end }}
 </ul>

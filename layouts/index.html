@@ -4,29 +4,27 @@
 
 		{{ .Content }}
 
+		<a id="activity"></a>
+		<h2>Recent activity</h2>
+
+		<p>What I've been up to on <a href="https://github.com">GitHub</a> recently.</p>
+
+		{{ with first .Site.Params.githubRecentEvents .Site.Data.github.events }}
+			{{ partial "github/events" . }}
+		{{ end }}
+
 		<a id="posts"></a>
 		<h2>Recent posts</h2>
 
+		Recently added/edited on this site.
+
 		<ul class="pages">
-		{{ range first 5 .Site.RegularPages }}
+		{{ range first .Site.Params.recentPosts .Site.RegularPages }}
 			{{ partial "preview" . }}
 		{{ end }}
 		</ul>
 
-		<a id="activity"></a>
-		<h2>Recent activity</h2>
-		{{ with first 5 .Site.Data.repos }}
-		<ul class="github projects">
-			{{ range . -}}
-				<li class="project">
-					<h3 class="project">
-						{{ partial "repos/title" . }}
-					</h3>
-					{{ partial "repos/body" . }}
-				</li>
-			{{- end }}
-		</ul>
-		{{ end }}
 	{{ end }}
 	{{ partial "toplink" }}
+
 {{ end }}

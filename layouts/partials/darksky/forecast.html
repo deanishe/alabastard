@@ -1,0 +1,35 @@
+<section class="forecast">
+	<header>
+		<div class="summary" data-icon="{{ .icon }}" data-summary="{{ .summary }}" data-time="{{ .time }}">
+			<span class="icon"></span>
+			<time></time>
+			<span class="summary">{{ .summary }}</span>
+		</div>
+	</header>
+	<div class="temp" data-temp="{{ .apparentTemperature }}"><span class="value">{{ .apparentTemperature }}</span><span class="unit">&deg;C</span></div>
+	<table>
+		<tr class="precipitation" data-probability="{{ .precipProbability }}" data-type="{{ .precipType }}" data-intensity="{{ .precipIntensity }}">
+			<td class="icon"><i class="icon"></i></td>
+			<td class="summary" data-probability="{{ .precipProbability }}">
+				<span class="value percent" data-percent="{{ .precipProbability }}">{{ .precipProbability }}</span> chance of <span class="unit">{{ .precipType }}</span>
+			</td>
+		</tr>
+		<tr class="wind" data-speed="{{ .windSpeed }}">
+			<td class="icon"><i class="icon"></i></td>
+			<td>
+				<span class="speed" data-speed="{{ .windSpeed }}">{{ .windSpeed }} m/s</span> wind <span class="bearing">from {{ .windBearing }}&deg;</span>
+			</td>
+		</tr>
+		<tr class="humidity">
+			<td class="icon"><i class="icon wi wi-humidity"></i></td>
+			<td>
+				<span class="value percent" data-percent="{{ .humidity }}">{{ .humidity }}</span> humidity
+			</td>
+		</tr>
+	</table>
+	{{/*
+	<div class="precipitation" data-probability="{{ .precipProbability }}" data-type="{{ .precipType }}"><span class="value percent" data-percent="{{ .precipProbability }}">{{ .precipProbability }}</span> chance of <span class="unit">{{ .precipType }}</span></div>
+	<div class="wind" data-wind-speed="{{ .windSpeed }}"  data-wind-bearing="{{ .windBearing }}"><span class="icon"></span> <span class="speed">{{ .windSpeed }} m/s</span> wind <span class="bearing">from {{ .windBearing }}&deg;</span></div>
+	<div class="humidity" data-humidity="{{ .humidity }}"><span class="value percent" data-percent="{{ .humidity }}">{{ .humidity }}</span> humidity</div>
+	*/}}
+</section>

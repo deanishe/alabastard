@@ -5,7 +5,8 @@
 	{{ .Content }}
 
 	{{ with .Site.Data.github.repos | first 25 }}
-		{{ partial "repos/list" . }}
+		{{ partial "github/repos/list" . }}
 	{{ end }}
 
+	{{ partial "toplink" }}
 {{ end }}
