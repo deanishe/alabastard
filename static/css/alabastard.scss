@@ -135,10 +135,15 @@ div.sphinxsidebar {
   background: $bg-tag;
   border: 0;
   color: $text-tag;
+  display: inline-block;
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-weight: bold;
   padding: 0 4px;
   text-decoration: none;
+  a,
+  a:hover {
+    color: $text-tag;
+  }
 }
 
 .sphinxsidebar .tags,
@@ -148,15 +153,15 @@ div.sphinxsidebar {
 
   li {
     display: inline-block;
-    margin: 0 0 .2em;
-    padding: 0;
+    margin: 0 0 .25em .25em;
+    // padding: 0;
   }
 
   a,
   a:hover {
     border: 0;
     display: inline-block;
-    margin: 4px 2px;
+    // margin: 4px 2px;
   }
 }
 
@@ -269,6 +274,27 @@ h1 .tag {
   }
   // .input { color: $text-status; }
   .issue { font-style: italic; }
+}
+
+
+// dP oo          dP
+// 88             88
+// 88 dP 88d888b. 88  .dP  .d8888b.
+// 88 88 88'  `88 88888"   Y8ooooo.
+// 88 88 88    88 88  `8b.       88
+// dP dP dP    dP dP   `YP `88888P'
+
+.links {
+  list-style: none;
+  margin-left: 0;
+
+  &>li { padding-bottom: .5em; }
+
+  .summary {
+    color: $text-light;
+    font-size: .9em;
+    margin-top: .5em;
+  }
 }
 
 // .8888b                                                         dP

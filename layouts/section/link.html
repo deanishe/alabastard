@@ -1,0 +1,44 @@
+{{/* List Pinboard posts */}}
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	{{ with .Site.Data.pinboard.posts }}
+	<ul class="links">
+		{{ range .posts -}}
+			{{ if eq .shared "yes" -}}
+			<li class="link">
+				<section class="link">
+					<header>
+						<a href="{{ .href }}">{{ .description }}</a>
+					</header>
+					<div class="meta">
+						<ul class="tags">
+							{{ range (split .tags " ") -}}
+							<li class="tag">
+								<a href="https://pinboard.in/t:{{ . | urlize }}/">{{ . }}</a>
+							</li>
+							{{- end }}
+						</ul>
+						<time>saved on {{ dateFormat "2 Jan, 06" .time }}</time>
+					</div>
+					<div class="clear"></div>
+					<p class="summary">{{ .extended }}</p>
+				</section>
+			</li>
+			{{- end }}
+		{{- end }}
+	{{ end }}
+	</ul>
+	{{ partial "toplink" }}
+	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/jquery.expander.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.expander.defaults.slicePoint = 140;
+			$.expander.defaults.expandText = 'more &#9662;';
+			$.expander.defaults.userCollapseText = 'less &#9652;';
+			$('section.link p.summary').expander();
+		});
+	</script>
+{{ end }}

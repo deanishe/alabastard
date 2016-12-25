@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# TODO: Replace pinboard-recent script with Python script to download only public posts
+apiurl="https://api.pinboard.in/v1/posts/recent?count=100&format=json&auth_token="
+token="$PINBOARD_API_TOKEN"
+
+# curl options
+copts=(-sSL)
+
+# log <arg>... | echo args to STDERR
+log() {
+  echo "$@" >&2
+}
+
+# fatal <msg> | Print error message & usage and exit
+fatal() {
+  log "ERROR: $1"
+  usage
+  exit 1
+}
+
+usage() {
+    cat <<EOS
+Usage: pinboard-recent [-t <token>]
+
+Fetch JSON list of user's recent public posts.
+
+If the environment variables PINBOARD_API_TOKEN
+is set, that token is used to access the API.
+
+Options:
+    -h      Show this help message and exit
+EOS
+}
+
+while getopts ":ht:" opt; do
+  case $opt in
+    t)
+      token="$OPTARG"
+      ;;
+    h)
+      usage
+      exit 0
+      ;;
+    \?)
+      log "Invalid option: -$OPTARG"
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+username="$1"
+
+# Exit if no username was given
+test -n "$token" || fatal "API token not specified"
+
+log "Fetching recent posts ..."
+
+url="${apiurl}${token}"
+# url="$( echo "$apiurl" | sed -e "s/{username}/${username}/g" )"
+
+curl ${copts[@]} "$url"
+exit $?

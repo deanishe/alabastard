@@ -5,7 +5,7 @@ and links to each page of results.
 {{ if (or .PrevInSection .NextInSection) }}
 <ul class="pager">
 	{{ if .PrevInSection }}
-	<li class="previous"><a href="{{ .PrevInSection.Permalink | relURL }}"><span class="page">&#9666; {{ .PrevInSection.Title }}</span></a></li>
+	<li class="previous"><a href="{{ .PrevInSection.Permalink }}"><span class="page">&#9666; {{ .PrevInSection.Title }}</span></a></li>
 	{{ else }}
 	<li class="previous disabled"><span class="page">&#9666; previous</span></li>
 	{{- end }}
@@ -13,7 +13,7 @@ and links to each page of results.
 	<li>&nbsp;</li>
 
 	{{ if .NextInSection }}
-	<li class="next"><a href="{{ .NextInSection.Permalink | relURL }}"><span class="page">{{ .NextInSection.Title }} &#9656;</span></a></li>
+	<li class="next"><a href="{{ .NextInSection.Permalink }}"><span class="page">{{ .NextInSection.Title }} &#9656;</span></a></li>
 	{{ else }}
 	<li class="next disabled"><span class="page">next &#9656;</span></li>
 	{{- end }}

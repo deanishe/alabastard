@@ -85,10 +85,14 @@ div.sphinxsidebar h2 {
   background: #ecf0f3;
   border: 0;
   color: #333;
+  display: inline-block;
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-weight: bold;
   padding: 0 4px;
   text-decoration: none; }
+  .tag a,
+  .tag a:hover {
+    color: #333; }
 
 .sphinxsidebar .tags,
 .tags {
@@ -97,15 +101,13 @@ div.sphinxsidebar h2 {
   .sphinxsidebar .tags li,
   .tags li {
     display: inline-block;
-    margin: 0 0 .2em;
-    padding: 0; }
+    margin: 0 0 .25em .25em; }
   .sphinxsidebar .tags a,
   .sphinxsidebar .tags a:hover,
   .tags a,
   .tags a:hover {
     border: 0;
-    display: inline-block;
-    margin: 4px 2px; }
+    display: inline-block; }
 
 h1 .tag {
   font-size: 65%; }
@@ -155,6 +157,16 @@ h1 .tag {
     font-size: 0.8em; }
   .events .issue {
     font-style: italic; }
+
+.links {
+  list-style: none;
+  margin-left: 0; }
+  .links > li {
+    padding-bottom: .5em; }
+  .links .summary {
+    color: #666;
+    font-size: .9em;
+    margin-top: .5em; }
 
 .forecasts {
   list-style: none; }
