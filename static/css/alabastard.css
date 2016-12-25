@@ -57,6 +57,13 @@ h6 code {
 .jumpnav {
   float: right; }
 
+.notfound {
+  text-align: center;
+  display: inline-block; }
+  .notfound figcaption {
+    font-size: 140%;
+    padding: .5em; }
+
 div.sphinxsidebar a,
 div.sphinxsidebar a:hover {
   border: 0; }

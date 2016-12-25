@@ -21,31 +21,6 @@
 	</section>
 	{{- end }}
 
-	{{/*
-	{{ with .Site.Data.darksky.forecast }}
-		<ul class="forecasts">
-			{{ with .currently }}
-			<li class="forecast" id="current">
-				<h2>Current conditions in Essen</h2>
-
-				{{ partial "darksky/forecast" . }}
-			</li>
-			{{ end }}
-			<li>
-				<h2>Later</h2>
-
-				<ul class="forecasts">
-					{{ range .hourly.data }}
-					<li class="forecast">
-						{{ partial "darksky/forecast" . }}
-					</li>
-					{{ end }}
-				</ul>
-			</li>
-		</ul>
-	{{ end }}
-	*/}}
-
 	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>
 	<script type="text/javascript">
 		$( document ).ready( function() {
@@ -53,34 +28,5 @@
 			w.run();
 		});
 	</script>
-	{{/*
-	<script type="text/javascript">
-	callOnLoad(function() {
-		$( 'li.forecast' ).each(function() {
-			var summary = $(this).data('summary'),
-				date = new Date($(this).data('time') * 1000),
-				time = date.getHours() + ':00';
-			console.log('[weather] time=' + time + ', summary=' + summary);
-			if ( $(this).attr('id') != "current" ) {
-				$(this).find('.time').html(time);
-				// console.log('[weather] current=' + summary);
-			}
-		});
-
-		$('.precipitation').each(function() {
-			var p = $(this).data('probability'),
-				dry = (p == 0);
-			if (dry) {
-				$(this).html('dry');
-			}
-		});
-		$('.percent').each(function() {
-			var p = $(this).data('percent'),
-				pc = (p * 100) + '%';
-			$(this).html(pc);
-		});
-	});
-	</script>
-	*/}}
 
 {{ end }}

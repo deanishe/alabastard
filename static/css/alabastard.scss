@@ -84,6 +84,28 @@ h6 {
 .jumpnav { float: right; }
 
 
+// dP   dP  a8888a  dP   dP
+// 88   88 d8' ..8b 88   88
+// 88aaa88 88 .P 88 88aaa88
+//      88 88 d' 88      88
+//      88 Y8'' .8P      88
+//      dP  Y8888P       dP
+
+.notfound {
+  text-align: center;
+  display: inline-block;
+
+  figure {
+    // text-align: center;
+  }
+
+  figcaption {
+    // text-align: center;
+    font-size: 140%;
+    padding: .5em;
+  }
+}
+
 //          oo       dP          dP
 //                   88          88
 // .d8888b. dP .d888b88 .d8888b. 88d888b. .d8888b. 88d888b.

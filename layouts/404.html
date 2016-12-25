@@ -1,5 +1,15 @@
 {{ define "main" }}
-	<h1>Page not found</h1>
+<h1>404</h1>
 
-	I'm sorry, but the requested page wasn’t found on the server.
+<div class="notfound">
+	<figure>
+		<img src="{{ $.Site.BaseURL }}images/spoon.png" alt="Life of Brian: Roman soldiers find nothing at PFJ's headquarters" title="We found this spoon, sir">
+		<figcaption>"We found this spoon, sir."</figcaption>
+	</figure>
+</div>
+
+<p>
+	The page you're looking for doesn't exist. Sorry. Try choosing something
+	from the menu.
+</p>
 {{ end }}
