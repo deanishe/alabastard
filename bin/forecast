@@ -8,10 +8,16 @@
 # Created on 2016-12-26
 #
 
-"""Fetch all public/shared posts from Pinboard.in.
+"""Fetch weather forecast from darksky.net
 
-An API token is required. Specify this with --token
-or by setting the environment variable PINBOARD_API_TOKEN.
+An API token and location are required. Specify the API
+token with --token or the DARKSKY_API_TOKEN environment
+variable.
+
+The location must be in the form lat,lon
+(e.g. "51.450833,7.013056") and can be specified as a
+command-line argument or via the DARKSKY_LOCATION
+environment variable.
 """
 
 from __future__ import print_function, absolute_import
@@ -22,8 +28,8 @@ import os
 import sys
 from urllib2 import urlopen
 
-# recent posts
-API_URL = 'https://api.pinboard.in/v1/posts/all?format=json&auth_token={token}'
+API_URL = ('https://api.darksky.net/forecast/{token}/{location}/?'
+           'units=si&exclude=minutely,flags,daily,alerts')
 
 
 def log(s, *args):
@@ -33,9 +39,9 @@ def log(s, *args):
     print(s, file=sys.stderr)
 
 
-def fetch_posts(token):
+def fetch_forecast(location, token):
     """Fetch all posts from Pinboard."""
-    url = API_URL.format(token=token)
+    url = API_URL.format(location=location, token=token)
     return json.loads(httpget(url))
 
 
@@ -52,14 +58,21 @@ def parse_args():
     """Parse CLI args and return options."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('-t', '--token',
-                   default=os.getenv('PINBOARD_API_TOKEN'),
-                   help='Pinboard API token')
+                   default=os.getenv('DARKSKY_API_TOKEN'),
+                   help='DarkSky API token')
+    p.add_argument('-l', '--location',
+                   default=os.getenv('DARKSKY_LOCATION'),
+                   help='location to fetch forecast for')
     p.add_argument('target', help='File to write output to', nargs='?')
 
     args = p.parse_args()
     if not args.token:
         p.error('API token not set. Use --token or '
-                'set PINBOARD_API_TOKEN environment variable.')
+                'set DARKSKY_API_TOKEN environment variable.')
+
+    if not args.location:
+        p.error('Location not set. Use --location or '
+                'set DARKSKY_LOCATION environment variable.')
 
     if args.target == '-':  # STDOUT
         args.target = None
@@ -70,15 +83,15 @@ def parse_args():
 def main():
     """Run script."""
     args = parse_args()
-    posts = fetch_posts(args.token)
-    shared = [p for p in posts if p.get('shared') == 'yes']
-    log('%d/%d posts shared', len(shared), len(posts))
+    data = fetch_forecast(args.location, args.token)
+
     if not args.target:
-        json.dump(shared, sys.stdout, sort_keys=True, indent=2)
+        json.dump(data, sys.stdout, sort_keys=True, indent=2)
     else:
         with open(args.target, 'wb') as fp:
-            json.dump(shared, fp, sort_keys=True, indent=2)
-        log('Wrote %d posts to %s', len(shared), args.target)
+            json.dump(data, fp, sort_keys=True, indent=2)
+
+        log('Wrote forecast to %s', args.target)
 
     return 0
 

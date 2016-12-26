@@ -1,0 +1,135 @@
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright (c) 2016 Dean Jackson <deanishe@deanishe.net>
+#
+# MIT Licence. See http://opensource.org/licenses/MIT
+#
+# Created on 2016-12-26
+#
+
+"""Fetch events or repos for a GitHub user.
+
+You must specify the username for the user whose info
+should be retrieved. Use --username or set the environment
+variable GITHUB_USERNAME.
+
+You can alternatively specify an API token via --token
+or GITHUB_API_TOKEN, which will be used to authenticate
+with the API (so you don't hit the rate limit).
+
+If a token is specified, it *must* be for the user whose
+data you're fetching.
+"""
+
+from __future__ import print_function, absolute_import
+
+import argparse
+import base64
+import json
+import os
+import sys
+from urllib2 import urlopen, Request
+
+API_EVENTS = 'https://api.github.com/users/{username}/events/public'
+API_REPOS = ('https://api.github.com/users/{username}/repos?'
+             'type=owner&sort=pushed')
+
+
+def log(s, *args):
+    """Simple STDERR logger."""
+    if args:
+        s = s % args
+    print(s, file=sys.stderr)
+
+
+def build_request(url, username, token):
+    """Return ``Request`` initialised with URL and optional credentials."""
+    r = Request(url)
+    if username and token:
+        s = base64.encodestring('{}:{}'.format(username, token)).strip()
+        log('header=%r', s)
+        r.add_header('Authorization', 'Basic {}'.format(s))
+
+    return r
+
+
+def fetch_data(api_url, username, token=None):
+    """Fetch data from GitHub API."""
+    url = api_url.format(username=username)
+    log('url=%s', url)
+    req = build_request(url, username, token)
+    return json.loads(httpget(req))
+
+
+# def fetch_events(username, token=None):
+#     """Fetch event stream for ``username``."""
+#     url = API_EVENTS.format(username=username)
+#     log('url=%s', url)
+#     req = build_request(url, username, token)
+#     return json.loads(httpget(req))
+
+
+# def fetch_repos(username, token=None):
+#     """Fetch recently-updated repos for ``username``."""
+#     url = API_REPOS.format(username=username)
+#     log('url=%s', url)
+#     req = build_request(url, username, token)
+#     return json.loads(httpget(req))
+
+
+def httpget(req):
+    """Return raw response data of HTTP call."""
+    log('Fetching %s ...', req.get_full_url())
+    r = urlopen(req)
+    code = r.getcode()
+    log('[%d] %s', code, r.geturl())
+    return r.read()
+
+
+def parse_args():
+    """Parse CLI args and return options."""
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('-t', '--token',
+                   default=os.getenv('GITHUB_API_TOKEN'),
+                   help='optional GitHub API token')
+    p.add_argument('-u', '--username',
+                   default=os.getenv('GITHUB_USERNAME'),
+                   help='GitHub username to fetch data for')
+    p.add_argument('what',
+                   choices=['events', 'repos'],
+                   help='Fetch user event stream')
+    p.add_argument('target', help='file to write output to', nargs='?')
+
+    args = p.parse_args()
+    if not args.username:
+        p.error('GitHub username not set. Use --username or '
+                'set GITHUB_USERNAME environment variable')
+
+    if args.target == '-':  # STDOUT
+        args.target = None
+
+    return args
+
+
+def main():
+    """Run script."""
+    args = parse_args()
+    urls = {'events': API_EVENTS, 'repos': API_REPOS}
+    url = urls[args.what]
+    data = fetch_data(url, args.username, args.token)
+
+    log('%d %s', len(data), args.what)
+
+    if not args.target:
+        json.dump(data, sys.stdout, sort_keys=True, indent=2)
+    else:
+        with open(args.target, 'wb') as fp:
+            json.dump(data, fp, sort_keys=True, indent=2)
+        log('Wrote %d %s to %s', len(data), args.what, args.target)
+
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
