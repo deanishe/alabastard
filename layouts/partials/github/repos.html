@@ -1,11 +1,9 @@
 {{/*
 Render a /user/NNN/repos response from the GitHub API
-TODO: use pre/code tags instead of CSS for monospace project names
 */}}
 <ul class="github projects">
 	{{ range . -}}
 	<li class="project">
-		{{/*<div class="icon"><img src="/images/github-24.png" alt=""></div>*/}}
 		<div class="details">
 			<header>
 				<a href="{{ if .homepage -}}{{ .homepage }}{{ else }}{{ .html_url }}{{- end }}"><code>{{ .name }}</code></a>
@@ -20,15 +18,9 @@ TODO: use pre/code tags instead of CSS for monospace project names
 				{{- end }}
 				<li><a href="{{ .html_url }}">{{ .full_name }}</a> on GitHub</li>
 				<li><a href="{{ .html_url }}/issues">issues</a> <span class="status">({{ .open_issues_count }} open)</span></li>
-				<li>last pushed <time class="relative" datetime="{{ dateFormat "2006-01-02T03:04" .pushed_at }}">{{ dateFormat "2 Jan, 2006" .pushed_at }}</time></li>
+				<li>last pushed <time class="relative" datetime="{{ dateFormat "2006-01-02 15:04:05Z" .pushed_at }}">{{ dateFormat "2 Jan, 2006" .pushed_at }}</time></li>
 			</ul>
 		</div>
-		{{/*
-		<h2 class="project">
-			{{ partial "github/repos/title" . }}
-		</h2>
-		{{ partial "github/repos/body" . }}
-		*/}}
 	</li>
 	{{ end }}
 </ul>

@@ -1,2 +1,0 @@
-<a href="{{ if .homepage -}}{{ .homepage }}{{ else }}{{ .html_url }}{{- end }}"><code>{{ .name }}</code></a>
-<span class="status"><a href="{{ .html_url }}/stargazers">{{ .stargazers_count }} {{ if eq .stargazers_count 1 -}}star{{  else }}stars{{- end }}</a></span>
