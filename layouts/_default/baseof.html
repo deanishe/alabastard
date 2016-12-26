@@ -44,24 +44,55 @@
 				$(document).ready(function() {
 
 					if ($('time.relative').length) {
-						console.log('[time] loading momentjs ...')
-
+						console.log('loading moment.js ...')
 						loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js', function() {
 
 							$('time.relative').each(function(i, elem) {
 
 								var dt = $(this).attr('datetime');
-								var rel = moment(dt).fromNow();
-								console.log('dt=' + dt + ', reldate=' + rel);
-								$(this).attr('title', dt);
-								$(this).html(rel);
 
+								if (dt) {
+									var rel = moment(dt).fromNow();
+
+									if (rel != 'Invalid date') {
+										console.log('[moment] ' + dt + '  ->  ' + rel);
+										$(this).html(rel);
+									}
+								}
 							});
 						});
 					}
 				});
 			</script>
 			<!-- /momentjs -->
+
+			<!-- octicons -->
+			<script type="text/javascript">
+				// Load Octicons if there are any i.octicon elements on the page
+				$(document).ready(function() {
+					if ($('i.octicon').length) {
+						console.log('loading Octicons ...')
+						$('head').append('<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css" />');
+					}
+				});
+			</script>
+			<!-- /octicons -->
+
+			<!-- highlightjs -->
+			<script type="text/javascript">
+				// If any time.relative elements are on page, load moment.js
+				// and call it to re-format times using relative dates
+				$(document).ready(function() {
+
+					if ($('code.hljs').length) {
+						console.log('loading highlight.js ...')
+						loadScript('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js', function() {
+							hljs.initHighlightingOnLoad();
+						});
+					}
+				});
+			</script>
+			<!-- /highlightjs -->
 
 			{{ if .Site.Params.piwikSiteID -}}
 			{{ if .Site.Params.piwikURL -}}

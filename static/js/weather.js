@@ -46,21 +46,19 @@
         return function(i, elem) {
           var bearing, wc;
           elem = $(elem);
-          bearing = elem.data('wind-bearing');
+          bearing = elem.data('bearing');
           wc = _this.getWindDirectionIconClass(bearing);
           console.log('[wind] bearing=' + bearing + ', wc=' + wc);
           elem.find('.bearing').html('');
           return elem.find('i.icon').addClass(wc);
         };
       })(this));
-      $('.forecast .summary').each((function(_this) {
-        return function(i, div) {
-          var icon;
-          div = $(div);
-          icon = div.data('icon');
-          return div.find('i.icon').addClass('wi wi-forecast-io-' + icon);
-        };
-      })(this));
+      $('.forecast .summary').each(function(i, div) {
+        var icon;
+        div = $(div);
+        icon = div.data('icon');
+        return div.find('i.icon').addClass('wi wi-forecast-io-' + icon);
+      });
       $('section.later').each((function(_this) {
         return function(i, s) {
           s = $(s);
@@ -78,33 +76,26 @@
           });
         };
       })(this));
-      $('.forecast .temp').each((function(_this) {
+      $('.forecast .temp').each(function(i, div) {
+        var t;
+        div = $(div);
+        t = div.data('temp');
+        i = t.toFixed(0);
+        if (i === '-0') {
+          i = 0;
+        }
+        return div.find('.value').html(i);
+      });
+      $('.forecast .precipitation .summary').each(function(i, elem) {
+        elem = $(elem);
+        if (elem.data('probability') === 0) {
+          return elem.html('dry');
+        }
+      });
+      $('.forecast .wind .speed').each((function(_this) {
         return function(i, div) {
-          var t;
           div = $(div);
-          t = div.data('temp');
-          i = t.toFixed(0);
-          if (i === '-0') {
-            i = 0;
-          }
-          return div.find('.value').html(i);
-        };
-      })(this));
-      $('.forecast .precipitation .summary').each((function(_this) {
-        return function(i, elem) {
-          elem = $(elem);
-          if (elem.data('probability') === 0) {
-            return elem.html('dry');
-          }
-        };
-      })(this));
-      $('.forecast .wind').each((function(_this) {
-        return function(i, tr) {
-          tr = $(tr);
-          return tr.find('.speed').each(function(i, div) {
-            div = $(div);
-            return div.html(_this.metresPerSecondToKph(div.data('speed')) + ' kph');
-          });
+          return div.html(_this.metresPerSecondToKph(div.data('speed')) + ' kph');
         };
       })(this));
       return $('.forecast').each((function(_this) {
@@ -304,7 +295,6 @@
     Weather.prototype.getWindWarnLevel = function(windSpeed) {
       var windForce;
       windForce = this.getWindForce(windSpeed);
-      console.log("[wind] speed=" + windSpeed + ", force=" + windForce);
       if (windForce > 5) {
         return 5;
       }

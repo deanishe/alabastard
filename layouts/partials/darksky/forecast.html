@@ -14,7 +14,7 @@
 				<span class="value percent" data-percent="{{ .precipProbability }}">{{ .precipProbability }}</span> chance of <span class="unit">{{ .precipType }}</span>
 			</td>
 		</tr>
-		<tr class="wind" data-speed="{{ .windSpeed }}">
+		<tr class="wind" data-bearing="{{ .windBearing }}" data-speed="{{ .windSpeed }}">
 			<td class="icon"><i class="icon"></i></td>
 			<td>
 				<span class="speed" data-speed="{{ .windSpeed }}">{{ .windSpeed }} m/s</span> wind <span class="bearing">from {{ .windBearing }}&deg;</span>

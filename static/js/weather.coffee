@@ -65,14 +65,14 @@ class @Weather
     # All wind direction icons
     $('.forecast .wind').each (i, elem) =>
       elem = $(elem)
-      bearing = elem.data 'wind-bearing'
+      bearing = elem.data 'bearing'
       wc = @getWindDirectionIconClass bearing
       console.log('[wind] bearing=' + bearing + ', wc=' + wc)
       elem.find('.bearing').html ''
       elem.find('i.icon').addClass wc
 
     # Summary icons
-    $('.forecast .summary').each (i, div) =>
+    $('.forecast .summary').each (i, div) ->
       div = $(div)
       icon = div.data('icon')
       div.find('i.icon').addClass('wi wi-forecast-io-' + icon)
@@ -91,7 +91,7 @@ class @Weather
             t.html @formatDate(d)
 
     # Make temperatures integers
-    $('.forecast .temp').each (i, div) =>
+    $('.forecast .temp').each (i, div) ->
       div = $( div )
       t = div.data 'temp'
       i = t.toFixed(0)
@@ -100,18 +100,15 @@ class @Weather
       div.find('.value').html(i)
 
     # No precipitation
-    $('.forecast .precipitation .summary').each (i, elem) =>
+    $('.forecast .precipitation .summary').each (i, elem) ->
       elem = $(elem)
       if elem.data('probability') == 0
         elem.html 'dry'
 
     # Wind direction
-    $('.forecast .wind').each (i, tr) =>
-      tr = $( tr )
-      tr.find('.speed').each (i, div) =>
-        div = $(div)
-        div.html(@metresPerSecondToKph(div.data('speed')) + ' kph')
-      # TODO: Add warning colours?
+    $('.forecast .wind .speed').each (i, div) =>
+      div = $(div)
+      div.html(@metresPerSecondToKph(div.data('speed')) + ' kph')
 
     # Warning colours
     $('.forecast').each (i, section) =>
@@ -123,19 +120,24 @@ class @Weather
         intensity = tr.data('intensity')
         probability = tr.data('probability')
         level = @getPrecipitationWarnLevel(probability, intensity)
+
         console.log """[precipitation] type=#{type}, intensity=#{intensity}, probability=#{probability}, level=#{level}"""
-        tr.find('i.icon').each (i, icon) =>
+
+        tr.find('i.icon').each (i, icon) ->
           if level == 0
             return
           else
             $(icon).addClass('wi wi-rain warn' + level)
+
       # Wind
       section.find('tr.wind').each (i, tr) =>
         tr = $(tr)
         speed = @metresPerSecondToKph tr.data('speed')
-        level = @getWindWarnLevel(speed)
+        level = @getWindWarnLevel speed
+
         console.log """[wind] speed=#{speed}, level=#{level}"""
-        tr.find('i.icon').each (i, icon) =>
+
+        tr.find('i.icon').each (i, icon) ->
           if level > 0
             $(icon).addClass('warn' + level)
 
@@ -274,7 +276,7 @@ class @Weather
 
   getWindWarnLevel: (windSpeed) ->
     windForce = @getWindForce windSpeed
-    console.log """[wind] speed=#{windSpeed}, force=#{windForce}"""
+    # console.log """[wind] speed=#{windSpeed}, force=#{windForce}"""
     if windForce > 5
       return 5
     if windForce > 4

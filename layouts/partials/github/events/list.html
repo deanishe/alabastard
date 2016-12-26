@@ -79,23 +79,8 @@ https://developer.github.com/v3/activity/events/types/
 					<a href="https://github.com/{{ .repo.name }}">{{ .repo.name }}</a>
 				{{- end }}
 			</header>
-			<div class="meta"><time datetime="{{ .created_at }}">{{ dateFormat "2006-01-02 03:04" .created_at }}</time></div>
+			<div class="meta"><time class="relative" datetime="{{ dateFormat "2006-01-02 03:04" .created_at }}">{{ dateFormat "03:04 on 02/01/2006" .created_at }}</time></div>
 		</div>
 	</li>
 	{{- end }}
 </ul>
-
-<script type="text/javascript">
-	$('head').append('<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css" />');
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('li.event .meta time').each(function(i, elem) {
-			var dt = $(this).attr('datetime');
-			var rel = moment(dt).fromNow();
-			// console.log('dt=' + dt + ', reldate=' + rel);
-			$(this).html(rel);
-		});
-	});
-</script>
