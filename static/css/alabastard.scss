@@ -14,10 +14,10 @@ $bg-tag: #ecf0f3;
 $text-status: #888;
 $text-light: #666;
 $text-tag: #333;
-$text-link: #3782BE;
-$text-body: #3E4349;
+$text-link: #3782be;
+$text-body: #3e4349;
 $text-lighter: #444;
-$text-light-on-dark: #AAA;
+$text-light-on-dark: #aaa;
 
 $text-warn1: $text-body;
 $text-warn2: green;
@@ -55,12 +55,12 @@ h5,
 h6,
 header {
   a {
-    border: none;
+    border: 0;
     color: $text-link;
     text-decoration: none;
 
     &:hover {
-      border: none;
+      border: 0;
       text-decoration: underline;
     }
 
@@ -95,11 +95,8 @@ header {
 //      dP  Y8888P       dP
 
 .notfound {
-  text-align: center;
   display: inline-block;
-
-  figure {
-  }
+  text-align: center;
 
   figcaption {
     font-size: 140%;
@@ -116,11 +113,15 @@ header {
 
 // Override sphinx sidebar styles
 div.sphinxsidebar {
+
   a,
   a:hover { border: 0; }
+
   a:hover { text-decoration: underline; }
+
   ul.social,
   div.about { margin: 1.5em 0 0; }
+
   h2 { margin: 10px 0; }
 }
 
@@ -260,7 +261,7 @@ h1 .tag {
   .status {
     a {
       color: $text-status;
-      font-size: 0.7em;
+      font-size: .7em;
     }
   }
 
@@ -505,9 +506,10 @@ h1 .tag {
     text-align: center;
 
     .tag {
-      color: $text-tag;
       background: $text-light-on-dark;
+      color: $text-tag;
     }
+
     h2 { color: $text-light-on-dark; }
   }
 

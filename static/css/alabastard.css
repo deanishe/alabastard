@@ -16,8 +16,8 @@ h4 a,
 h5 a,
 h6 a,
 header a {
-  border: none;
-  color: #3782BE;
+  border: 0;
+  color: #3782be;
   text-decoration: none; }
   h1 a:hover,
   h2 a:hover,
@@ -26,7 +26,7 @@ header a {
   h5 a:hover,
   h6 a:hover,
   header a:hover {
-    border: none;
+    border: 0;
     text-decoration: underline; }
   h1 a code,
   h2 a code,
@@ -35,7 +35,7 @@ header a {
   h5 a code,
   h6 a code,
   header a code {
-    color: #3782BE;
+    color: #3782be;
     font-weight: normal; }
     h1 a code:hover,
     h2 a code:hover,
@@ -66,8 +66,8 @@ header code {
   float: right; }
 
 .notfound {
-  text-align: center;
-  display: inline-block; }
+  display: inline-block;
+  text-align: center; }
   .notfound figcaption {
     font-size: 140%;
     padding: .5em; }
@@ -160,7 +160,7 @@ h1 .tag {
     font-weight: normal; }
   .projects .status a {
     color: #888;
-    font-size: 0.7em; }
+    font-size: .7em; }
   .projects .icon {
     float: left;
     width: 30px; }
@@ -313,10 +313,10 @@ h1 .tag {
   .sphinxsidebar {
     text-align: center; }
     .sphinxsidebar .tag {
-      color: #333;
-      background: #AAA; }
+      background: #aaa;
+      color: #333; }
     .sphinxsidebar h2 {
-      color: #AAA; }
+      color: #aaa; }
 
   .social li a.twitter {
     background-position: 0 -64px; }
