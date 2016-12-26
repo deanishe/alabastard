@@ -14,7 +14,8 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a {
+h6 a,
+header a {
   border: none;
   color: #3782BE;
   text-decoration: none; }
@@ -23,7 +24,8 @@ h6 a {
   h3 a:hover,
   h4 a:hover,
   h5 a:hover,
-  h6 a:hover {
+  h6 a:hover,
+  header a:hover {
     border: none;
     text-decoration: underline; }
   h1 a code,
@@ -31,7 +33,8 @@ h6 a {
   h3 a code,
   h4 a code,
   h5 a code,
-  h6 a code {
+  h6 a code,
+  header a code {
     color: #3782BE;
     font-weight: normal; }
     h1 a code:hover,
@@ -39,14 +42,16 @@ h6 a {
     h3 a code:hover,
     h4 a code:hover,
     h5 a code:hover,
-    h6 a code:hover {
+    h6 a code:hover,
+    header a code:hover {
       background: none; }
 h1 code,
 h2 code,
 h3 code,
 h4 code,
 h5 code,
-h6 code {
+h6 code,
+header code {
   font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   font-size: 75%; }
 
@@ -111,7 +116,7 @@ div.sphinxsidebar h2 {
   .sphinxsidebar .tags li,
   .tags li {
     display: inline-block;
-    margin: 0 0 .25em .25em; }
+    margin: 0 0 .375em .375em; }
   .sphinxsidebar .tags a,
   .sphinxsidebar .tags a:hover,
   .tags a,
@@ -147,26 +152,41 @@ h1 .tag {
 .projects {
   list-style: none;
   margin: 0; }
-  .projects h2.project,
-  .projects h3.project {
-    background: url("../images/github-24.png") left center no-repeat;
-    padding-left: 30px; }
-  .projects h2 .status a,
-  .projects h3 .status a {
+  .projects .project {
+    background: url("../images/github-24.png") left 2px no-repeat;
+    padding: 0 0 1em 32px; }
+  .projects header {
+    font-size: 180%;
+    font-weight: normal; }
+  .projects .status a {
     color: #888;
     font-size: 0.7em; }
+  .projects .icon {
+    float: left;
+    width: 30px; }
+  .projects .details {
+    display: inline-block; }
   .projects .meta .status {
     font-size: 80%; }
 
 .events {
   list-style: none;
   margin-left: 0; }
-  .events .date {
+  .events .event {
+    padding-bottom: 1em; }
+  .events .octicon {
+    float: left;
+    margin-top: 4px;
+    width: 24px; }
+  .events .details {
+    display: inline-block; }
+  .events .meta {
     color: #888;
-    font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-    font-size: 0.8em; }
+    font-size: .8em; }
   .events .issue {
     font-style: italic; }
+  .events .what {
+    font-weight: bold; }
 
 .links {
   list-style: none;
@@ -204,7 +224,8 @@ h1 .tag {
     padding: .125em 0; }
     .forecast table td .icon {
       font-size: 1.6em;
-      padding: 0 .25em; }
+      padding: 0 .25em;
+      text-align: center; }
 .forecast > div {
   margin: .2em 0; }
 .forecast .temp {
@@ -238,19 +259,18 @@ h1 .tag {
   .social a.github:hover {
     background-position: -64px -32px; }
 
-div.gitinfo {
+.gitinfo {
   color: #888;
   float: right; }
-  div.gitinfo .content {
+  .gitinfo .content {
     display: none; }
-  div.gitinfo .hash {
-    display: inline-block; }
-  div.gitinfo .header {
+  .gitinfo .header,
+  .gitinfo .meta {
     text-align: right; }
-  div.gitinfo code,
-  div.gitinfo a.info {
+  .gitinfo code,
+  .gitinfo .info {
     color: #888; }
-  div.gitinfo th {
+  .gitinfo th {
     text-align: right;
     vertical-align: text-top; }
 

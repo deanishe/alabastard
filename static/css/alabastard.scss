@@ -52,7 +52,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+header {
   a {
     border: none;
     color: $text-link;
@@ -98,11 +99,9 @@ h6 {
   display: inline-block;
 
   figure {
-    // text-align: center;
   }
 
   figcaption {
-    // text-align: center;
     font-size: 140%;
     padding: .5em;
   }
@@ -138,7 +137,6 @@ div.sphinxsidebar {
     color: $text-lighter;
   }
 
-  // .about { margin: 10px 0; }
   .about,
   .about a { color: $text-status; }
 }
@@ -164,6 +162,7 @@ div.sphinxsidebar {
   font-weight: bold;
   padding: 0 4px;
   text-decoration: none;
+
   a,
   a:hover {
     color: $text-tag;
@@ -177,15 +176,13 @@ div.sphinxsidebar {
 
   li {
     display: inline-block;
-    margin: 0 0 .25em .25em;
-    // padding: 0;
+    margin: 0 0 .375em .375em;
   }
 
   a,
   a:hover {
     border: 0;
     display: inline-block;
-    // margin: 4px 2px;
   }
 }
 
@@ -205,13 +202,8 @@ h1 .tag {
 
 
 .pages {
-  // border: 1px dotted green;
   list-style: none;
   margin: 0;
-
-  // li {
-  //   a { text-decoration: none; }
-  // }
 }
 
 
@@ -254,21 +246,30 @@ h1 .tag {
   list-style: none;
   margin: 0;
 
-  h2,
-  h3 {
-    &.project {
-      background: url('../images/github-24.png') left center no-repeat;
-      padding-left: 30px;
-    }
+  .project {
+    background: url('../images/github-24.png') left 2px no-repeat;
+    padding: 0 0 1em 32px;
+  }
 
-    // No. of stars in project title
-    .status {
-      a {
-        color: $text-status;
-        font-size: 0.7em;
-      }
+  header {
+    font-size: 180%;
+    font-weight: normal;
+  }
+
+  // No. of stars in project title
+  .status {
+    a {
+      color: $text-status;
+      font-size: 0.7em;
     }
   }
+
+  .icon {
+    float: left;
+    width: 30px;
+  }
+
+  .details { display: inline-block; }
 
   .meta {
     // No. of issues in status list
@@ -288,16 +289,26 @@ h1 .tag {
   list-style: none;
   margin-left: 0;
 
-  .action {
-    // font-weight: bold;
+  .event {
+    padding-bottom: 1em;
+    // &:last-child { padding-bottom: 0; }
   }
-  .date {
+
+  .octicon {
+    float: left;
+    margin-top: 4px;
+    width: 24px;
+  }
+
+  .details { display: inline-block; }
+
+  .meta {
     color: $text-status;
-    font-family: $font-monospace;
-    font-size: 0.8em;
+    font-size: .8em;
   }
-  // .input { color: $text-status; }
+
   .issue { font-style: italic; }
+  .what { font-weight: bold; }
 }
 
 
@@ -312,7 +323,7 @@ h1 .tag {
   list-style: none;
   margin-left: 0;
 
-  &>li { padding-bottom: .5em; }
+  >li { padding-bottom: .5em; }
 
   .summary {
     color: $text-light;
@@ -335,7 +346,7 @@ h1 .tag {
 
 .forecast {
 
-  .warn1 {}
+  // .warn1 {}
   .warn2 { color: $text-warn2; }
   .warn3 { color: $text-warn3; }
   .warn4 { color: $text-warn4; }
@@ -361,33 +372,15 @@ h1 .tag {
       .icon {
         font-size: 1.6em;
         padding: 0 .25em;
+        text-align: center;
       }
     }
   }
 
-  &>div { margin: .2em 0; }
-
-  .temp {
-    font-size: 1.75em;
-    // margin: 0.25em 0;
-  }
-
-
-  .wind {
-    // border: 1px dashed green;
-    vertical-align: middle;
-
-    // &>* {
-    //   border: 1px dotted orange;
-    //   display: inline-block;
-    //   margin-bottom: .5em;
-    // }
-    // .speed {}
-  }
-
-  +.forecast {
-    margin-top: 1.5em;
-  }
+  >div { margin: .2em 0; }
+  .temp { font-size: 1.75em; }
+  .wind { vertical-align: middle; }
+  +.forecast { margin-top: 1.5em; }
 }
 
 
@@ -418,7 +411,7 @@ h1 .tag {
     &.twitter:hover { background-position: 0 -32px; }
 
     &.rss { background-position: -32px 0; }
-     &.rss:hover { background-position: -32px -32px; }
+    &.rss:hover { background-position: -32px -32px; }
 
     &.github { background-position: -64px 0; }
     &.github:hover { background-position: -64px -32px; }
@@ -435,15 +428,18 @@ h1 .tag {
 //      .88
 //  d8888P
 
-div.gitinfo {
+.gitinfo {
   color: $text-status;
   float: right;
 
   .content { display: none; }
-  .hash { display: inline-block; }
-  .header { text-align: right; }
+  // .hash { display: inline-block; }
+  .header,
+  .meta { text-align: right; }
+
   code,
-  a.info { color: $text-status; }
+  .info { color: $text-status; }
+
   th {
     text-align: right;
     vertical-align: text-top;

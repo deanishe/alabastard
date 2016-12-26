@@ -11,9 +11,9 @@
 							<a href="#menu">menu &#9662;</a>
 						</div>
 						{{ block "main" . }}{{ end }}
+						{{ if .Site.DisqusShortname -}}
 						{{ if not .IsHome -}}
 						{{ template "_internal/disqus.html" . }}
-						{{ if .Site.DisqusShortname -}}
 						{{ partial "toplink" }}
 						{{- end }}
 						{{- end }}
@@ -37,9 +37,34 @@
 			<!-- /highlight.js -->
 			{{- end }}
 
-			{{ if .Site.Params.piwikSiteID }}
-			{{ if .Site.Params.piwikURL }}
+			<!-- momentjs -->
+			<script type="text/javascript">
+				// If any time.relative elements are on page, load moment.js
+				// and call it to re-format times using relative dates
+				$(document).ready(function() {
 
+					if ($('time.relative').length) {
+						console.log('[time] loading momentjs ...')
+
+						loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js', function() {
+
+							$('time.relative').each(function(i, elem) {
+
+								var dt = $(this).attr('datetime');
+								var rel = moment(dt).fromNow();
+								console.log('dt=' + dt + ', reldate=' + rel);
+								$(this).attr('title', dt);
+								$(this).html(rel);
+
+							});
+						});
+					}
+				});
+			</script>
+			<!-- /momentjs -->
+
+			{{ if .Site.Params.piwikSiteID -}}
+			{{ if .Site.Params.piwikURL -}}
 			<!-- Piwik -->
 			<script type="text/javascript">
 			  var _paq = _paq || [];
@@ -55,9 +80,8 @@
 			</script>
 			<noscript><p><img src="//{{ .Site.Params.piwikURL }}/piwik.php?idsite={{ .Site.Params.piwikSiteID }}" style="border:0;" alt="" /></p></noscript>
 			<!-- End Piwik Code -->
-
-			{{ end }}
-			{{ end }}
+			{{- end }}
+			{{- end }}
 
 			{{ template "_internal/google_analytics.html" . }}
 		</div>

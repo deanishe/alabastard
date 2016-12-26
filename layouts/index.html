@@ -10,7 +10,7 @@
 		<p>What I've been up to on <a href="https://github.com">GitHub</a> recently.</p>
 
 		{{ with first .Site.Params.githubRecentEvents .Site.Data.github.events }}
-			{{ partial "github/events" . }}
+			{{ partial "github/events/list" . }}
 		{{ end }}
 
 		<a id="posts"></a>

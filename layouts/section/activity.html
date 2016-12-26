@@ -5,7 +5,7 @@
 	{{ .Content }}
 
 	{{ with .Site.Data.github.events | first 25 }}
-		{{ partial "github/events" . }}
+		{{ partial "github/events/list" . }}
 	{{ end }}
 
 	{{ partial "toplink" }}
