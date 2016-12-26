@@ -1,2 +1,23 @@
-<ul class="pinboard">
+<ul class="links">
+	{{ range . -}}
+		<li class="link">
+			<section class="link">
+				<header>
+					<a href="{{ .href }}">{{ .description }}</a>
+				</header>
+				<div class="meta">
+					<ul class="tags">
+						{{ range (split .tags " ") -}}
+						<li class="tag">
+							<a href="https://pinboard.in/t:{{ . | urlize }}/">{{ . }}</a>
+						</li>
+						{{- end }}
+					</ul>
+					saved <time class="relative" datetime="{{ .time }}">{{ dateFormat "2 Jan, 06" .time }}</time>
+				</div>
+				<div class="clear"></div>
+				<p class="summary expandable">{{ .extended }}</p>
+			</section>
+		</li>
+	{{- end }}
 </ul>

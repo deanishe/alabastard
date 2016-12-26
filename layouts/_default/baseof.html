@@ -94,6 +94,27 @@
 			</script>
 			<!-- /highlightjs -->
 
+			<!-- jquery.expander -->
+			<script type="text/javascript">
+				// If any time.relative elements are on page, load moment.js
+				// and call it to re-format times using relative dates
+				$(document).ready(function() {
+
+					if ($('.expandable').length) {
+						console.log('loading jquery.expander.js ...')
+
+						loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery-expander/1.7.0/jquery.expander.min.js', function() {
+
+							$.expander.defaults.slicePoint = 140;
+							$.expander.defaults.expandText = 'more &#9662;';
+							$.expander.defaults.userCollapseText = 'less &#9652;';
+							$('.expandable').expander();
+						});
+					}
+				});
+			</script>
+			<!-- /jquery.expander -->
+
 			{{ if .Site.Params.piwikSiteID -}}
 			{{ if .Site.Params.piwikURL -}}
 			<!-- Piwik -->

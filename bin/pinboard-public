@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright (c) 2016 Dean Jackson <deanishe@deanishe.net>
+#
+# MIT Licence. See http://opensource.org/licenses/MIT
+#
+# Created on 2016-12-26
+#
+
+"""Fetch all public/shared posts from Pinboard.in"""
+
+from __future__ import print_function, absolute_import
+
+import argparse
+import json
+import os
+import sys
+from urllib2 import urlopen
+
+# recent posts
+API_URL = 'https://api.pinboard.in/v1/posts/all?format=json&auth_token={token}'
+
+
+def log(s, *args):
+    """Simple STDERR logger."""
+    if args:
+        s = s % args
+    print(s, file=sys.stderr)
+
+
+def fetch_posts(token):
+    """Fetch all posts from Pinboard."""
+    url = API_URL.format(token=token)
+    return json.loads(httpget(url))
+
+
+def httpget(url):
+    """Return raw response data of HTTP call."""
+    log('Fetching %s ...', url)
+    r = urlopen(url)
+    code = r.getcode()
+    log('[%d] %s', code, url)
+    return r.read()
+
+
+def parse_args():
+    """Parse CLI args and return options."""
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('-t', '--token',
+                   default=os.getenv('PINBOARD_API_TOKEN'),
+                   help='Pinboard API token')
+    p.add_argument('target', help='File to write output to', nargs='?')
+
+    args = p.parse_args()
+    if not args.token:
+        p.error('API token not set. Use --token or '
+                'set PINBOARD_API_TOKEN environment variable.')
+
+    if args.target == '-':  # STDOUT
+        args.target = None
+
+    return args
+
+
+def main():
+    """Run script."""
+    args = parse_args()
+    log('args=%r', args)
+    posts = fetch_posts(args.token)
+    shared = [p for p in posts if p.get('shared') == 'yes']
+    log('%d/%d posts shared', len(shared), len(posts))
+    if not args.target:
+        json.dump(shared, sys.stdout, sort_keys=True, indent=2)
+    else:
+        with open(args.target, 'wb') as fp:
+            json.dump(shared, fp, sort_keys=True, indent=2)
+        log('Wrote %d posts to %s', len(shared), args.target)
+
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
