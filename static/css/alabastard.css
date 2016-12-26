@@ -50,6 +50,9 @@ h6 code {
   font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   font-size: 75%; }
 
+.footer {
+  padding-bottom: 3em; }
+
 .toplink {
   margin-top: 1em;
   text-align: right; }
