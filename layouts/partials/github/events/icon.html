@@ -1,34 +1,36 @@
-{{/* watch event */}}
-{{- if eq .type "WatchEvent" -}}<i class="octicon octicon-star"></i>
-{{/* push event */}}
-{{- else if eq .type "PushEvent" -}}<i class="octicon octicon-repo-push"></i>
-{{/* fork event */}}
-{{- else if eq .type "ForkEvent" -}}<i class="octicon octicon-repo-forked"></i>
-{{/* create event */}}
-{{- else if eq .type "CreateEvent" -}}
-	{{ if eq .payload.ref_type "tag" -}}<i class="octicon octicon-tag"></i>
-	{{- else if eq .payload.ref_type "repository" -}}<i class="octicon octicon-repo"></i>
-	{{- else if eq .payload.ref_type "branch" -}}<i class="octicon octicon-git-branch"></i>
+<div class="icon">
+	{{/* watch event */}}
+	{{- if eq .type "WatchEvent" -}}<i class="octicon octicon-star"></i>
+	{{/* push event */}}
+	{{- else if eq .type "PushEvent" -}}<i class="octicon octicon-repo-push"></i>
+	{{/* fork event */}}
+	{{- else if eq .type "ForkEvent" -}}<i class="octicon octicon-repo-forked"></i>
+	{{/* create event */}}
+	{{- else if eq .type "CreateEvent" -}}
+		{{ if eq .payload.ref_type "tag" -}}<i class="octicon octicon-tag"></i>
+		{{- else if eq .payload.ref_type "repository" -}}<i class="octicon octicon-repo"></i>
+		{{- else if eq .payload.ref_type "branch" -}}<i class="octicon octicon-git-branch"></i>
+		{{- end }}
+	{{/* release event */}}
+	{{- else if eq .type "ReleaseEvent" -}}<i class="octicon octicon-cloud-upload"></i>
+	{{/* issues event */}}
+	{{- else if eq .type "IssuesEvent" -}}
+		{{ if eq .payload.action "closed" -}}<i class="octicon octicon-issue-closed"></i>
+		{{ else if eq .payload.action "reopened" -}}<i class="octicon octicon-issue-reopened"></i>
+		{{- else -}}<i class="octicon octicon-issue-opened"></i>
+		{{- end }}
+	{{/* PR event */}}
+	{{- else if eq .type "PullRequestEvent" -}}<i class="octicon octicon-git-pull-request"></i>
+	{{/* delete event TODO: handle other types of delete event */}}
+	{{- else if eq .type "DeleteEvent" -}}
+		{{ if eq .payload.ref_type "branch" }}
+			<i class="octicon octicon-git-branch"></i>
+		{{- end }}
+	{{/* gollum (wiki) event */}}
+	{{- else if eq .type "GollumEvent" -}}<i class="octicon octicon-file-text"></i>
+	{{/* comment event */}}
+	{{- else if findRE ".*CommentEvent" .type -}}<i class="octicon octicon-comment"></i>
+	{{/* default event */}}
+	{{- else -}}<i class="octicon octicon-question"></i>
 	{{- end }}
-{{/* release event */}}
-{{- else if eq .type "ReleaseEvent" -}}<i class="octicon octicon-cloud-upload"></i>
-{{/* issues event */}}
-{{- else if eq .type "IssuesEvent" -}}
-	{{ if eq .payload.action "closed" -}}<i class="octicon octicon-issue-closed"></i>
-	{{ else if eq .payload.action "reopened" -}}<i class="octicon octicon-issue-reopened"></i>
-	{{- else -}}<i class="octicon octicon-issue-opened"></i>
-	{{- end }}
-{{/* PR event */}}
-{{- else if eq .type "PullRequestEvent" -}}<i class="octicon octicon-git-pull-request"></i>
-{{/* delete event TODO: handle other types of delete event */}}
-{{- else if eq .type "DeleteEvent" -}}
-	{{ if eq .payload.ref_type "branch" }}
-		<i class="octicon octicon-git-branch"></i>
-	{{- end }}
-{{/* gollum (wiki) event */}}
-{{- else if eq .type "GollumEvent" -}}<i class="octicon octicon-file-text"></i>
-{{/* comment event */}}
-{{- else if findRE ".*CommentEvent" .type -}}<i class="octicon octicon-comment"></i>
-{{/* default event */}}
-{{- else -}}<i class="octicon octicon-question"></i>
-{{- end }}
+</div>

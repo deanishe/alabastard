@@ -293,15 +293,25 @@ h1 .tag {
   .event {
     padding-bottom: 1em;
     // &:last-child { padding-bottom: 0; }
+
+    .icon {
+      display: table-cell;
+      width: 24px;
+    }
+
+    .details {
+      display: table-cell;
+      // display: inline-block;
+    }
   }
 
   .octicon {
-    float: left;
-    margin-top: 4px;
-    width: 24px;
+    // float: left;
+    // min-height: 20px;
+    // display: block;
+    // margin-top: 4px;
+    // width: 24px;
   }
-
-  .details { display: inline-block; }
 
   .meta {
     color: $text-status;
