@@ -3,7 +3,7 @@ Render a /user/NNN/events/public response from the GitHub API:
 https://developer.github.com/v3/activity/events/types/
 */}}
 <ul class="github events">
-	{{ range . -}}
+	{{ range where . ".repo.name" "ne" "deanishe/deanishe.github.io" -}}
 	<li class="event">
 		{{ partial "github/events/icon" . }}
 		<div class="details">
