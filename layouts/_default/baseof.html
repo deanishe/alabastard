@@ -25,7 +25,7 @@
 			{{ partial "footer" . }}
 
 			{{ range .Site.Params.custom_js -}}
-				<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+				<script src="/{{ . }}"></script>
 			{{- end }}
 
 			{{ with .Site.Params.highlightjs -}}

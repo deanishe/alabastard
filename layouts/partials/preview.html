@@ -1,5 +1,5 @@
 <li class="preview">
-	<h3 class="post"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} <span class="status">[draft]</span>{{end}}</h3>
+	<h3 class="post"><a href="{{ .Permalink | relURL }}">{{ .Title }}</a>{{ if .Draft }} <span class="status">[draft]</span>{{end}}</h3>
 
 	{{ partial "metadata" . }}
 
@@ -9,7 +9,7 @@
 
 	{{ if .Truncated }}
 	<div class="read-more-link">
-		<a href="{{ .Permalink }}">read&nbsp;more&nbsp;&#9656;</a>
+		<a href="{{ .Permalink | relURL }}">read&nbsp;more&nbsp;&#9656;</a>
 	</div>
 	{{ end }}
 </li>

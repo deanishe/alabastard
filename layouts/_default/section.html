@@ -3,16 +3,16 @@
 
 	{{ .Content }}
 
-	{{ range .Data.Pages.GroupByDate "2006" }}
-	<h2>{{ .Key }}</h2>
-	<ul class="pages">
-		{{ $paginator := $.Paginate .Pages }}
-		{{ range $paginator.Pages }}
-			{{ partial "preview" . }}
-		{{ end }}
-	</ul>
+	{{ $paginator := .Paginate (.Pages.GroupByDate "2006") }}
+	{{ range $paginator.PageGroups }}
+		<h2>{{ .Key }}</h2>
+		<ul class="pages">
+			{{ range .Pages }}
+				{{ partial "preview" . }}
+			{{ end }}
+		</ul>
 
-	{{ partial "toplink" }}
-	{{ partial "pagination.html" $paginator }}
+		{{ partial "toplink" }}
+		{{ partial "pagination.html" $paginator }}
 	{{ end }}
 {{ end }}
