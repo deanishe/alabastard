@@ -5,9 +5,9 @@
 
 	{{ .Content }}
 
-	{{ with .Site.Data.github.repos | first 25 }}
-		{{ partial "github/repos" . }}
-	{{ end }}
+	{{ $repos := .Site.Data.github.repos | first 25 }}
+	{{ $ignored := .Site.Params.repos.ignored }}
+	{{ partial "github/repos" (dict "repos" $repos "ignored" $ignored) }}
 
 	{{ partial "toplink" }}
 {{ end }}
