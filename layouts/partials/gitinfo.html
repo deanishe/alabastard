@@ -5,7 +5,7 @@
   <div class="content clear">
     {{ .Subject }}
     <div class="meta">
-      <code>{{ .AbbreviatedHash }}</code> <time class="relative" datetime="{{ .AuthorDate.Format "2006-01-02 15:04:05Z" }}">{{ .AuthorDate }}</time>
+      <code>{{ .AbbreviatedHash }}</code> <time class="relative" datetime="{{ .AuthorDate.Format "2006-01-02T15:04-0700" }}">{{ .AuthorDate }}</time>
     </div>
   </div>
 </div>
