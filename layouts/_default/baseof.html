@@ -27,6 +27,14 @@
 				<script src="/{{ . }}"></script>
 			{{- end }}
 
+			{{ if (eq (getenv "ENV") "dev") -}}
+			{{ $jquery := resources.Get "js/jquery-3.3.1.js" }}
+			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
+			{{- else -}}
+			{{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
+			{{- end }}
+
 			<!-- momentjs -->
 			<script type="text/javascript">
 				// If any time.relative elements are on page, load moment.js
@@ -93,6 +101,7 @@
 			</script>
 			<!-- /jquery.expander -->
 
+			{{ if (ne (getenv "ENV") "dev") -}}
 			{{ if .Site.Params.piwikSiteID -}}
 			{{ if .Site.Params.piwikURL -}}
 			<!-- Piwik -->
@@ -110,6 +119,7 @@
 			</script>
 			<noscript><p><img src="//{{ .Site.Params.piwikURL }}/piwik.php?idsite={{ .Site.Params.piwikSiteID }}" style="border:0;" alt="" /></p></noscript>
 			<!-- End Piwik Code -->
+			{{- end }}
 			{{- end }}
 			{{- end }}
 

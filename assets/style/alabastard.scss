@@ -251,8 +251,9 @@ h1 .tag {
   margin: 0;
 
   .project {
-    background: url('../images/github-24.png') left 2px no-repeat;
-    padding: 0 0 1em 32px;
+    // background: url('../images/github-24.png') left 2px no-repeat;
+    // background: url('../images/icons.svg#github') left 2px no-repeat;
+    padding: 0 0 1em;
   }
 
   header {
@@ -269,8 +270,16 @@ h1 .tag {
   }
 
   .icon {
+    display: block;
     float: left;
+    padding-top: 2px;
     width: 30px;
+
+    svg {
+      fill: #333333;
+      height: 24px;
+      width: 24px;
+    }
   }
 
   .details { display: inline-block; }
@@ -410,8 +419,11 @@ h1 .tag {
     margin: 0 0 0 .25em;
   }
 
+  svg {
+    fill: $text-lighter;
+  }
+
   a {
-    background: url('../images/social.png') 0 0 no-repeat;
     border: 0;
     display: block;
     margin: 0;
@@ -419,14 +431,13 @@ h1 .tag {
     padding: 0;
     &:hover { border: 0; }
 
-    &.twitter { background-position: 0 0; }
-    &.twitter:hover { background-position: 0 -32px; }
-
-    &.rss { background-position: -32px 0; }
-    &.rss:hover { background-position: -32px -32px; }
-
-    &.github { background-position: -64px 0; }
-    &.github:hover { background-position: -64px -32px; }
+    &.twitter:hover,
+    &.rss:hover,
+    &.github:hover {
+      svg {
+        fill: $text-link;
+      }
+    }
   }
 }
 
