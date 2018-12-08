@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 	{{ partial "head" . }}
 	<body role="document">
 		<div class="document">
@@ -28,15 +27,6 @@
 				<script src="/{{ . }}"></script>
 			{{- end }}
 
-			{{ with .Site.Params.highlightjs -}}
-			<!-- highlight.js -->
-			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-			<script type="text/javascript">
-				hljs.initHighlightingOnLoad();
-			</script>
-			<!-- /highlight.js -->
-			{{- end }}
-
 			<!-- momentjs -->
 			<script type="text/javascript">
 				// If any time.relative elements are on page, load moment.js
@@ -44,8 +34,8 @@
 				$(document).ready(function() {
 
 					if ($('time.relative').length) {
-						console.log('loading moment.js ...')
-						loadScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js', function() {
+						console.log('loading moment.js ...');
+						loadScript(libUrls.momentJS, function() {
 
 							$('time.relative').each(function(i, elem) {
 
@@ -66,33 +56,22 @@
 			</script>
 			<!-- /momentjs -->
 
-			<!-- octicons -->
-			<script type="text/javascript">
-				// Load Octicons if there are any i.octicon elements on the page
-				$(document).ready(function() {
-					if ($('i.octicon').length) {
-						console.log('loading Octicons ...')
-						$('head').append('<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css" />');
-					}
-				});
-			</script>
-			<!-- /octicons -->
-
+			{{ with .Site.Params.highlightjs -}}
 			<!-- highlightjs -->
 			<script type="text/javascript">
-				// If any code.hljs elements are on page, load highlight.js
+				// If any <code> elements are on page, load highlight.js
 				// and call it to highlight the syntax.
 				$(document).ready(function() {
-
-					if ($('code.hljs').length) {
-						console.log('loading highlight.js ...')
-						loadScript('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js', function() {
+					if ($('code').length) {
+						console.log('loading highlight.js ...');
+						loadScript(libUrls.highlightJS, function() {
 							hljs.initHighlightingOnLoad();
 						});
 					}
 				});
 			</script>
 			<!-- /highlightjs -->
+			{{- end }}
 
 			<!-- jquery.expander -->
 			<script type="text/javascript">
@@ -100,9 +79,9 @@
 				$(document).ready(function() {
 
 					if ($('.expandable').length) {
-						console.log('loading jquery.expander.js ...')
+						console.log('loading jquery.expander.js ...');
 
-						loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery-expander/1.7.0/jquery.expander.min.js', function() {
+						loadScript(libUrls.expanderJS, function() {
 
 							$.expander.defaults.slicePoint = 140;
 							$.expander.defaults.expandText = 'more &#9662;';

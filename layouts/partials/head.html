@@ -9,13 +9,27 @@
 	<!-- RSS -->
 	<link rel="alternate" type="application/rss+xml" href="{{ .Site.RSSLink | relURL }}" />
 	<!-- CSS -->
-	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/alabaster.css" type="text/css" />
+	{{ if (eq (getenv "ENV") "dev") }}
+		{{ $options := (dict "enableSourceMap" true) }}
+		{{ $style := resources.Get "style/alabastard.scss" | toCSS $options }}
+		<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+		{{ $debug := resources.Get "style/debug.scss" | toCSS $options }}
+		<link rel="stylesheet" href="{{ $debug.RelPermalink }}"/>
+	{{ else }}
+		{{ $options := (dict "enableSourceMap" true "outputStyle" "compressed") }}
+		{{/* PostCSS takes way too long... */}}
+		{{/* {{ $style := resources.Get "style/screen.scss" | toCSS | postCSS | minify | fingerprint }} */}}
+		{{ $style := resources.Get "style/alabastard.scss" | toCSS $options | fingerprint }}
+		<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+	{{ end }}
 	{{ with .Site.Params.highlightjs -}}
 	<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" type="text/css" />
 	{{- else -}}
 	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/pygments.css" type="text/css" />
 	{{- end }}
+	{{/*
 	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/alabastard.css" type="text/css" />
+	*/}}
 	{{ range .Site.Params.custom_css -}}
 	<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" type="text/css" />
 	{{- end }}
@@ -44,6 +58,38 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL }}favicon.ico">
 	{{- end }}
 	<!-- JS -->
+	{{ $jquery := resources.Get "js/jquery-3.3.1.js" }}
+	{{ $alabastard := resources.Get "js/alabastard.js" }}
+	{{ $moment := resources.Get "js/moment.min.js" }}
+	{{ $highlightjs := resources.Get "js/highlight.min.js" }}
+	{{ $expander := resources.Get "js/jquery.expander.min.js" }}
+	{{ $weather := resources.Get "js/weather.js" }}
+	{{ $script := slice $jquery $alabastard  | resources.Concat "js/alabastard.js" }}
+	{{ if (eq (getenv "ENV") "dev") }}
+	<script type="text/javascript">
+		var libUrls = {
+			momentJS: '{{ $moment.RelPermalink }}',
+			highlightJS: '{{ $highlightjs.RelPermalink }}',
+			weatherJS: '{{ $weather.RelPermalink }}',
+			expanderJS: '{{ $expander.RelPermalink }}'
+		};
+	</script>
+	<script type="text/javascript" src="{{ $script.RelPermalink }}"></script>
+	{{/*<script async type="text/javascript" src="{{ $debug.RelPermalink }}"></script>*/}}
+	{{ else }}
+	<script type="text/javascript">
+		var libUrls = {
+			momentJS: '{{ ( $moment | resources.Fingerprint ).RelPermalink }}',
+			highlightJS: '{{ ( $highlightjs | resources.Fingerprint ).RelPermalink }}',
+			weatherJS: '{{ ( $weather | resources.Minify | resources.Fingerprint ).RelPermalink }}',
+			expanderJS: '{{ ( $expander | resources.Fingerprint ).RelPermalink }}'
+		};
+	</script>
+	{{ $js := $script | resources.Minify | resources.Fingerprint }}
+		<script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+	{{ end }}
+	{{/*
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/alabastard.js"></script>
+	*/}}
 </head>
