@@ -1,0 +1,27 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+
+	<p>
+	{{- if .Data.Terms -}}
+		{{- $n := len .Data.Terms -}}
+		{{- if (eq $n 1) -}}
+			1 {{ .Data.Singular }}
+		{{- else -}}
+			{{ .Data.Terms | len }} {{ .Data.Plural }}
+		{{- end -}}
+	{{- else -}}
+		0 {{ .Data.Plural }}
+	{{- end -}}
+	</p>
+
+	<ul class="terms">
+		{{ range $key, $value := .Data.Terms }}
+		<li>
+			<a href="./{{ $key | urlize }}">{{ $key }}</a> <span class="count">({{ len $value }})</span>
+		</li>
+		{{ end }}
+	</ul>
+{{ end }}
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}
