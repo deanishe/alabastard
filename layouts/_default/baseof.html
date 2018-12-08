@@ -122,7 +122,9 @@
 			{{- end }}
 			{{- end }}
 			{{- end }}
-
+			{{ if (and (ne (getenv "ENV") "dev") .Site.Params.createServiceWorker) -}}
+				{{ partial "serviceworker" . }}
+			{{- end }}
 			{{ template "_internal/google_analytics.html" . }}
 		</div>
 	</body>

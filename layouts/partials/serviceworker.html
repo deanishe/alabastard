@@ -1,0 +1,14 @@
+<!-- serviceworker -->
+<script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+    console.debug('[main] registering ServiceWorker ...');
+    navigator.serviceWorker.register('{{ relURL "/sw.js" }}').then(function() {
+      console.log('[main] registered ServiceWorker');
+    }, function() {
+      console.debug('[main] could not register ServiceWorker');
+    });
+  } else {
+    console.log('[main] ServiceWorker is not supported');
+  }
+</script>
+<!-- /serviceworker -->
