@@ -18,6 +18,11 @@
 		{{ range .Site.Params.custom_css -}}
 		<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options ).RelPermalink }}" type="text/css" />
 		{{- end }}
+		{{ with .Site.Params.highlightjs -}}
+		<link rel="stylesheet" href="{{ ( resources.Get . ).RelPermalink }}" type="text/css" />
+		{{- else -}}
+		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.css" ).RelPermalink }}" type="text/css" />
+		{{- end }}
 	{{ else }}
 		{{ $options := (dict "enableSourceMap" true "outputStyle" "compressed") }}
 		{{/*
@@ -29,12 +34,12 @@
 		{{ range .Site.Params.custom_css -}}
 		<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
 		{{- end }}
+		{{ with .Site.Params.highlightjs -}}
+		<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+		{{- else -}}
+		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.css" | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+		{{- end }}
 	{{ end }}
-	{{ with .Site.Params.highlightjs -}}
-	<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" type="text/css" />
-	{{- else -}}
-	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/pygments.css" type="text/css" />
-	{{- end }}
 
 	<!-- favicons -->
 	{{ with .Site.Params.favicons -}}
@@ -61,7 +66,6 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL }}favicon.ico">
 	{{- end }}
 	<!-- JS -->
-	{{ $jquery := resources.Get "js/jquery-3.3.1.js" }}
 	{{ $alabastard := resources.Get "js/alabastard.js" }}
 	{{ $debug := resources.Get "js/debug.js" }}
 	{{ $moment := resources.Get "js/moment.min.js" }}

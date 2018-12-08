@@ -31,7 +31,7 @@
 			{{ $jquery := resources.Get "js/jquery-3.3.1.js" }}
 			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
 			{{- else -}}
-			{{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+			{{ $jquery := resources.Get "js/jquery-3.3.1.min.js" | resources.Fingerprint }}
 			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
 			{{- end }}
 
