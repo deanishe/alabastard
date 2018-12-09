@@ -16,15 +16,16 @@
 		{{- end }}
 
 		{{ partial "sidebar/buttons" . }}
-		{{ partial "sidebar/donate" . }}
 		{{ partial "sidebar/menu" . }}
-		<!-- {{ partial "sidebar/relations" . }} -->
 		{{ partial "sidebar/social" . }}
+		{{ partial "sidebar/donate" . }}
 		{{ partial "sidebar/tags" . }}
+		{{ partial "sidebar/relations" . }}
 		{{ partial "sidebar/about" . }}
 
-		{{/*<p><a href="{{ .Site.RSSLink }}">RSS feed</a></p>*/}}
+		{{/* <p><a href="{{ .Site.RSSLink }}">RSS feed</a></p> */}}
 	</div>
 </div>
 <div class="clearer"></div>
 <!-- /sidebar -->
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

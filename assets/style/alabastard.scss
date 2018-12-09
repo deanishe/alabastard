@@ -28,7 +28,6 @@ $text-warn3: blue;
 $text-warn4: orange;
 $text-warn5: red;
 
-
 //                                                       dP
 //                                                       88
 // .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. 88
@@ -126,6 +125,26 @@ div.sphinxsidebar {
   div.about { margin: 1.5em 0 0; }
 
   h2 { margin: 10px 0; }
+
+  .related {
+    // text-align: left;
+
+    li+li {
+      margin-top: 8px;
+    }
+
+    a {
+      font-weight: bold;
+    }
+
+    .direction {
+      // background: $bg-tag;
+      display: inline-block;
+      line-height: 1em;
+      margin: 0;
+      padding: 2px 3px;
+    }
+  }
 }
 
 // div.sphinxsidebarwrapper h1.logo,
@@ -545,3 +564,4 @@ h1 .tag {
     }
   }
 }
+//  vim: set ft=scss ts=2 sw=2 tw=80 et : 

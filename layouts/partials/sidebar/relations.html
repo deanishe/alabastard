@@ -1,12 +1,19 @@
 {{ if .Site.Params.sidebar.show_relations | and .IsPage -}}
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="{{ .Site.BaseURL }}">Home</a><ul>
-  {{ with .PrevInSection -}}
-  <li>Previous: <a href="{{ .Permalink | relURL }}" title="{{ .Title }}">{{ .Title }}</a></li>
-  {{- end }}
-  {{ with .NextInSection -}}
-  <li>Next: <a href="{{ .Permalink | relURL }}" title="{{ .Title }}">{{ .Title }}</a></li>
-  {{- end }}
+<h2>related topics</h2>
+<ul class="related">
+	{{/* <li><a href="{{ .Site.BaseURL }}">Home</a><ul> */}}
+	{{ with .PrevInSection -}}
+	<li> 
+		<span class="direction">previous:</span>
+		<a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+	</li>
+	{{- end }}
+	{{ with .NextInSection -}}
+	<li>
+		<span class="direction">next:</span>
+		<a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+	</li>
+	{{- end }}
 </ul>
 {{- end }}
+{{/* vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet : */}}

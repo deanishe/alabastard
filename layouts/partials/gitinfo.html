@@ -10,15 +10,3 @@
   </div>
 </div>
 <div class="clear"></div>
-
-<script>
-  $( '.gitinfo' ).each(function(i, git) {
-    var link = $(git).find('.header a')[0],
-        content = $(git).find('.content')[0];
-
-    $(link).on('click', function(ev) {
-      $(content).fadeToggle(100);
-      return false;
-    });
-  });
-</script>

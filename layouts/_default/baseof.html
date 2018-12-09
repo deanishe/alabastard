@@ -35,6 +35,22 @@
 			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
 			{{- end }}
 
+      <!-- gitinfo buttons -->
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $( '.gitinfo' ).each(function(i, git) {
+            var link = $(git).find('.header a')[0],
+                content = $(git).find('.content')[0];
+
+            $(link).on('click', function(ev) {
+              $(content).fadeToggle(100);
+              return false;
+            });
+          });
+        });
+      </script>
+      <!-- /gitinfo -->
+
 			<!-- momentjs -->
 			<script type="text/javascript">
 				// If any time.relative elements are on page, load moment.js
