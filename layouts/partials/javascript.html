@@ -1,0 +1,28 @@
+<!-- JS -->
+{{- $alabastard := resources.Get "js/alabastard.js" -}}
+{{- $debug := resources.Get "js/debug.js" -}}
+{{- $highlightjs := resources.Get "js/highlight.min.js" -}}
+{{- $expander := resources.Get "js/jquery.expander.min.js" -}}
+{{- $weather := resources.Get "js/weather.js" -}}
+{{- if (eq (getenv "ENV") "dev") -}}
+	<script type="text/javascript" src="{{ $alabastard.RelPermalink }}"></script>
+	<script type="text/javascript" src="{{ $debug.RelPermalink }}"></script>
+	<script type="text/javascript">
+		let libUrls = {
+			highlightJS: '{{ $highlightjs.RelPermalink }}',
+			weatherJS: '{{ $weather.RelPermalink }}',
+			expanderJS: '{{ $expander.RelPermalink }}',
+		};
+	</script>
+{{- else -}}
+	{{ $script := $alabastard | resources.Minify | resources.Fingerprint }}
+	<script type="text/javascript" src="{{ $script.RelPermalink }}"></script>
+	<script type="text/javascript">
+		let libUrls = {
+			highlightJS: '{{ ( $highlightjs | resources.Fingerprint ).RelPermalink }}',
+			weatherJS: '{{ ( $weather | resources.Minify | resources.Fingerprint ).RelPermalink }}',
+			expanderJS: '{{ ( $expander | resources.Fingerprint ).RelPermalink }}',
+		};
+	</script>
+{{- end -}}
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

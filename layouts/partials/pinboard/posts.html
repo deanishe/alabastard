@@ -13,7 +13,10 @@
 						</li>
 						{{- end }}
 					</ul>
-					saved <time class="relative" datetime="{{ .time }}">{{ dateFormat "2 Jan, 06" .time }}</time>
+					saved
+					<time class="relative" data-timestamp="{{ (time .time).Unix }}">
+						{{ dateFormat "2 Jan, 06" .time }}
+					</time>
 				</div>
 				<div class="clear"></div>
 				<p class="summary expandable">{{ .extended }}</p>

@@ -79,7 +79,11 @@ https://developer.github.com/v3/activity/events/types/
 					<a href="https://github.com/{{ .repo.name }}">{{ .repo.name }}</a>
 				{{- end }}
 			</header>
-			<div class="meta"><time class="relative" datetime="{{ dateFormat "2006-01-02T15:04:05Z" .created_at }}">{{ dateFormat "03:04 on 02/01/2006" .created_at }}</time></div>
+            <div class="meta">
+                <time class="relative" data-timestamp="{{ (time .created_at).Unix }}">
+                    {{ dateFormat "03:04 on 02/01/2006" .created_at }}
+                </time>
+            </div>
 		</div>
 	</li>
 	{{- end }}

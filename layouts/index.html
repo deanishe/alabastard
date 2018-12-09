@@ -5,8 +5,7 @@
 
 		{{ .Content }}
 
-		<a id="activity"></a>
-		<h2>Recent activity</h2>
+		<h2 id="activity">Recent activity</h2>
 
 		<p>What I've been up to on <a href="https://github.com">GitHub</a> recently.</p>
 
@@ -14,8 +13,7 @@
 			{{ partial "github/events/list" . }}
 		{{ end }}
 
-		<a id="links"></a>
-		<h2>Recent links</h2>
+		<h2 id="links">Recent links</h2>
 
 		<p>Items I've shared on <a href="https://pinboard.in">Pinboard</a> recently.</p>
 
@@ -23,8 +21,7 @@
 			{{ partial "pinboard/posts" . }}
 		{{- end }}
 
-		<a id="posts"></a>
-		<h2>Recent posts</h2>
+		<h2 id="posts">Recent posts</h2>
 
 		<p>Recently added/edited on this site.</p>
 

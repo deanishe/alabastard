@@ -1,6 +1,4 @@
-{{/*
-Render a /user/NNN/repos response from the GitHub API
-*/}}
+{{/* Render a /user/NNN/repos response from the GitHub API */}}
 <ul class="github projects">
 	{{ range .repos -}}
 		{{ if not (in $.ignored .name) }}
@@ -25,10 +23,15 @@ Render a /user/NNN/repos response from the GitHub API
 					{{- end }}
 					<li><a href="{{ .html_url }}">{{ .full_name }}</a> on GitHub</li>
 					<li><a href="{{ .html_url }}/issues">issues</a> <span class="status">({{ .open_issues_count }} open)</span></li>
-					<li>last pushed <time class="relative" datetime="{{ dateFormat "2006-01-02T15:04:05Z" .pushed_at }}">{{ dateFormat "2 Jan, 2006" .pushed_at }}</time></li>
+		  <li>last pushed
+			<time class="relative" data-timestamp="{{ (time .pushed_at).Unix }}">
+			  {{ dateFormat "2 Jan, 2006" .pushed_at }}
+			</time>
+		  </li>
 				</ul>
 			</div>
 		</li>
 		{{ end }}
 	{{ end }}
 </ul>
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

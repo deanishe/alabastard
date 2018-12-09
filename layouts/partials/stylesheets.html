@@ -1,0 +1,28 @@
+{{ if (eq (getenv "ENV") "dev") }}
+	{{- $options := (dict "enableSourceMap" true) -}}
+	{{- $style := resources.Get "style/alabastard.scss" | toCSS $options -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+	{{ $debug := resources.Get "style/debug.scss" | toCSS $options -}}
+	<link rel="stylesheet" href="{{ $debug.RelPermalink }}"/>
+	{{ range .Site.Params.custom_css -}}
+	<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options ).RelPermalink }}" type="text/css" />
+	{{- end }}
+	{{ with .Site.Params.highlightjs -}}
+	<link rel="stylesheet" href="{{ ( resources.Get . ).RelPermalink }}" type="text/css" />
+	{{- else -}}
+	<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.scss" | toCSS $options ).RelPermalink }}" type="text/css" />
+	{{- end -}}
+{{- else -}}
+	{{ $options := (dict "enableSourceMap" true "outputStyle" "compressed") }}
+	{{ $style := resources.Get "style/alabastard.scss" | toCSS $options | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+	{{ range .Site.Params.custom_css -}}
+	<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+	{{- end }}
+	{{ with .Site.Params.highlightjs -}}
+	<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+	{{- else -}}
+	<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.scss" | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+	{{- end }}
+{{- end -}}
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}
