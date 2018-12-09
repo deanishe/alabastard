@@ -58,8 +58,10 @@
 				$(document).ready(function() {
 
 					if ($('time.relative').length) {
-						console.log('loading moment.js ...');
+						console.debug('[loader] loading moment.js ...');
 						loadScript(libUrls.momentJS, function() {
+
+              console.debug('[loader] loaded moment.js');
 
 							$('time.relative').each(function(i, elem) {
 
@@ -69,7 +71,7 @@
 									var rel = moment(dt).fromNow();
 
 									if (rel != 'Invalid date') {
-										console.log('[moment] ' + dt + '  ->  ' + rel);
+										console.debug('[moment] ' + dt + '  ->  ' + rel);
 										$(this).html(rel);
 									}
 								}
@@ -87,8 +89,9 @@
 				// and call it to highlight the syntax.
 				$(document).ready(function() {
 					if ($('code').length) {
-						console.log('loading highlight.js ...');
+						console.debug('[loader] loading highlight.js ...');
 						loadScript(libUrls.highlightJS, function() {
+						console.debug('[loader] loaded highlight.js');
 							hljs.initHighlightingOnLoad();
 						});
 					}
@@ -103,9 +106,10 @@
 				$(document).ready(function() {
 
 					if ($('.expandable').length) {
-						console.log('loading jquery.expander.js ...');
+						console.debug('[loader] loading jquery.expander.js ...');
 
 						loadScript(libUrls.expanderJS, function() {
+              console.debug('[loader] loaded jquery.expander.js');
 
 							$.expander.defaults.slicePoint = 140;
 							$.expander.defaults.expandText = 'more &#9662;';
