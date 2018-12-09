@@ -21,14 +21,10 @@
 		{{ with .Site.Params.highlightjs -}}
 		<link rel="stylesheet" href="{{ ( resources.Get . ).RelPermalink }}" type="text/css" />
 		{{- else -}}
-		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.css" ).RelPermalink }}" type="text/css" />
+		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.scss" | toCSS $options ).RelPermalink }}" type="text/css" />
 		{{- end }}
 	{{ else }}
 		{{ $options := (dict "enableSourceMap" true "outputStyle" "compressed") }}
-		{{/*
-		PostCSS takes way too long...
-		{{ $style := resources.Get "style/screen.scss" | toCSS | postCSS | minify | fingerprint }}
-		*/}}
 		{{ $style := resources.Get "style/alabastard.scss" | toCSS $options | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
 		{{ range .Site.Params.custom_css -}}
@@ -37,7 +33,7 @@
 		{{ with .Site.Params.highlightjs -}}
 		<link rel="stylesheet" href="{{ ( resources.Get . | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
 		{{- else -}}
-		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.css" | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
+		<link rel="stylesheet" href="{{ ( resources.Get "style/pygments.scss" | toCSS $options | fingerprint ).RelPermalink }}" type="text/css" />
 		{{- end }}
 	{{ end }}
 

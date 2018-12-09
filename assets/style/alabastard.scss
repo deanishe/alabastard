@@ -174,8 +174,6 @@ div.sphinxsidebar {
 //                      .88
 //                  d8888P
 
-
-
 .tag {
   background: $bg-tag;
   border: 0;
@@ -214,6 +212,50 @@ h1 .tag {
   font-size: 65%;
 }
 
+
+//                              dP
+//                              88
+// .d8888b. dP    dP 88d888b. d8888P .d8888b. dP.  .dP
+// Y8ooooo. 88    88 88'  `88   88   88'  `88  `8bd8'
+//       88 88.  .88 88    88   88   88.  .88  .d88b.
+// `88888P' `8888P88 dP    dP   dP   `88888P8 dP'  `dP
+//               .88
+//           d8888P
+
+pre,
+code {
+  background-color: inherit;
+}
+
+div.chroma,
+pre.chroma {
+  padding: 7px 16px;
+
+  code {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.chroma {
+
+  pre {
+
+    // line numbers
+    &.chroma {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 16px;
+
+      .lnt {
+        color: #999;
+        margin: 0 8px 0 0;
+        padding: 0;
+      }
+    }
+  }
+}
 
 
 // 88d888b. .d8888b. .d8888b. .d8888b. .d8888b.
@@ -564,4 +606,4 @@ h1 .tag {
     }
   }
 }
-//  vim: set ft=scss ts=2 sw=2 tw=80 et : 
+//  vim: set ft=scss ts=2 sw=2 tw=80 et :
