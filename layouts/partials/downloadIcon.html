@@ -1,0 +1,6 @@
+{{- $types := slice "pdf" "alfredworkflow" "zip" "rar" "doc" "docx" }}
+{{- if in $types . -}}
+	<img src="/images/{{ . }}.png" alt="{{ . }} icon">
+{{- else -}}
+	<img src="/images/file.png" alt="file icon">
+{{- end -}}

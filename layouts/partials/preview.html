@@ -10,10 +10,10 @@
 	{{ .Summary }}
 	</div>
 
-	{{ if .Truncated }}
+	{{- if or .Truncated .Resources }}
 	<div class="read-more-link">
 		<a href="{{ .RelPermalink }}">read&nbsp;more&nbsp;&#9656;</a>
 	</div>
-	{{ end }}
+	{{- end }}
 </li>
 {{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

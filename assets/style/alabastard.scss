@@ -543,6 +543,44 @@ aside {
   }
 }
 
+//       dP                              dP                         dP
+//       88                              88                         88
+// .d888b88 .d8888b. dP  dP  dP 88d888b. 88 .d8888b. .d8888b. .d888b88 .d8888b.
+// 88'  `88 88'  `88 88  88  88 88'  `88 88 88'  `88 88'  `88 88'  `88 Y8ooooo.
+// 88.  .88 88.  .88 88.88b.88' 88    88 88 88.  .88 88.  .88 88.  .88       88
+// `88888P8 `88888P' 8888P Y8P  dP    dP dP `88888P' `88888P8 `88888P8 `88888P'
+
+div.downloads {
+  font-weight: bold;
+
+  h2 {
+    font-size: 150%;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: table-row;
+
+      .download-icon {
+        // border: 1px dotted green;
+        height: 32px;
+        width: 32px;
+      }
+
+      &>* {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// .download-icon {
+//   background: url('/images/pdf.png');
+//   background-repeat: no-repeat;
+// }
 
 //                            oo                     dP   oo
 //                                                   88
