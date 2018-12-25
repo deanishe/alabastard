@@ -1,26 +1,27 @@
 <ul class="links">
-	{{ range . -}}
-		<li class="link">
-			<section class="link">
-				<header>
-					<a href="{{ .href }}">{{ .description }}</a>
-				</header>
-				<div class="meta">
-					<ul class="tags">
-						{{ range (split .tags " ") -}}
-						<li class="tag">
-							<a href="https://pinboard.in/t:{{ . | urlize }}/">{{ . }}</a>
-						</li>
-						{{- end }}
-					</ul>
-					saved
-					<time class="relative" data-timestamp="{{ (time .time).Unix }}">
-						{{ dateFormat "2 Jan, 06" .time }}
-					</time>
-				</div>
-				<div class="clear"></div>
-				<p class="summary expandable">{{ .extended }}</p>
-			</section>
-		</li>
-	{{- end }}
+{{ range . -}}
+	<li class="link">
+		<section class="link">
+			<header>
+				<a href="{{ .href }}" target="_blank">{{ .description }}</a>
+			</header>
+			<div class="meta">
+				<ul class="tags">
+					{{ range (split .tags " ") -}}
+					<li class="tag">
+						<a href="https://pinboard.in/t:{{ . | urlize }}/" target="_blank">{{ . }}</a>
+					</li>
+					{{- end }}
+				</ul>
+				saved
+				<time class="relative" data-timestamp="{{ (time .time).Unix }}">
+					{{ dateFormat "2 Jan, 06" .time }}
+				</time>
+			</div>
+			<div class="clear"></div>
+			<p class="summary expandable">{{ .extended }}</p>
+		</section>
+	</li>
+{{- end }}
 </ul>
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

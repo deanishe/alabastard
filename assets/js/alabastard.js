@@ -64,7 +64,7 @@ function relTime(dt) {
   }
   years = Math.floor(months / 12);
   months = months % 12;
-  console.debug(`[reltime] ${years}y${months}m${weeks}w${days}d${hours}h${mins}m${secs}s`);
+  // console.debug(`[reltime] ${years}y${months}m${weeks}w${days}d${hours}h${mins}m${secs}s`);
 
   if (years) {
     n = years;

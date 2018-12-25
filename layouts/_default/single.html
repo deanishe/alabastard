@@ -1,18 +1,18 @@
 {{ define "main" }}
+	{{ print "<!-- single.html -->" | safeHTML }}
 	<h1>{{ .Title }}</h1>
 
 	<div class="page">
 
-		{{ partial "metadata" . }}
+		{{- partial "metadata" . }}
 
-		{{ .Content }}
+		{{- .Content }}
 
-		{{ if .GitInfo -}}
-		{{ partial "gitinfo" .GitInfo }}
-		{{- end }}
+		{{- with .GitInfo }}{{ partial "gitinfo" . }}{{ end }}
 	</div>
 	{{ partial "toplink" }}
 	{{ if ne .Type "toplevel" }}
-	{{ partial "pager" . }}
+	{{/* {{ partial "pager" . }} */}}
+	{{- with .Site.RegularPages.Related . }}{{- partial "related" . }}{{- end }}
 	{{- end }}
 {{ end }}

@@ -1,15 +1,16 @@
 <div class="gitinfo">
-  <div class="header">
-    <a href="#" class="info">&#8505;</a>
-  </div>
-  <div class="content clear">
-    {{ .Subject }}
-    <div class="meta">
-      <code>{{ .AbbreviatedHash }}</code>
-	  <time class="relative" data-timestamp="{{ .AuthorDate.Unix }}">
+	<div class="header">
+	<a href="#" class="info">&#8505;</a>
+	</div>
+	<div class="content clear">
+	{{ .Subject }}
+	<div class="meta">
+		<code>{{ .AbbreviatedHash }}</code>
+		<time class="relative" data-timestamp="{{ .AuthorDate.Unix }}">
 		{{ .AuthorDate }}
-	  </time>
-    </div>
-  </div>
+		</time>
+	</div>
+	</div>
 </div>
 <div class="clear"></div>
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

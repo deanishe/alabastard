@@ -1,6 +1,6 @@
 {{/* List GitHub repos */}}
 {{ define "main" }}
-
+	{{ print "<!-- project.html -->" | safeHTML }}
 	<h1>{{ .Title }}</h1>
 
 	{{ .Content }}
@@ -11,3 +11,4 @@
 
 	{{ partial "toplink" }}
 {{ end }}
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

@@ -1,0 +1,8 @@
+<aside class="related">
+	<h2>Related</h2>
+	<ul>
+	{{- range . }}
+		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	{{- end }}
+	</ul>
+</aside>

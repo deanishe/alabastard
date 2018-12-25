@@ -1,36 +1,35 @@
 {{ define "main" }}
-	{{ range where .Site.Pages "Type" "homepage" -}}
+	{{ print "<!-- index.html -->" | safeHTML }}
+	<h1>{{ .Title }}</h1>
 
-		<h1>{{ .Title }}</h1>
+	{{ .Content }}
 
-		{{ .Content }}
+	<h2 id="activity">Recent activity</h2>
 
-		<h2 id="activity">Recent activity</h2>
+	<p>What I've been up to on <a href="https://github.com" target="_blank">GitHub</a> recently.</p>
 
-		<p>What I've been up to on <a href="https://github.com">GitHub</a> recently.</p>
+	{{ with first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
+		{{ partial "github/events/list" . }}
+	{{ end }}
 
-		{{ with first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
-			{{ partial "github/events/list" . }}
-		{{ end }}
+	<h2 id="links">Recent links</h2>
 
-		<h2 id="links">Recent links</h2>
+	<p>Items I've shared on <a href="https://pinboard.in" target="_blank">Pinboard</a> recently.</p>
 
-		<p>Items I've shared on <a href="https://pinboard.in">Pinboard</a> recently.</p>
-
-		{{ with first .Site.Params.homepageRecentLinks .Site.Data.pinboard.posts -}}
-			{{ partial "pinboard/posts" . }}
-		{{- end }}
-
-		<h2 id="posts">Recent posts</h2>
-
-		<p>Recently added/edited on this site.</p>
-
-		<ul class="pages">
-		{{ range first .Site.Params.homepageRecentPosts .Site.RegularPages -}}
-			{{ partial "preview" . }}
-		{{- end }}
-		</ul>
-
+	{{ with first .Site.Params.homepageRecentLinks .Site.Data.pinboard.posts -}}
+		{{ partial "pinboard/posts" . }}
 	{{- end }}
+
+	<h2 id="posts">Recent posts</h2>
+
+	<p>Recently added/edited on this site.</p>
+
+	<ul class="pages">
+	{{ range first .Site.Params.homepageRecentPosts .Site.RegularPages -}}
+		{{ partial "preview" . }}
+	{{- end }}
+	</ul>
+
 	{{ partial "toplink" }}
 {{- end }}
+{{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}
