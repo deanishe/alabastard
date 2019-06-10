@@ -232,11 +232,20 @@ h1 .tag {
 //           d8888P
 
 pre,
-code {
+code,
+kbd {
   // background-color: inherit;
   // font-weight: 600;
   // display: inline-block;
   padding: 2px 4px;
+}
+
+kbd {
+  background-color: lighten($bg-tag, 10%);
+  border: 1px solid darken($bg-tag, 10%);
+  border-radius: 4px;
+  // display: inline-block;
+  // padding: 2px 4px;
 }
 
 div.chroma,
