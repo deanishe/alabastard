@@ -3,8 +3,11 @@ Render a /user/NNN/events/public response from the GitHub API:
 https://developer.github.com/v3/activity/events/types/
 */}}
 <ul class="github events">
-	{{ range where . ".repo.name" "ne" "deanishe/deanishe.github.io" -}}
-	{{ partial "github/events/single.html" . }}
+	{{/* {{ range where . ".repo.name" "ne" "deanishe/deanishe.github.io" -}} */}}
+	{{ range .events }}
+		{{ if not (in $.ignored .repo.name) }}
+			{{ partial "github/events/single.html" . }}
+		{{ end }}
 	{{- end }}
 </ul>
 {{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

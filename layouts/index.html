@@ -6,7 +6,7 @@
 
 	{{ $recent := slice }}
 	{{ range first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
-		{{ if not (in $.Site.Params.ignoreGithubRepos .repo.name) }}
+		{{ if not (in $.Site.Params.repos.ignored .repo.name) }}
 			{{ $recent = $recent | append (dict "time" .created_at "event" . ) }}
 		{{ end }}
 	{{ end }}

@@ -5,9 +5,9 @@
 
 	{{ .Content }}
 
-	{{ with .Site.Data.github.events | first 25 }}
-		{{ partial "github/events/list" . }}
-	{{ end }}
+	{{ $events := .Site.Data.github.events | first 25 }}
+	{{ $ignored := .Site.Params.repos.ignored }}
+	{{ partial "github/events/list" (dict "events" $events "ignored" $ignored) }}
 
 	{{ partial "toplink" }}
 {{ end }}
