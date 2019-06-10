@@ -36,7 +36,8 @@ function relTime(dt) {
     neg = false;
 
   if (delta < 0) {  // time is in future
-    delta = -delta
+    delta = -delta;
+    neg = true;
   }
 
   var secs = 0,
@@ -93,7 +94,16 @@ function relTime(dt) {
     s += 's';
   }
 
-  if (neg) return 'in ' + n + s;
-
-  return n + s + ' ago';
+  var msg = n + s + ' ago';
+  if (neg) {
+    msg = 'in ' + n + s;
+  }
+  switch (msg) {
+    case '1 day ago':
+      return 'yesterday';
+    case 'in 1 day':
+      return 'tomorrow';
+    default:
+      return msg;
+  }
 }

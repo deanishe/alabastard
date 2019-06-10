@@ -1,19 +1,25 @@
 <li class="preview">
-	<h3 class="post">
-		<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-		{{ if .Draft }}<span class="status">[draft]</span>{{end}}
-	</h3>
-
-	{{ partial "metadata" . }}
-
-	<div class="summary">
-	{{ .Summary }}
+	<div class="icon">
+		<svg width="24" height="24" viewBox="0 0 512 512">
+			<path d="M372.341,177.131l-232.803,0l0,-38.739l232.803,0l0,38.739Zm0,58.291l-232.803,0l0,-38.86l232.803,0l0,38.86Zm0,58.17l-232.803,0l0,-38.738l232.803,0l0,38.738Zm77.528,-194.061c0,-21.323 -17.346,-38.74 -38.667,-38.74l-310.525,0c-21.322,0 -38.74,17.417 -38.74,38.74l0,232.922c0,21.324 17.418,38.741 38.74,38.741l271.664,0l77.722,77.722l-0.194,-349.385Z" style="fill-rule:nonzero;"/>
+		</svg>
 	</div>
+	<div class="post details">
+		<h2>
+			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+			{{ if .Draft }}<span class="status">[draft]</span>{{end}}
+		</h2>
 
-	{{- if or .Truncated .Resources }}
-	<div class="read-more-link">
-		<a href="{{ .RelPermalink }}">read&nbsp;more&nbsp;&#9656;</a>
+		{{ partial "metadata" . }}
+
+		<div class="summary">
+			{{ .Summary }}
+		</div>
+		{{- if or .Truncated .Resources }}
+			<div class="read-more-link">
+				<a href="{{ .RelPermalink }}">read&nbsp;more&nbsp;&#9656;</a>
+			</div>
+		{{- end }}
 	</div>
-	{{- end }}
 </li>
 {{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}

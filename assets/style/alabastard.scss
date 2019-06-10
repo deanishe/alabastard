@@ -28,6 +28,14 @@ $text-warn3: blue;
 $text-warn4: orange;
 $text-warn5: red;
 
+$font-size: 17px;
+$font-size1: 240%;
+$font-size2: 180%;
+$font-size3: 150%;
+$font-size4: 130%;
+$font-size5: 100%;
+$font-size6: 100%;
+
 //                                                       dP
 //                                                       88
 // .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. 88
@@ -293,6 +301,8 @@ pre.chroma {
 }
 
 .read-more-link {
+  font-size: 90%;
+  line-height: 1em;
   text-align: right;
 }
 
@@ -335,7 +345,7 @@ aside {
   }
 
   header {
-    font-size: 180%;
+    font-size: $font-size3;
     font-weight: normal;
   }
 
@@ -354,8 +364,8 @@ aside {
     width: 30px;
 
     svg {
-      fill: #333333;
       height: 24px;
+      fill: #333333;
       width: 24px;
     }
   }
@@ -376,6 +386,57 @@ aside {
 // 88.  ... 88 .88'  88.  ... 88    88   88         88
 // `88888P' 8888P'   `88888P' dP    dP   dP   `88888P'
 
+@mixin type-icon {
+  .icon {
+    display: table-cell;
+    width: 24px;
+
+    svg {
+      display: block;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+li {
+  &.preview,
+  &.link,
+  &.event {
+    // border-bottom: 1px dashed purple;
+    // margin: 1em 0;
+
+    &>* {
+      margin-left: 30px;
+    }
+
+    h2 {
+      font-size: $font-size4;
+      line-height: $font-size4 + 4;
+      // margin-top: 0;
+    }
+
+    .meta {
+      // border: 1px dotted green;
+    }
+
+    .icon {
+      float: left;
+      margin: 0;
+      width: 28px;
+
+      svg {
+        display: block;
+        fill: $text-body;
+        height: 24px;
+        position: relative;
+        top: 2px;
+        width: 24px;
+      }
+    }
+  }
+}
+
 .events {
   list-style: none;
   margin-left: 0;
@@ -383,17 +444,6 @@ aside {
   .event {
     padding-bottom: 1em;
     // &:last-child { padding-bottom: 0; }
-
-    .icon {
-      display: table-cell;
-      width: 24px;
-
-      svg {
-        display: block;
-        position: relative;
-        top: 3px;
-      }
-    }
 
     .details {
       display: table-cell;

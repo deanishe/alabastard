@@ -4,32 +4,32 @@
 
 	{{ .Content }}
 
-	<h2 id="activity">Recent activity</h2>
-
-	<p>What I've been up to on <a href="https://github.com" target="_blank">GitHub</a> recently.</p>
-
-	{{ with first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
-		{{ partial "github/events/list" . }}
+	{{ $recent := slice }}
+	{{ range first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
+		{{ if not (in $.Site.Params.ignoreGithubRepos .repo.name) }}
+			{{ $recent = $recent | append (dict "time" .created_at "event" . ) }}
+		{{ end }}
 	{{ end }}
-
-	<h2 id="links">Recent links</h2>
-
-	<p>Items I've shared on <a href="https://pinboard.in" target="_blank">Pinboard</a> recently.</p>
-
-	{{ with first .Site.Params.homepageRecentLinks .Site.Data.pinboard.posts -}}
-		{{ partial "pinboard/posts" . }}
+	{{ range first .Site.Params.homepageRecentLinks .Site.Data.pinboard.posts -}}
+		{{ $recent = $recent | append (dict "time" .time "post" . ) }}
 	{{- end }}
-
-	<h2 id="posts">Recent posts</h2>
-
-	<p>Recently added/edited on this site.</p>
-
-	<ul class="pages">
 	{{ range first .Site.Params.homepageRecentPosts .Site.RegularPages -}}
-		{{ partial "preview" . }}
+		{{ $recent = $recent | append (dict "time" .Date "page" . ) }}
 	{{- end }}
+	<ul class="github events pages">
+	{{ range sort $recent "time" "desc" }}
+		{{ with .page }}
+			{{ partial "preview" . }}
+		{{ end }}
+		{{ with .event }}
+			{{ partial "github/events/single.html" . }}
+		{{ end }}
+		{{ with .post }}
+			{{ partial "pinboard/single.html" . }}
+		{{ end }}
+		{{/* <code>{{ . }}</code> */}}
+	{{ end }}
 	</ul>
-
 	{{ partial "toplink" }}
 {{- end }}
 {{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}
