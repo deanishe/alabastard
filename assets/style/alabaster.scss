@@ -467,13 +467,6 @@ a:hover tt, a:hover code {
     .footer {
     	width: auto;
     }
-
-    .github {
-        display: none;
-    }
-
-
-
 }
 
 
@@ -493,8 +486,9 @@ a:hover tt, a:hover code {
     div.sphinxsidebar {
         display: block;
         float: none;
-        width: 102.5%;
-        margin: 50px -30px -20px -30px;
+        width: 108%;
+        // margin: 50px -30px -20px -30px;
+        margin: 70px 0 -20px -30px;
         padding: 10px 20px;
         background: #333;
         color: #FFF;
@@ -545,10 +539,6 @@ a:hover tt, a:hover code {
 
     .footer {
         width: auto;
-    }
-
-    .github {
-        display: none;
     }
 }
 

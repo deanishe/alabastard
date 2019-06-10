@@ -16,7 +16,7 @@
 	{{ range first .Site.Params.homepageRecentPosts .Site.RegularPages -}}
 		{{ $recent = $recent | append (dict "time" .Date "page" . ) }}
 	{{- end }}
-	<ul class="github events pages">
+	<ul class="events links posts">
 	{{ range sort $recent "time" "desc" }}
 		{{ with .page }}
 			{{ partial "preview" . }}
