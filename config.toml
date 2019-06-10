@@ -1,3 +1,6 @@
+[services.rss]
+    limit = 10
+
 [params]
     # file formats the theme has icons for
     supportedFiletypes = [
