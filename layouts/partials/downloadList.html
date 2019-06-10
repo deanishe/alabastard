@@ -1,0 +1,31 @@
+{{ $types := .Site.Params.supportedFiletypes }}
+{{- with .Resources }}
+<div class="downloads">
+    <h2 id="downloads">Downloads</h2>
+    <ul>
+    {{- range . }}
+        {{- if ne .ResourceType "image" }}
+            {{- $type := .ResourceType -}}
+            {{- if eq $type "" -}}
+                {{ $bits := split .Title "." }}
+                {{- range last 1 $bits }}
+                    {{- $type = . -}}
+                {{- end }}
+            {{- end }}
+            <li>
+                <span class="download-icon">
+                    <a href="{{ .RelPermalink }}">
+                        {{- if in $types $type -}}
+                            <img src="{{ print "images/" $type ".png" | absURL }}" alt="{{ . }} icon">
+                        {{- else -}}
+                            <img src="{{ "images/file.png" | absURL }}" alt="file icon">
+                        {{- end -}}
+                    </a>
+                </span>
+                &nbsp;<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+        {{- end }}
+    {{- end }}
+    </ul>
+</div>
+{{- end }}

@@ -3,37 +3,9 @@
 	<h1>{{ .Title }}</h1>
 
 	<div class="page">
-
 		{{- partial "metadata" . }}
-
 		{{- .Content }}
-
-		{{- with .Resources }}
-			<div class="downloads">
-				<h2>Files</h2>
-				<ul>
-				{{- range . }}
-					{{- if ne .ResourceType "image" }}
-						{{ $scratch := newScratch }}
-						{{- $scratch.Set "type" .ResourceType }}
-						{{- if eq ($scratch.Get "type") "" }}
-							{{ $bits := split .Title "." }}
-							{{- range last 1 $bits }}
-								{{- $scratch.Set "type" . }}
-							{{- end }}
-						{{- end }}
-						<li>
-							<span class="download-icon">
-								<a href="{{ .RelPermalink }}">{{ partial "downloadIcon" ($scratch.Get "type") }}</a>
-							</span>
-							&nbsp;<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-						</li>
-					{{- end }}
-				{{- end }}
-				</ul>
-			</div>
-		{{- end }}
-
+		{{ partial "downloadList" . }}
 		{{- with .GitInfo }}{{ partial "gitinfo" . }}{{ end }}
 	</div>
 	{{ partial "toplink" }}

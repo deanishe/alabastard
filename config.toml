@@ -1,0 +1,11 @@
+[params]
+    # file formats the theme has icons for
+    supportedFiletypes = [
+        "alfredworkflow",
+        "doc",
+        "docx",
+        "json",
+        "pdf",
+        "rar",
+        "zip",
+    ]
