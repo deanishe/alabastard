@@ -7,11 +7,11 @@
 	{{ $recent := slice }}
 	{{ range first .Site.Params.homepageRecentEvents .Site.Data.github.events }}
 		{{ if not (in $.Site.Params.repos.ignored .repo.name) }}
-			{{ $recent = $recent | append (dict "time" .created_at "event" . ) }}
+			{{ $recent = $recent | append (dict "time" (time .created_at) "event" . ) }}
 		{{ end }}
 	{{ end }}
 	{{ range first .Site.Params.homepageRecentLinks .Site.Data.pinboard.posts -}}
-		{{ $recent = $recent | append (dict "time" .time "post" . ) }}
+		{{ $recent = $recent | append (dict "time" (time .time) "post" . ) }}
 	{{- end }}
 	{{ range first .Site.Params.homepageRecentPosts .Site.RegularPages -}}
 		{{ $recent = $recent | append (dict "time" .Date "page" . ) }}
