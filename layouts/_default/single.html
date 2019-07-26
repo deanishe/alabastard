@@ -2,15 +2,17 @@
 	{{ print "<!-- single.html -->" | safeHTML }}
 	<h1>{{ .Title }}</h1>
 
-	<div class="page">
+	<article class="page">
 		{{- partial "metadata" . }}
 		{{- .Content }}
 		{{ partial "downloadList" . }}
-		{{- with .GitInfo }}{{ partial "gitinfo" . }}{{ end }}
-	</div>
-	{{ partial "toplink" }}
+	</article>
 	{{ if ne .Type "toplevel" }}
 	{{/* {{ partial "pager" . }} */}}
 	{{- with .Site.RegularPages.Related . }}{{- partial "related" . }}{{- end }}
 	{{- end }}
+	<footer>
+	{{ partial "toplink" }}
+	{{- with .GitInfo }}{{ partial "gitinfo" . }}{{ end }}
+	</footer>
 {{ end }}
