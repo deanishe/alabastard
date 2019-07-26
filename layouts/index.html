@@ -22,10 +22,10 @@
 			{{ partial "preview" . }}
 		{{ end }}
 		{{ with .event }}
-			{{ partial "github/events/single.html" . }}
+			{{ partial "github/events/single" . }}
 		{{ end }}
 		{{ with .post }}
-			{{ partial "pinboard/single.html" . }}
+			{{ partial "pinboard/single" . }}
 		{{ end }}
 		{{/* <code>{{ . }}</code> */}}
 	{{ end }}

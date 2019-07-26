@@ -5,72 +5,72 @@
             {{/* watch event */}}
             {{- if eq .type "WatchEvent" -}}
                 {{if eq .payload.action "started" -}}starred{{- else -}}unstarred{{- end }}
-                <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* push event */}}
             {{- else if eq .type "PushEvent" -}}
-                pushed to <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                pushed to <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* fork event */}}
             {{- else if eq .type "ForkEvent" -}}
                 forked
-                <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
-                to <a href="{{ .payload.forkee.html_url }}" target="_blank">{{ .payload.forkee.full_name }}</a>
+                <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
+                to <a href="{{ .payload.forkee.html_url }}" target="_blank" rel="noopener">{{ .payload.forkee.full_name }}</a>
 
             {{/* create event */}}
             {{- else if eq .type "CreateEvent" -}}
                 {{ if eq .payload.ref_type "tag" -}}
-                    created tag <a href="https://github.com/{{ .repo.name }}/tag/{{ .payload.ref | urlize }}" target="_blank">{{ .payload.ref }}</a> in
+                    created tag <a href="https://github.com/{{ .repo.name }}/tag/{{ .payload.ref | urlize }}" target="_blank" rel="noopener">{{ .payload.ref }}</a> in
                 {{- else if eq .payload.ref_type "repository" -}}
-                    created repository <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .payload.ref }}</a>
+                    created repository <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .payload.ref }}</a>
                 {{- else if eq .payload.ref_type "branch" -}}
-                    created branch <a href="https://github.com/{{ .repo.name }}/tree/{{ .payload.ref | urlize }}" target="_blank">{{ .payload.ref }}</a> in
+                    created branch <a href="https://github.com/{{ .repo.name }}/tree/{{ .payload.ref | urlize }}" target="_blank" rel="noopener">{{ .payload.ref }}</a> in
                 {{- end }}
-                <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* release event */}}
             {{- else if eq .type "ReleaseEvent" -}}
-                created <a href="{{ .payload.release.html_url }}" target="_blank">release {{ .payload.release.tag_name }}</a>
-                in <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                created <a href="{{ .payload.release.html_url }}" target="_blank" rel="noopener">release {{ .payload.release.tag_name }}</a>
+                in <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* issues event */}}
             {{- else if eq .type "IssuesEvent" -}}
                 {{ .payload.action }}
-                <a href="{{ .payload.issue.html_url }}" target="_blank">#{{ .payload.issue.number }} <span class="issue">{{ .payload.issue.title }}</span></a>
-                in <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="{{ .payload.issue.html_url }}" target="_blank" rel="noopener">#{{ .payload.issue.number }} <span class="issue">{{ .payload.issue.title }}</span></a>
+                in <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* PR event */}}
             {{- else if eq .type "PullRequestEvent" -}}
                 {{ .payload.action }}
-                <a href="{{ .payload.pull_request.html_url }}" target="_blank">pull request #{{ .payload.pull_request.number }}</a>
-                in <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="{{ .payload.pull_request.html_url }}" target="_blank" rel="noopener">pull request #{{ .payload.pull_request.number }}</a>
+                in <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* delete event */}}
             {{- else if eq .type "DeleteEvent" -}}
                 deleted {{ .payload.ref_type }} {{ .payload.ref }}
-                in <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                in <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* gollum (wiki) event */}}
             {{- else if eq .type "GollumEvent" -}}
                 {{ range first 1 .payload.pages -}}
                     {{ .action }} wiki page
-                    <a href="{{ .html_url }}" target="_blank">{{ .title }}</a>
+                    <a href="{{ .html_url }}" target="_blank" rel="noopener">{{ .title }}</a>
                 {{- end }}
-                in <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                in <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* comment event */}}
             {{- else if findRE ".*CommentEvent" .type -}}
-                <a href="{{ .payload.comment.html_url }}" target="_blank">commented</a> on
+                <a href="{{ .payload.comment.html_url }}" target="_blank" rel="noopener">commented</a> on
                 {{ if eq .type "CommitCommentEvent" -}}a commit in
                 {{- else if eq .type "IssueCommentEvent" -}}
-                    <a href="{{ .payload.issue.html_url }}" target="_blank">#{{ .payload.issue.number }} <span class="issue">{{ .payload.issue.title }}</span></a> in
+                    <a href="{{ .payload.issue.html_url }}" target="_blank" rel="noopener">#{{ .payload.issue.number }} <span class="issue">{{ .payload.issue.title }}</span></a> in
                 {{- end }}
-                <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
 
             {{/* default event */}}
             {{- else -}}
                 did something <span class="input">[{{ .type }}]</span> with
-                <a href="https://github.com/{{ .repo.name }}" target="_blank">{{ .repo.name }}</a>
+                <a href="https://github.com/{{ .repo.name }}" target="_blank" rel="noopener">{{ .repo.name }}</a>
             {{- end }}
         </header>
         <div class="meta">

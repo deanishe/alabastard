@@ -6,7 +6,7 @@
 		{{ with .Site.Params.description -}}
 		<meta name="description" content="{{ . }}">
 		{{- end }}
-		{{ .Hugo.Generator }}
+		{{ hugo.Generator }}
 		<title>{{ if not .IsHome }}{{ .Title }} &mdash; {{ end }}{{ .Site.Title }}</title>
 		{{ range .AlternativeOutputFormats -}}
     		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
@@ -71,14 +71,13 @@
 			<script type="text/javascript">
 				// Reformat any time.relative elements on page
 				$(document).ready(function() {
-
 					$('time.relative').each(function(i, elem) {
 						var ts = $(this).data('timestamp');
 						if (ts) {
 							var dt = new Date(ts * 1000);
 							var s = relTime(dt);
 							if (s) {
-								console.debug('[date] ' + ts + ' -> ' + s);
+								// console.debug('[date] ' + ts + ' -> ' + s);
 								$(this).html(s);
 							}
 						}
@@ -109,13 +108,10 @@
 			<script type="text/javascript">
 				// If any .expandable elements are on page, load jquery.expander.js
 				$(document).ready(function() {
-
 					if ($('.expandable').length) {
 						console.debug('[loader] loading jquery.expander.js ...');
-
 						loadScript(libUrls.expanderJS, function() {
 							console.debug('[loader] loaded jquery.expander.js');
-
 							$.expander.defaults.slicePoint = 140;
 							$.expander.defaults.expandText = 'more &#9662;';
 							$.expander.defaults.userCollapseText = 'less &#9652;';

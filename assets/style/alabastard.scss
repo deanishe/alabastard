@@ -87,6 +87,10 @@ header {
   }
 }
 
+div.body>h1 {
+  margin-bottom: .5em;
+}
+
 .footer { padding-bottom: 3em; }
 
 .toplink {
@@ -296,7 +300,9 @@ pre.chroma {
 
 
 .meta {
+  // border: 1px dotted red;
   font-size: 90%;
+  padding-bottom: .5em;
 
   .tags {
     display: block;
@@ -669,6 +675,7 @@ div.downloads {
 
     &:first-child,
     &:last-child {
+      margin: 0 1em;
       .page { padding: 0; }
     }
 
@@ -682,8 +689,8 @@ div.downloads {
       color: $text-status;
     }
 
-    &.previous { float: left; }
-    &.next { float: right; }
+    // &.previous { float: left; }
+    // &.next { float: right; }
   }
 }
 
@@ -699,7 +706,10 @@ div.downloads {
 .mobile-menu { display: none; }
 
 @media screen and (max-width: 875px) {
-  .mobile-menu { display: block; }
+  .mobile-menu {
+    display: block;
+    margin-left: 1em;
+  }
 
   .sphinxsidebar {
     text-align: center;

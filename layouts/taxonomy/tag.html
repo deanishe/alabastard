@@ -1,17 +1,9 @@
 {{/* List pages with specifed tag */}}
 {{- define "main" }}
 	{{ print "<!-- taxonomy/tag.html -->" | safeHTML }}
-	<h1>Posts tagged <span class="tag">{{ .Title | lower }}</span></h1>
+	<h1>Items tagged <span class="tag">{{ .Title | lower }}</span></h1>
 
 	{{ .Content }}
-
-	{{/*
-	<ul class="pages">
-		{{ range .Pages }}
-			{{ partial "preview" . }}
-		{{ end }}
-	</ul>
-	*/}}
 
 	{{- $paginator := .Paginate (.Pages.GroupByDate "2006") }}
 	{{- range $paginator.PageGroups }}
@@ -23,7 +15,7 @@
 		</ul>
 
 		{{- partial "toplink" }}
-		{{- partial "pagination.html" $paginator }}
 	{{- end }}
+	{{- partial "pagination.html" $paginator }}
 {{- end }}
 {{/*  vim: set ft=gohtmltmpl ts=4 sw=4 tw=80 noet :  */}}
