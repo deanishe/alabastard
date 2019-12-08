@@ -1,0 +1,10 @@
+{{ $path := . }}
+{{ if (eq (getenv "ENV") "dev") }}
+	{{- $options := (dict "enableSourceMap" true) -}}
+	{{- $style := resources.Get $path | toCSS $options -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+{{ else }}
+	{{ $options := (dict "enableSourceMap" true "outputStyle" "compressed") }}
+	{{ $style := resources.Get $path | toCSS $options | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+{{ end }}

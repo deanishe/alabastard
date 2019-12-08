@@ -53,9 +53,6 @@ class @Weather
   run: () ->
     console.log '[weather] running ...'
 
-    # Add stylesheet
-    $('head').append '<link rel="stylesheet" type="text/css" href="../css/weather.css" />'
-
     # All percentages
     $( '.percent.value' ).each (i, e) =>
       p = $(e).data 'percent'

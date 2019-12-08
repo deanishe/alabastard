@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "main" -}}
 	{{ print "<!-- weather.html -->" | safeHTML }}
 	<h1>{{ .Title }}</h1>
 
@@ -15,19 +15,19 @@
 
 	<section class="later">
 		<h2>Later</h2>
-
 		{{ range .hourly.data -}}
 			{{ partial "darksky/forecast" . }}
 		{{- end }}
 	</section>
 	{{- end }}
-
-	<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>
-	<script type="text/javascript">
-		$( document ).ready( function() {
-			var w = new Weather();
-			w.run();
-		});
-	</script>
-
-{{ end }}
+{{- end }}
+{{ define "extraHead" }}{{ partial "stylesheet" "style/weather.scss" }}{{ end }}
+{{ define "postJS" -}}
+<script type="text/javascript" src="{{ $.Site.BaseURL }}js/weather.js"></script>
+<script type="text/javascript">
+	$( document ).ready( function() {
+		var w = new Weather();
+		w.run();
+	});
+</script>
+{{- end }}

@@ -15,6 +15,7 @@
 		{{ partial "stylesheets" . }}
 		{{ partial "favicons" . }}
 		{{ partial "javascript" . }}
+		{{ block "extraHead" . }}{{ end }}
 		{{ printf "<!-- I hate cats -->" | safeHTML }}
 	</head>
 	<body role="document">
@@ -51,21 +52,21 @@
 			<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
 			{{- end }}
 
-	  <!-- gitinfo buttons -->
-	  <script type="text/javascript">
-		$(document).ready(function() {
-		  $( '.gitinfo' ).each(function(i, git) {
-			var link = $(git).find('.header a')[0],
-				content = $(git).find('.content')[0];
+			<!-- gitinfo buttons -->
+			<script type="text/javascript">
+				$(document).ready(function() {
+				  $( '.gitinfo' ).each(function(i, git) {
+					var link = $(git).find('.header a')[0],
+						content = $(git).find('.content')[0];
 
-			$(link).on('click', function(ev) {
-			  $(content).fadeToggle(100);
-			  return false;
-			});
-		  });
-		});
-	  </script>
-	  <!-- /gitinfo -->
+					$(link).on('click', function(ev) {
+					  $(content).fadeToggle(100);
+					  return false;
+					});
+				  });
+				});
+			</script>
+			<!-- /gitinfo -->
 
 			<!-- relative dates -->
 			<script type="text/javascript">
@@ -95,8 +96,8 @@
 					if ($('code').length) {
 						console.debug('[loader] loading highlight.js ...');
 						loadScript(libUrls.highlightJS, function() {
-						console.debug('[loader] loaded highlight.js');
-							hljs.initHighlightingOnLoad();
+							console.debug('[loader] loaded highlight.js');
+							hljs.initHighlighting();
 						});
 					}
 				});
@@ -121,6 +122,8 @@
 				});
 			</script>
 			<!-- /jquery.expander -->
+
+			{{ block "postJS" . }}{{ end }}
 
 			{{ if (ne (getenv "ENV") "dev") -}}
 			{{ if .Site.Params.piwikSiteID -}}

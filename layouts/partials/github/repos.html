@@ -21,7 +21,7 @@
 			{{- end }}
 			<li><a href="{{ .html_url }}" target="_blank">{{ .full_name }}</a> on GitHub</li>
 			<li><a href="{{ .html_url }}/issues" target="_blank">issues</a> <span class="status">({{ .open_issues_count }} open)</span></li>
-			<li>last pushed
+			<li>last updated
 				<time class="relative" data-timestamp="{{ (time .pushed_at).Unix }}">
 					{{ dateFormat "2 Jan, 2006" .pushed_at }}
 				</time>

@@ -10,10 +10,14 @@
 //                                           .88
 //                                       d8888P
 
-$font-monospace: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+$font-monospace: 'Source Code Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 $font-title: 'Garamond', 'Georgia', serif;
 
 $bg-tag: #ecf0f3;
+// $bg-script: #fbfbfc;
+$bg-script: #f5f5fa;
+// $bg-code: #f5f5fa;
+$bg-code: $bg-script;
 $text-status: #888;
 $text-light: #666;
 $text-tag: #333;
@@ -242,15 +246,94 @@ kbd {
   // background-color: inherit;
   // font-weight: 600;
   // display: inline-block;
+  background-color: $bg-code;
   padding: 2px 4px;
 }
 
 kbd {
-  background-color: lighten($bg-tag, 10%);
-  border: 1px solid darken($bg-tag, 10%);
+  border: 1px solid $bg-tag;
   border-radius: 4px;
   // display: inline-block;
   // padding: 2px 4px;
+}
+
+//                         dP
+//                         88
+// .d8888b. .d8888b. .d888b88 .d8888b.
+// 88'  `"" 88'  `88 88'  `88 88ooood8
+// 88.  ... 88.  .88 88.  .88 88.  ...
+// `88888P' `88888P' `88888P8 `88888P'
+
+
+pre {
+  padding: 0 !important;
+  padding-left: 1em !important;
+
+  code {
+    display: block;
+    padding: 1em 0.5em;
+
+    &.hljs {
+      background-color: $bg-code;
+      padding: 1em 0.5em;
+    }
+  }
+}
+
+div.code {
+  border: 1px solid $bg-tag;
+
+  header {
+    align-items: stretch;
+    border-bottom: 1px solid $bg-tag;
+    display: flex;
+    padding: 0.5em;
+
+    .filename {
+      color: $text-light;
+      display: inline-block;
+      font-family: $font-monospace;
+      font-size: 0.9em;
+      margin-right: auto;
+    }
+
+    .rawlink {
+      font-size: 1em;
+    }
+  }
+
+  pre {
+    margin: 0;
+    padding: 0 !important;
+  }
+
+  /*
+  code {
+    padding: 1em;
+  }
+  */
+
+  pre,
+  code,
+  .hljs {
+    background-color: $bg-script;
+  }
+
+  /*
+  pre {
+    background-color: $bg-code;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    // padding: 7px 16px;
+
+    code {
+      background-color: inherit;
+      padding: 0.5em;
+      // color: inherit;
+    }
+  }
+  */
 }
 
 div.chroma,
@@ -267,7 +350,6 @@ pre.chroma {
 .chroma {
 
   pre {
-
     // line numbers
     &.chroma {
       margin-bottom: 0;

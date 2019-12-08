@@ -1,0 +1,17 @@
+{{ $lang := "" }}
+{{ $script := "" }}
+{{- if .IsNamedParams }}
+  {{ $script = .Get "script" }}
+  {{ $lang = .Get "lang" }}
+{{- else -}}
+  {{ $script = .Get 0 }}
+  {{ $lang = "" }}
+{{ end -}}
+{{ $code := ( .Page.Resources.GetMatch $script ).Content }}
+<div class="code">
+  <header>
+    <div class="filename">{{ $script }}</div>
+    <a class="rawlink" href="{{ $script }}">view raw</a>
+  </header>
+  <pre><code class="{{ $lang }}">{{ $code }}</code></pre>
+</div>
