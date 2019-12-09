@@ -125,7 +125,8 @@ def main():
         json.dump(data, sys.stdout, sort_keys=True, indent=2)
     else:
         with open(args.target, 'wb') as fp:
-            json.dump(data, fp, sort_keys=True, indent=2)
+            json.dump(data, fp, sort_keys=True, indent=2,
+                      separators=(',', ': '))
         log('Wrote %d %s to %s', len(data), args.what, args.target)
 
     return 0

@@ -23,7 +23,8 @@ import sys
 from urllib2 import urlopen
 
 # recent posts
-API_URL = 'https://api.pinboard.in/v1/posts/all?format=json&results=100&auth_token={token}'
+API_URL = ('https://api.pinboard.in/v1/posts/all?'
+           'format=json&results=100&auth_token={token}')
 
 
 def log(s, *args):
@@ -74,10 +75,12 @@ def main():
     shared = [p for p in posts if p.get('shared') == 'yes']
     log('%d/%d posts shared', len(shared), len(posts))
     if not args.target:
-        json.dump(shared, sys.stdout, sort_keys=True, indent=2)
+        json.dump(shared, sys.stdout, sort_keys=True, indent=2,
+                  separators=(',', ': '))
     else:
         with open(args.target, 'wb') as fp:
-            json.dump(shared, fp, sort_keys=True, indent=2)
+            json.dump(shared, fp, sort_keys=True, indent=2,
+                      separators=(',', ': '))
         log('Wrote %d posts to %s', len(shared), args.target)
 
     return 0

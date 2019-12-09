@@ -86,10 +86,12 @@ def main():
     data = fetch_forecast(args.location, args.token)
 
     if not args.target:
-        json.dump(data, sys.stdout, sort_keys=True, indent=2)
+        json.dump(data, sys.stdout, sort_keys=True, indent=2,
+                  separators=(',', ': '))
     else:
         with open(args.target, 'wb') as fp:
-            json.dump(data, fp, sort_keys=True, indent=2)
+            json.dump(data, fp, sort_keys=True, indent=2,
+                      separators=(',', ': '))
 
         log('Wrote forecast to %s', args.target)
 
