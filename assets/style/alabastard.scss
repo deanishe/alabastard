@@ -134,6 +134,18 @@ div.body>h1 {
 // Override sphinx sidebar styles
 div.sphinxsidebar {
 
+  p.logo,
+  h1.logo {
+    text-align: right;
+  }
+
+  p.logo {
+    img {
+      max-width: 128px;
+      max-height: 128px;
+    }
+  }
+
   a,
   a:hover { border: 0; }
 
@@ -729,11 +741,6 @@ div.downloads {
     }
   }
 }
-
-// .download-icon {
-//   background: url('/images/pdf.png');
-//   background-repeat: no-repeat;
-// }
 
 //                            oo                     dP   oo
 //                                                   88

@@ -16,9 +16,9 @@
                 <span class="download-icon">
                     <a href="{{ .RelPermalink }}">
                         {{- if in $types $type -}}
-                            <img src="{{ print "images/" $type ".png" | absURL }}" alt="{{ . }} icon">
+                            <img src="{{ print "images/filetypes/" $type ".png" | absURL }}" alt="{{ $type }} icon">
                         {{- else -}}
-                            <img src="{{ "images/file.png" | absURL }}" alt="file icon">
+                            <img src="{{ "images/filetypes/file.png" | absURL }}" alt="file icon">
                         {{- end -}}
                     </a>
                 </span>
