@@ -394,13 +394,23 @@ pre.chroma {
 
 
 .meta {
-  // border: 1px dotted red;
+  display: table;
   font-size: 90%;
   padding-bottom: .5em;
+  width: 100%;
+
+  .left,
+  .right {
+    display: table-cell;
+  }
+
+  .left {
+    padding-right: 1rem;
+    white-space: nowrap;
+  }
 
   .tags {
-    display: block;
-    float: right;
+    text-align: right;
     font-size: 90%;
   }
 }
@@ -525,10 +535,6 @@ li {
       font-size: $font-size4;
       line-height: $font-size4 + 4;
       margin-top: 0;
-    }
-
-    .meta {
-      // border: 1px dotted green;
     }
 
     .icon {
@@ -800,7 +806,7 @@ div.downloads {
     margin-left: 1em;
   }
 
-  .sphinxsidebar {
+  div.sphinxsidebar {
     text-align: center;
 
     .tag {
@@ -808,7 +814,27 @@ div.downloads {
       color: $text-tag;
     }
 
+    h1.logo { text-align: center; }
+
     h2 { color: $text-light-on-dark; }
+  }
+
+  .meta {
+    display: block;
+    padding-bottom: 0;
+
+    .left,
+    .right {
+      display: block;
+    }
+
+    .left {
+      padding-bottom: .5em;
+    }
+
+    .tags {
+      text-align: left;
+    }
   }
 
   .social {

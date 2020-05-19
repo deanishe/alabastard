@@ -7,9 +7,8 @@
 		{{- .Content }}
 		{{ partial "downloadList" . }}
 	</article>
-	{{ if ne .Type "toplevel" }}
-	{{/* {{ partial "pager" . }} */}}
-	{{- with .Site.RegularPages.Related . }}{{- partial "related" . }}{{- end }}
+	{{ if ne .Type "toplevel" -}}
+		{{ with .Site.RegularPages.Related . }}{{- partial "related" . }}{{- end }}
 	{{- end }}
 	<footer>
 	{{ partial "toplink" }}

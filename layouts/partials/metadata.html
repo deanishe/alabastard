@@ -1,11 +1,13 @@
 <div class="meta">
-	<span class="date"><time class="relative" data-timestamp="{{ .Date.Unix }}">{{ .Date.Format "2 Jan, 2006" }}</time></span>
-	{{ if ne .Type "toplevel" -}}
-	{{ if ne .Type "homepage" -}}
-	<span class="type">| <a href="/{{ .Type | urlize }}/">more {{ .Type | pluralize }}&nbsp;&#9656;</a></span>
-	{{- end }}
-	{{- end }}
+	<div class="left">
+		<span class="date"><time class="relative" data-timestamp="{{ .Date.Unix }}">{{ .Date.Format "2 Jan, 2006" }}</time></span>
+		{{ if and (ne .Type "toplevel") (ne .Type "homepage") -}}
+		<span class="type">| <a href="/{{ .Type | urlize }}/">more&nbsp;{{ .Type | pluralize }}&nbsp;&#9656;</a></span>
+		{{- end }}
+	</div>
+	<div class="right">
 	{{ if .Params.tags -}}
 		{{ partial "tags" .Params.tags }}
 	{{- end }}
+	</div>
 </div>
