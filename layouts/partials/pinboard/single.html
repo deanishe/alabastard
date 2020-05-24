@@ -14,7 +14,7 @@
                 saved
                 <time class="relative" data-timestamp="{{ (time .time).Unix }}">
                     {{ dateFormat "2 Jan, 06" .time }}
-                </time>    
+                </time>
             </div>
             <div class="right">
                 <ul class="tags">
@@ -23,7 +23,7 @@
                         <a href="https://pinboard.in/t:{{ . | urlize }}/" target="_blank">{{ . }}</a>
                     </li>
                     {{- end }}
-                </ul>                
+                </ul>
             </div>
         </div>
         <p class="summary expandable">{{ .extended }}</p>
