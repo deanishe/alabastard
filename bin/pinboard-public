@@ -17,6 +17,7 @@ or by setting the environment variable PINBOARD_API_TOKEN.
 from __future__ import print_function, absolute_import
 
 import argparse
+import codecs
 import json
 import os
 import sys
@@ -34,15 +35,25 @@ def log(s, *args):
     print(s, file=sys.stderr)
 
 
+def _decode(data):
+    """Decode data based on BOM."""
+    enc = 'utf-8'
+    if data.startswith(codecs.BOM_UTF8):
+        enc = 'utf-8-sig'
+
+    log('response encoding=%s', enc)
+    return data.decode(enc)
+
+
 def fetch_posts(token):
     """Fetch all posts from Pinboard."""
     url = API_URL.format(token=token)
-    return json.loads(httpget(url))
+    return json.loads(_decode(httpget(url)))
 
 
 def httpget(url):
     """Return raw response data of HTTP call."""
-    log('Fetching %s ...', url)
+    log('fetching %s ...', url)
     r = urlopen(url)
     code = r.getcode()
     log('[%d] %s', code, url)
@@ -81,7 +92,7 @@ def main():
         with open(args.target, 'wb') as fp:
             json.dump(shared, fp, sort_keys=True, indent=2,
                       separators=(',', ': '))
-        log('Wrote %d posts to %s', len(shared), args.target)
+        log('wrote %d posts to %s', len(shared), args.target)
 
     return 0
 
